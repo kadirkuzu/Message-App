@@ -1,28 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dell\\Desktop\\My Projects\\Message App\\Backend\\MessageApp\\Core\\MessageApp.Domain\\MessageApp.Domain.csproj": {}
+    "/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Core/MessageApp.Domain/MessageApp.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dell\\Desktop\\My Projects\\Message App\\Backend\\MessageApp\\Core\\MessageApp.Domain\\MessageApp.Domain.csproj": {
+    "/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Core/MessageApp.Domain/MessageApp.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dell\\Desktop\\My Projects\\Message App\\Backend\\MessageApp\\Core\\MessageApp.Domain\\MessageApp.Domain.csproj",
+        "projectUniqueName": "/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Core/MessageApp.Domain/MessageApp.Domain.csproj",
         "projectName": "MessageApp.Domain",
-        "projectPath": "C:\\Users\\Dell\\Desktop\\My Projects\\Message App\\Backend\\MessageApp\\Core\\MessageApp.Domain\\MessageApp.Domain.csproj",
-        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dell\\Desktop\\My Projects\\Message App\\Backend\\MessageApp\\Core\\MessageApp.Domain\\obj\\",
+        "projectPath": "/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Core/MessageApp.Domain/MessageApp.Domain.csproj",
+        "packagesPath": "/Users/kadirkuzu/.nuget/packages/",
+        "outputPath": "/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Core/MessageApp.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/kadirkuzu/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -61,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

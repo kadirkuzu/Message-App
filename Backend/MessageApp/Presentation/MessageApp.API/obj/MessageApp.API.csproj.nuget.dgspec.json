@@ -1,36 +1,33 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dell\\Desktop\\My Projects\\Message App\\Backend\\MessageApp\\Presentation\\MessageApp.API\\MessageApp.API.csproj": {}
+    "/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Presentation/MessageApp.API/MessageApp.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dell\\Desktop\\My Projects\\Message App\\Backend\\MessageApp\\Core\\MessageApp.Application\\MessageApp.Application.csproj": {
+    "/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Core/MessageApp.Application/MessageApp.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dell\\Desktop\\My Projects\\Message App\\Backend\\MessageApp\\Core\\MessageApp.Application\\MessageApp.Application.csproj",
+        "projectUniqueName": "/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Core/MessageApp.Application/MessageApp.Application.csproj",
         "projectName": "MessageApp.Application",
-        "projectPath": "C:\\Users\\Dell\\Desktop\\My Projects\\Message App\\Backend\\MessageApp\\Core\\MessageApp.Application\\MessageApp.Application.csproj",
-        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dell\\Desktop\\My Projects\\Message App\\Backend\\MessageApp\\Core\\MessageApp.Application\\obj\\",
+        "projectPath": "/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Core/MessageApp.Application/MessageApp.Application.csproj",
+        "packagesPath": "/Users/kadirkuzu/.nuget/packages/",
+        "outputPath": "/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Core/MessageApp.Application/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/kadirkuzu/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Dell\\Desktop\\My Projects\\Message App\\Backend\\MessageApp\\Core\\MessageApp.Domain\\MessageApp.Domain.csproj": {
-                "projectPath": "C:\\Users\\Dell\\Desktop\\My Projects\\Message App\\Backend\\MessageApp\\Core\\MessageApp.Domain\\MessageApp.Domain.csproj"
+              "/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Core/MessageApp.Domain/MessageApp.Domain.csproj": {
+                "projectPath": "/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Core/MessageApp.Domain/MessageApp.Domain.csproj"
               }
             }
           }
@@ -71,29 +68,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Dell\\Desktop\\My Projects\\Message App\\Backend\\MessageApp\\Core\\MessageApp.Domain\\MessageApp.Domain.csproj": {
+    "/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Core/MessageApp.Domain/MessageApp.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dell\\Desktop\\My Projects\\Message App\\Backend\\MessageApp\\Core\\MessageApp.Domain\\MessageApp.Domain.csproj",
+        "projectUniqueName": "/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Core/MessageApp.Domain/MessageApp.Domain.csproj",
         "projectName": "MessageApp.Domain",
-        "projectPath": "C:\\Users\\Dell\\Desktop\\My Projects\\Message App\\Backend\\MessageApp\\Core\\MessageApp.Domain\\MessageApp.Domain.csproj",
-        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dell\\Desktop\\My Projects\\Message App\\Backend\\MessageApp\\Core\\MessageApp.Domain\\obj\\",
+        "projectPath": "/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Core/MessageApp.Domain/MessageApp.Domain.csproj",
+        "packagesPath": "/Users/kadirkuzu/.nuget/packages/",
+        "outputPath": "/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Core/MessageApp.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/kadirkuzu/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -132,37 +126,34 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Dell\\Desktop\\My Projects\\Message App\\Backend\\MessageApp\\Infrastructure\\MessageApp.Persistence\\MessageApp.Persistence.csproj": {
+    "/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Infrastructure/MessageApp.Persistence/MessageApp.Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dell\\Desktop\\My Projects\\Message App\\Backend\\MessageApp\\Infrastructure\\MessageApp.Persistence\\MessageApp.Persistence.csproj",
+        "projectUniqueName": "/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Infrastructure/MessageApp.Persistence/MessageApp.Persistence.csproj",
         "projectName": "MessageApp.Persistence",
-        "projectPath": "C:\\Users\\Dell\\Desktop\\My Projects\\Message App\\Backend\\MessageApp\\Infrastructure\\MessageApp.Persistence\\MessageApp.Persistence.csproj",
-        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dell\\Desktop\\My Projects\\Message App\\Backend\\MessageApp\\Infrastructure\\MessageApp.Persistence\\obj\\",
+        "projectPath": "/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Infrastructure/MessageApp.Persistence/MessageApp.Persistence.csproj",
+        "packagesPath": "/Users/kadirkuzu/.nuget/packages/",
+        "outputPath": "/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Infrastructure/MessageApp.Persistence/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/kadirkuzu/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Dell\\Desktop\\My Projects\\Message App\\Backend\\MessageApp\\Core\\MessageApp.Application\\MessageApp.Application.csproj": {
-                "projectPath": "C:\\Users\\Dell\\Desktop\\My Projects\\Message App\\Backend\\MessageApp\\Core\\MessageApp.Application\\MessageApp.Application.csproj"
+              "/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Core/MessageApp.Application/MessageApp.Application.csproj": {
+                "projectPath": "/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Core/MessageApp.Application/MessageApp.Application.csproj"
               }
             }
           }
@@ -225,40 +216,37 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Dell\\Desktop\\My Projects\\Message App\\Backend\\MessageApp\\Presentation\\MessageApp.API\\MessageApp.API.csproj": {
+    "/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Presentation/MessageApp.API/MessageApp.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dell\\Desktop\\My Projects\\Message App\\Backend\\MessageApp\\Presentation\\MessageApp.API\\MessageApp.API.csproj",
+        "projectUniqueName": "/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Presentation/MessageApp.API/MessageApp.API.csproj",
         "projectName": "MessageApp.API",
-        "projectPath": "C:\\Users\\Dell\\Desktop\\My Projects\\Message App\\Backend\\MessageApp\\Presentation\\MessageApp.API\\MessageApp.API.csproj",
-        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dell\\Desktop\\My Projects\\Message App\\Backend\\MessageApp\\Presentation\\MessageApp.API\\obj\\",
+        "projectPath": "/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Presentation/MessageApp.API/MessageApp.API.csproj",
+        "packagesPath": "/Users/kadirkuzu/.nuget/packages/",
+        "outputPath": "/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Presentation/MessageApp.API/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/kadirkuzu/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Dell\\Desktop\\My Projects\\Message App\\Backend\\MessageApp\\Core\\MessageApp.Application\\MessageApp.Application.csproj": {
-                "projectPath": "C:\\Users\\Dell\\Desktop\\My Projects\\Message App\\Backend\\MessageApp\\Core\\MessageApp.Application\\MessageApp.Application.csproj"
+              "/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Core/MessageApp.Application/MessageApp.Application.csproj": {
+                "projectPath": "/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Core/MessageApp.Application/MessageApp.Application.csproj"
               },
-              "C:\\Users\\Dell\\Desktop\\My Projects\\Message App\\Backend\\MessageApp\\Infrastructure\\MessageApp.Persistence\\MessageApp.Persistence.csproj": {
-                "projectPath": "C:\\Users\\Dell\\Desktop\\My Projects\\Message App\\Backend\\MessageApp\\Infrastructure\\MessageApp.Persistence\\MessageApp.Persistence.csproj"
+              "/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Infrastructure/MessageApp.Persistence/MessageApp.Persistence.csproj": {
+                "projectPath": "/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Infrastructure/MessageApp.Persistence/MessageApp.Persistence.csproj"
               }
             }
           }
@@ -308,7 +296,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
