@@ -236,3 +236,6 @@ C:/Users/Dell/Desktop/My Projects/Message App/Backend/MessageApp/Presentation/Me
 /Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Presentation/MessageApp.API/obj/Debug/net8.0/MessageApp.API.pdb
 /Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Presentation/MessageApp.API/obj/Debug/net8.0/MessageApp.API.genruntimeconfig.cache
 /Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Presentation/MessageApp.API/obj/Debug/net8.0/ref/MessageApp.API.dll
+/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Presentation/MessageApp.API/bin/Debug/net8.0/FluentValidation.dll
+/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Presentation/MessageApp.API/bin/Debug/net8.0/FluentValidation.AspNetCore.dll
+/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Presentation/MessageApp.API/bin/Debug/net8.0/FluentValidation.DependencyInjectionExtensions.dll

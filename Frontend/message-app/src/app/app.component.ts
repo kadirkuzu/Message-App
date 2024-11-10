@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {Store} from "@ngrx/store";
+import {MessageActions} from "./states/messages/actions";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'message-app';
+
+  constructor(private store:Store) {
+    store.dispatch(MessageActions.getAll())
+  }
 }
