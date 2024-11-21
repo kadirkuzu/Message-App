@@ -9,110 +9,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b446ecaa-c78b-4d35-973d-6044e0ae3c33" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Core/MessageApp.Application/Validators/Messages/SendMessageValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Frontend/message-app/src/app/models/common/entity.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Frontend/message-app/src/app/models/message.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Frontend/message-app/src/app/pages/chats/chats.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Frontend/message-app/src/app/pages/chats/messages/messages.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Frontend/message-app/src/app/pages/chats/messages/messages.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Frontend/message-app/src/app/pages/chats/messages/messages.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Frontend/message-app/src/app/pages/pages.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Frontend/message-app/src/app/services/common/api.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Frontend/message-app/src/app/services/messages.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Frontend/message-app/src/app/states/common/actionBase.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Frontend/message-app/src/app/states/common/effects.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Frontend/message-app/src/app/states/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Frontend/message-app/src/app/states/messages/actions.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Frontend/message-app/src/app/states/messages/effects.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Frontend/message-app/src/app/states/messages/reducer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Frontend/message-app/src/app/states/messages/selectors.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Frontend/message-app/src/environments/environment.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/MessageApp.Application/MessageApp.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Core/MessageApp.Application/MessageApp.Application.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/MessageApp.Application/bin/Debug/net8.0/MessageApp.Application.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Core/MessageApp.Application/bin/Debug/net8.0/MessageApp.Application.deps.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/MessageApp.Application/bin/Debug/net8.0/MessageApp.Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Core/MessageApp.Application/bin/Debug/net8.0/MessageApp.Application.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/MessageApp.Application/bin/Debug/net8.0/MessageApp.Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Core/MessageApp.Application/bin/Debug/net8.0/MessageApp.Application.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/MessageApp.Application/bin/Debug/net8.0/MessageApp.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Core/MessageApp.Application/bin/Debug/net8.0/MessageApp.Domain.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/MessageApp.Application/bin/Debug/net8.0/MessageApp.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Core/MessageApp.Application/bin/Debug/net8.0/MessageApp.Domain.pdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Core/MessageApp.Application/Services/IFileService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Infrastructure/MessageApp.Infrastructure/ServiceRegistration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Infrastructure/MessageApp.Infrastructure/Services/FileService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Presentation/MessageApp.API/wwwroot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.MessageApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MessageApp/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/MessageApp.Application/obj/Debug/net8.0/MessageApp.Application.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/MessageApp.Application/obj/Debug/net8.0/MessageApp.Application.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/MessageApp.Application/obj/Debug/net8.0/MessageApp.Application.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Core/MessageApp.Application/obj/Debug/net8.0/MessageApp.Application.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/MessageApp.Application/obj/Debug/net8.0/MessageApp.Application.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Core/MessageApp.Application/obj/Debug/net8.0/MessageApp.Application.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/MessageApp.Application/obj/Debug/net8.0/MessageApp.Application.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Core/MessageApp.Application/obj/Debug/net8.0/MessageApp.Application.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/MessageApp.Application/obj/Debug/net8.0/MessageApp.Application.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Core/MessageApp.Application/obj/Debug/net8.0/MessageApp.Application.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/MessageApp.Application/obj/Debug/net8.0/MessageApp.Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Core/MessageApp.Application/obj/Debug/net8.0/MessageApp.Application.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/MessageApp.Application/obj/Debug/net8.0/MessageApp.Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Core/MessageApp.Application/obj/Debug/net8.0/MessageApp.Application.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/MessageApp.Application/obj/Debug/net8.0/MessageApp.Application.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Core/MessageApp.Application/obj/Debug/net8.0/MessageApp.Application.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/MessageApp.Application/obj/Debug/net8.0/ref/MessageApp.Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Core/MessageApp.Application/obj/Debug/net8.0/ref/MessageApp.Application.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/MessageApp.Application/obj/Debug/net8.0/refint/MessageApp.Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Core/MessageApp.Application/obj/Debug/net8.0/refint/MessageApp.Application.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/MessageApp.Application/obj/MessageApp.Application.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Core/MessageApp.Application/obj/MessageApp.Application.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/MessageApp.Application/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Core/MessageApp.Application/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/MessageApp.Application/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Core/MessageApp.Application/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/MessageApp.Domain/bin/Debug/net8.0/MessageApp.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Core/MessageApp.Domain/bin/Debug/net8.0/MessageApp.Domain.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/MessageApp.Domain/bin/Debug/net8.0/MessageApp.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Core/MessageApp.Domain/bin/Debug/net8.0/MessageApp.Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/MessageApp.Application/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Core/MessageApp.Application/obj/rider.project.model.nuget.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/MessageApp.Domain/obj/Debug/net8.0/MessageApp.Domain.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/MessageApp.Domain/obj/Debug/net8.0/MessageApp.Domain.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/MessageApp.Domain/obj/Debug/net8.0/MessageApp.Domain.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Core/MessageApp.Domain/obj/Debug/net8.0/MessageApp.Domain.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/MessageApp.Domain/obj/Debug/net8.0/MessageApp.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Core/MessageApp.Domain/obj/Debug/net8.0/MessageApp.Domain.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/MessageApp.Domain/obj/Debug/net8.0/MessageApp.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Core/MessageApp.Domain/obj/Debug/net8.0/MessageApp.Domain.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/MessageApp.Domain/obj/Debug/net8.0/MessageApp.Domain.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Core/MessageApp.Domain/obj/Debug/net8.0/MessageApp.Domain.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/MessageApp.Domain/obj/Debug/net8.0/ref/MessageApp.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Core/MessageApp.Domain/obj/Debug/net8.0/ref/MessageApp.Domain.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/MessageApp.Domain/obj/Debug/net8.0/refint/MessageApp.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Core/MessageApp.Domain/obj/Debug/net8.0/refint/MessageApp.Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/MessageApp.Domain/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Core/MessageApp.Domain/obj/rider.project.model.nuget.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/MessageApp.Infrastructure/obj/Debug/net8.0/MessageApp.Infrastructure.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/MessageApp.Infrastructure/obj/Debug/net8.0/MessageApp.Infrastructure.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/MessageApp.Infrastructure/obj/Debug/net8.0/MessageApp.Infrastructure.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/MessageApp.Infrastructure/obj/Debug/net8.0/MessageApp.Infrastructure.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/MessageApp.Infrastructure/obj/Debug/net8.0/MessageApp.Infrastructure.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/MessageApp.Infrastructure/obj/Debug/net8.0/MessageApp.Infrastructure.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/MessageApp.Infrastructure/obj/Debug/net8.0/MessageApp.Infrastructure.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/MessageApp.Infrastructure/obj/Debug/net8.0/MessageApp.Infrastructure.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/MessageApp.Infrastructure/obj/MessageApp.Infrastructure.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/MessageApp.Infrastructure/obj/MessageApp.Infrastructure.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/MessageApp.Infrastructure/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/MessageApp.Infrastructure/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/MessageApp.Infrastructure/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/MessageApp.Infrastructure/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/MessageApp.Persistence/bin/Debug/net8.0/MessageApp.Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/MessageApp.Persistence/bin/Debug/net8.0/MessageApp.Application.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/MessageApp.Persistence/bin/Debug/net8.0/MessageApp.Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/MessageApp.Persistence/bin/Debug/net8.0/MessageApp.Application.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/MessageApp.Persistence/bin/Debug/net8.0/MessageApp.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/MessageApp.Persistence/bin/Debug/net8.0/MessageApp.Domain.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/MessageApp.Persistence/bin/Debug/net8.0/MessageApp.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/MessageApp.Persistence/bin/Debug/net8.0/MessageApp.Domain.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/MessageApp.Persistence/bin/Debug/net8.0/MessageApp.Persistence.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/MessageApp.Persistence/bin/Debug/net8.0/MessageApp.Persistence.deps.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/MessageApp.Persistence/bin/Debug/net8.0/MessageApp.Persistence.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/MessageApp.Persistence/bin/Debug/net8.0/MessageApp.Persistence.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/MessageApp.Persistence/bin/Debug/net8.0/MessageApp.Persistence.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/MessageApp.Persistence/bin/Debug/net8.0/MessageApp.Persistence.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/MessageApp.Persistence/bin/Debug/net8.0/MessageApp.Persistence.runtimeconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/MessageApp.Persistence/bin/Debug/net8.0/MessageApp.Persistence.runtimeconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/MessageApp.Infrastructure/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/MessageApp.Infrastructure/obj/rider.project.model.nuget.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/MessageApp.Persistence/obj/Debug/net8.0/MessageApp.Persistence.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/MessageApp.Persistence/obj/Debug/net8.0/MessageApp.Persistence.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/MessageApp.Persistence/obj/Debug/net8.0/MessageApp.Persistence.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/MessageApp.Persistence/obj/Debug/net8.0/MessageApp.Persistence.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/MessageApp.Persistence/obj/Debug/net8.0/MessageApp.Persistence.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/MessageApp.Persistence/obj/Debug/net8.0/MessageApp.Persistence.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/MessageApp.Persistence/obj/Debug/net8.0/MessageApp.Persistence.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/MessageApp.Persistence/obj/Debug/net8.0/MessageApp.Persistence.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/MessageApp.Persistence/obj/Debug/net8.0/MessageApp.Persistence.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/MessageApp.Persistence/obj/Debug/net8.0/MessageApp.Persistence.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/MessageApp.Persistence/obj/Debug/net8.0/MessageApp.Persistence.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/MessageApp.Persistence/obj/Debug/net8.0/MessageApp.Persistence.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/MessageApp.Persistence/obj/Debug/net8.0/MessageApp.Persistence.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/MessageApp.Persistence/obj/Debug/net8.0/MessageApp.Persistence.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/MessageApp.Persistence/obj/Debug/net8.0/MessageApp.Persistence.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/MessageApp.Persistence/obj/Debug/net8.0/MessageApp.Persistence.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/MessageApp.Persistence/obj/Debug/net8.0/ref/MessageApp.Persistence.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/MessageApp.Persistence/obj/Debug/net8.0/ref/MessageApp.Persistence.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/MessageApp.Persistence/obj/Debug/net8.0/refint/MessageApp.Persistence.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/MessageApp.Persistence/obj/Debug/net8.0/refint/MessageApp.Persistence.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/MessageApp.Persistence/obj/MessageApp.Persistence.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/MessageApp.Persistence/obj/MessageApp.Persistence.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/MessageApp.Persistence/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/MessageApp.Persistence/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/MessageApp.Persistence/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/MessageApp.Persistence/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/MessageApp.Persistence/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/MessageApp.Persistence/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/MessageApp.API/Controllers/MessagesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/MessageApp.API/Controllers/MessagesController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/MessageApp.API/MessageApp.API.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/MessageApp.API/MessageApp.API.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation/MessageApp.API/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/MessageApp.API/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/MessageApp.API/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/MessageApp.API/Properties/launchSettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/MessageApp.API/bin/Debug/net8.0/MessageApp.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/MessageApp.API/bin/Debug/net8.0/MessageApp.API.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/MessageApp.API/bin/Debug/net8.0/MessageApp.API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/MessageApp.API/bin/Debug/net8.0/MessageApp.API.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/MessageApp.API/bin/Debug/net8.0/MessageApp.Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/MessageApp.API/bin/Debug/net8.0/MessageApp.Application.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/MessageApp.API/bin/Debug/net8.0/MessageApp.Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/MessageApp.API/bin/Debug/net8.0/MessageApp.Application.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/MessageApp.API/bin/Debug/net8.0/MessageApp.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/MessageApp.API/bin/Debug/net8.0/MessageApp.Domain.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/MessageApp.API/bin/Debug/net8.0/MessageApp.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/MessageApp.API/bin/Debug/net8.0/MessageApp.Domain.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation/MessageApp.API/obj/Debug/net8.0/MessageApp.API.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/MessageApp.API/obj/Debug/net8.0/MessageApp.API.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation/MessageApp.API/obj/Debug/net8.0/MessageApp.API.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/MessageApp.API/obj/Debug/net8.0/MessageApp.API.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/MessageApp.API/obj/Debug/net8.0/MessageApp.API.MvcApplicationPartsAssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/MessageApp.API/obj/Debug/net8.0/MessageApp.API.MvcApplicationPartsAssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/MessageApp.API/obj/Debug/net8.0/MessageApp.API.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/MessageApp.API/obj/Debug/net8.0/MessageApp.API.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation/MessageApp.API/obj/Debug/net8.0/MessageApp.API.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/MessageApp.API/obj/Debug/net8.0/MessageApp.API.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/MessageApp.API/obj/Debug/net8.0/MessageApp.API.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/MessageApp.API/obj/Debug/net8.0/MessageApp.API.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/MessageApp.API/obj/Debug/net8.0/MessageApp.API.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/MessageApp.API/obj/Debug/net8.0/MessageApp.API.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/MessageApp.API/obj/Debug/net8.0/MessageApp.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/MessageApp.API/obj/Debug/net8.0/MessageApp.API.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/MessageApp.API/obj/Debug/net8.0/MessageApp.API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/MessageApp.API/obj/Debug/net8.0/MessageApp.API.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/MessageApp.API/obj/Debug/net8.0/MessageApp.API.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/MessageApp.API/obj/Debug/net8.0/MessageApp.API.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/MessageApp.API/obj/Debug/net8.0/ref/MessageApp.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/MessageApp.API/obj/Debug/net8.0/ref/MessageApp.API.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/MessageApp.API/obj/Debug/net8.0/refint/MessageApp.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/MessageApp.API/obj/Debug/net8.0/refint/MessageApp.API.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation/MessageApp.API/obj/MessageApp.API.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/MessageApp.API/obj/MessageApp.API.csproj.nuget.dgspec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation/MessageApp.API/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/MessageApp.API/obj/project.assets.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation/MessageApp.API/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/MessageApp.API/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/message-app/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/message-app/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/message-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/message-app/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/message-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/message-app/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/message-app/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/message-app/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/message-app/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/message-app/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/message-app/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/message-app/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/message-app/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/message-app/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/MessageApp.API/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/MessageApp.API/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/MessageApp.API/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/MessageApp.API/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/MessageApp.API/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/MessageApp.API/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,6 +63,13 @@
     &quot;accountId&quot;: &quot;b82c2c3f-e380-4f0d-964f-407214998c3f&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Core/MessageApp.Application/obj/Debug/net8.0/MessageApp.Application.AssemblyInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Core/MessageApp.Domain/obj/Debug/net8.0/MessageApp.Domain.AssemblyInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Infrastructure/MessageApp.Infrastructure/obj/Debug/net8.0/MessageApp.Infrastructure.AssemblyInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Infrastructure/MessageApp.Persistence/obj/Debug/net8.0/MessageApp.Persistence.AssemblyInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Presentation/MessageApp.API/obj/Debug/net8.0/MessageApp.API.AssemblyInfo.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -146,20 +79,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.MessageApp.API: http.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.keymap",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.MessageApp.API: http.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.MessageApp.API: http">
     <configuration name="MessageApp.API: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Presentation/MessageApp.API/MessageApp.API.csproj" />
@@ -202,6 +135,8 @@
       <updated>1731179973815</updated>
       <workItem from="1731179975632" duration="176000" />
       <workItem from="1731197225454" duration="5712000" />
+      <workItem from="1731265682161" duration="7105000" />
+      <workItem from="1732151016565" duration="4742000" />
     </task>
     <servers />
   </component>

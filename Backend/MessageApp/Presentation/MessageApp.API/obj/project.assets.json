@@ -1104,6 +1104,19 @@
           "bin/placeholder/MessageApp.Domain.dll": {}
         }
       },
+      "MessageApp.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "MessageApp.Application": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/MessageApp.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MessageApp.Infrastructure.dll": {}
+        }
+      },
       "MessageApp.Persistence/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -3003,6 +3016,11 @@
       "path": "../../Core/MessageApp.Domain/MessageApp.Domain.csproj",
       "msbuildProject": "../../Core/MessageApp.Domain/MessageApp.Domain.csproj"
     },
+    "MessageApp.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../../Infrastructure/MessageApp.Infrastructure/MessageApp.Infrastructure.csproj",
+      "msbuildProject": "../../Infrastructure/MessageApp.Infrastructure/MessageApp.Infrastructure.csproj"
+    },
     "MessageApp.Persistence/1.0.0": {
       "type": "project",
       "path": "../../Infrastructure/MessageApp.Persistence/MessageApp.Persistence.csproj",
@@ -3012,6 +3030,7 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "MessageApp.Application >= 1.0.0",
+      "MessageApp.Infrastructure >= 1.0.0",
       "MessageApp.Persistence >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 8.0.10",
       "Swashbuckle.AspNetCore >= 6.6.2"
@@ -3044,6 +3063,9 @@
           "projectReferences": {
             "/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Core/MessageApp.Application/MessageApp.Application.csproj": {
               "projectPath": "/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Core/MessageApp.Application/MessageApp.Application.csproj"
+            },
+            "/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Infrastructure/MessageApp.Infrastructure/MessageApp.Infrastructure.csproj": {
+              "projectPath": "/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Infrastructure/MessageApp.Infrastructure/MessageApp.Infrastructure.csproj"
             },
             "/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Infrastructure/MessageApp.Persistence/MessageApp.Persistence.csproj": {
               "projectPath": "/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Infrastructure/MessageApp.Persistence/MessageApp.Persistence.csproj"

@@ -1,10 +1,12 @@
 using FluentValidation.AspNetCore;
 using MessageApp.Application.Validators.Messages;
+using MessageApp.Infrastructure;
 using MessageApp.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddPersistenceServices();
+builder.Services.AddInfrastructureServices();
 builder.Services.AddControllers()
     .AddFluentValidation(conf => conf.RegisterValidatorsFromAssemblyContaining<SendMessageValidator>());
 
@@ -20,6 +22,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseStaticFiles();
 
 app.UseHttpsRedirection();
 

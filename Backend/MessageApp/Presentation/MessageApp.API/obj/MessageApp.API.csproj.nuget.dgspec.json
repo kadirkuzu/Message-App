@@ -142,6 +142,68 @@
         }
       }
     },
+    "/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Infrastructure/MessageApp.Infrastructure/MessageApp.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Infrastructure/MessageApp.Infrastructure/MessageApp.Infrastructure.csproj",
+        "projectName": "MessageApp.Infrastructure",
+        "projectPath": "/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Infrastructure/MessageApp.Infrastructure/MessageApp.Infrastructure.csproj",
+        "packagesPath": "/Users/kadirkuzu/.nuget/packages/",
+        "outputPath": "/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Infrastructure/MessageApp.Infrastructure/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/kadirkuzu/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Core/MessageApp.Application/MessageApp.Application.csproj": {
+                "projectPath": "/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Core/MessageApp.Application/MessageApp.Application.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.403/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Infrastructure/MessageApp.Persistence/MessageApp.Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -256,6 +318,9 @@
             "projectReferences": {
               "/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Core/MessageApp.Application/MessageApp.Application.csproj": {
                 "projectPath": "/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Core/MessageApp.Application/MessageApp.Application.csproj"
+              },
+              "/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Infrastructure/MessageApp.Infrastructure/MessageApp.Infrastructure.csproj": {
+                "projectPath": "/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Infrastructure/MessageApp.Infrastructure/MessageApp.Infrastructure.csproj"
               },
               "/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Infrastructure/MessageApp.Persistence/MessageApp.Persistence.csproj": {
                 "projectPath": "/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Infrastructure/MessageApp.Persistence/MessageApp.Persistence.csproj"
