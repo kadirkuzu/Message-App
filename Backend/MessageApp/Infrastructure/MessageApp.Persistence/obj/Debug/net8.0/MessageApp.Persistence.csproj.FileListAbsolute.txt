@@ -38,3 +38,23 @@ C:/Users/Dell/Desktop/My Projects/Message App/Backend/MessageApp/Infrastructure/
 /Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Infrastructure/MessageApp.Persistence/obj/Debug/net8.0/MessageApp.Persistence.pdb
 /Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Infrastructure/MessageApp.Persistence/obj/Debug/net8.0/MessageApp.Persistence.genruntimeconfig.cache
 /Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Infrastructure/MessageApp.Persistence/obj/Debug/net8.0/ref/MessageApp.Persistence.dll
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\Infrastructure\MessageApp.Persistence\bin\Debug\net8.0\MessageApp.Persistence.deps.json
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\Infrastructure\MessageApp.Persistence\bin\Debug\net8.0\MessageApp.Persistence.runtimeconfig.json
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\Infrastructure\MessageApp.Persistence\bin\Debug\net8.0\MessageApp.Persistence.dll
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\Infrastructure\MessageApp.Persistence\bin\Debug\net8.0\MessageApp.Persistence.pdb
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\Infrastructure\MessageApp.Persistence\bin\Debug\net8.0\MessageApp.Application.dll
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\Infrastructure\MessageApp.Persistence\bin\Debug\net8.0\MessageApp.Domain.dll
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\Infrastructure\MessageApp.Persistence\bin\Debug\net8.0\MessageApp.Application.pdb
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\Infrastructure\MessageApp.Persistence\bin\Debug\net8.0\MessageApp.Domain.pdb
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\Infrastructure\MessageApp.Persistence\obj\Debug\net8.0\MessageApp.Persistence.csproj.AssemblyReference.cache
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\Infrastructure\MessageApp.Persistence\obj\Debug\net8.0\MessageApp.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\Infrastructure\MessageApp.Persistence\obj\Debug\net8.0\MessageApp.Persistence.AssemblyInfoInputs.cache
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\Infrastructure\MessageApp.Persistence\obj\Debug\net8.0\MessageApp.Persistence.AssemblyInfo.cs
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\Infrastructure\MessageApp.Persistence\obj\Debug\net8.0\MessageApp.Persistence.csproj.CoreCompileInputs.cache
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\Infrastructure\MessageApp.Persistence\obj\Debug\net8.0\MessageApp.Persistence.sourcelink.json
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\Infrastructure\MessageApp.Persistence\obj\Debug\net8.0\MessageA.34FD5565.Up2Date
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\Infrastructure\MessageApp.Persistence\obj\Debug\net8.0\MessageApp.Persistence.dll
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\Infrastructure\MessageApp.Persistence\obj\Debug\net8.0\refint\MessageApp.Persistence.dll
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\Infrastructure\MessageApp.Persistence\obj\Debug\net8.0\MessageApp.Persistence.pdb
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\Infrastructure\MessageApp.Persistence\obj\Debug\net8.0\MessageApp.Persistence.genruntimeconfig.cache
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\Infrastructure\MessageApp.Persistence\obj\Debug\net8.0\ref\MessageApp.Persistence.dll

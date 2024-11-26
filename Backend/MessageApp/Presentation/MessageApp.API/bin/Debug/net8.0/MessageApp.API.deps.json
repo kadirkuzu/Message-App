@@ -9,6 +9,7 @@
       "MessageApp.API/1.0.0": {
         "dependencies": {
           "MessageApp.Application": "1.0.0",
+          "MessageApp.Infrastructure": "1.0.0",
           "MessageApp.Persistence": "1.0.0",
           "Microsoft.EntityFrameworkCore.Design": "8.0.10",
           "Swashbuckle.AspNetCore": "6.6.2"
@@ -665,6 +666,17 @@
           }
         }
       },
+      "MessageApp.Infrastructure/1.0.0": {
+        "dependencies": {
+          "MessageApp.Application": "1.0.0"
+        },
+        "runtime": {
+          "MessageApp.Infrastructure.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "MessageApp.Persistence/1.0.0": {
         "dependencies": {
           "MessageApp.Application": "1.0.0",
@@ -1066,6 +1078,11 @@
       "sha512": ""
     },
     "MessageApp.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MessageApp.Infrastructure/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -1,25 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Core/MessageApp.Domain/MessageApp.Domain.csproj": {}
+    "C:\\Users\\KadirKuzu\\Desktop\\My Projects\\Message-App\\Backend\\MessageApp\\Core\\MessageApp.Domain\\MessageApp.Domain.csproj": {}
   },
   "projects": {
-    "/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Core/MessageApp.Domain/MessageApp.Domain.csproj": {
+    "C:\\Users\\KadirKuzu\\Desktop\\My Projects\\Message-App\\Backend\\MessageApp\\Core\\MessageApp.Domain\\MessageApp.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Core/MessageApp.Domain/MessageApp.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\KadirKuzu\\Desktop\\My Projects\\Message-App\\Backend\\MessageApp\\Core\\MessageApp.Domain\\MessageApp.Domain.csproj",
         "projectName": "MessageApp.Domain",
-        "projectPath": "/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Core/MessageApp.Domain/MessageApp.Domain.csproj",
-        "packagesPath": "/Users/kadirkuzu/.nuget/packages/",
-        "outputPath": "/Users/kadirkuzu/Desktop/School/Projects/Message-App/Backend/MessageApp/Core/MessageApp.Domain/obj/",
+        "projectPath": "C:\\Users\\KadirKuzu\\Desktop\\My Projects\\Message-App\\Backend\\MessageApp\\Core\\MessageApp.Domain\\MessageApp.Domain.csproj",
+        "packagesPath": "C:\\Users\\KadirKuzu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\KadirKuzu\\Desktop\\My Projects\\Message-App\\Backend\\MessageApp\\Core\\MessageApp.Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/Users/kadirkuzu/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\KadirKuzu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -36,8 +42,9 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "direct"
-        }
+          "auditMode": "all"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -58,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

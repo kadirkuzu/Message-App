@@ -1,11 +1,20 @@
 {
   "Version": 1,
-  "Hash": "51P4hPbE4egS1L3/SDye/SiOhHsk5GjeUEliigw780o=",
+  "Hash": "QKO9HDovjEH8Xa+p2d/RiU7wnvtsyQdq0W5xqiFLZQI=",
   "Source": "MessageApp.API",
   "BasePath": "_content/MessageApp.API",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "MessageApp.API\\wwwroot",
+      "Source": "MessageApp.API",
+      "ContentRoot": "C:\\Users\\KadirKuzu\\Desktop\\My Projects\\Message-App\\Backend\\MessageApp\\Presentation\\MessageApp.API\\wwwroot\\",
+      "BasePath": "_content/MessageApp.API",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [],
+  "Endpoints": []
 }
