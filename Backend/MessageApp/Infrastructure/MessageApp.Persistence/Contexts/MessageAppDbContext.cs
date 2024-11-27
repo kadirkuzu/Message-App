@@ -12,6 +12,9 @@ namespace MessageApp.Persistence.Contexts
         public DbSet<FriendRequest> FriendRequests { get; set; }
         public DbSet<Group> Groups { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<Domain.Entities.File> Files { get; set; }
+        public DbSet<UserImageFile> UserImageFiles { get; set; }
+        public DbSet<GroupImageFile> GroupImageFiles { get; set; }
 
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {

@@ -1,5 +1,4 @@
 ﻿using MessageApp.Application.Repositories;
-using MessageApp.Application.Services;
 using MessageApp.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,13 +10,11 @@ namespace MessageApp.API.Controllers
     {
         private readonly IReadRepository<Group> _readRepository;
         private readonly IWriteRepository<Group> _writeRepository;
-        private readonly IFileService _fileService;
 
-        public MessagesController(IReadRepository<Group> readRepository, IWriteRepository<Group> writeRepository, IFileService fileService)
+        public MessagesController(IReadRepository<Group> readRepository, IWriteRepository<Group> writeRepository)
         {
             _readRepository = readRepository;
             _writeRepository = writeRepository;
-            _fileService = fileService;
         }
 
         [HttpGet]
@@ -34,13 +31,6 @@ namespace MessageApp.API.Controllers
         {
             Group group = await _readRepository.GetByIdAsync(id);
             return Ok(group);
-        }
-
-        [HttpPost("[action]")]
-        public async Task<IActionResult> Upload()
-        {
-            await _fileService.UploadAsync("resource/product-images",Request.Form.Files);
-            return Ok();
         }
     }
 }
