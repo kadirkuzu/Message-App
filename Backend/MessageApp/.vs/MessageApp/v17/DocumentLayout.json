@@ -3,24 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\KadirKuzu\\Desktop\\My Projects\\Message-App\\Backend\\MessageApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A1F86A66-DA86-4524-A819-0EB9C1F9F260}|Core\\MessageApp.Domain\\MessageApp.Domain.csproj|c:\\users\\kadirkuzu\\desktop\\my projects\\message-app\\backend\\messageapp\\core\\messageapp.domain\\entities\\file.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A1F86A66-DA86-4524-A819-0EB9C1F9F260}|Core\\MessageApp.Domain\\MessageApp.Domain.csproj|solutionrelative:core\\messageapp.domain\\entities\\file.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3AEC79D7-478B-433E-B0B4-52FD33DEAA35}|Presentation\\MessageApp.API\\MessageApp.API.csproj|c:\\users\\kadirkuzu\\desktop\\my projects\\message-app\\backend\\messageapp\\presentation\\messageapp.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3AEC79D7-478B-433E-B0B4-52FD33DEAA35}|Presentation\\MessageApp.API\\MessageApp.API.csproj|solutionrelative:presentation\\messageapp.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A9FA6481-EAB8-40A8-9745-2AA4841024B4}|Infrastructure\\MessageApp.Infrastructure\\MessageApp.Infrastructure.csproj|c:\\users\\kadirkuzu\\desktop\\my projects\\message-app\\backend\\messageapp\\infrastructure\\messageapp.infrastructure\\serviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A9FA6481-EAB8-40A8-9745-2AA4841024B4}|Infrastructure\\MessageApp.Infrastructure\\MessageApp.Infrastructure.csproj|solutionrelative:infrastructure\\messageapp.infrastructure\\serviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A9FA6481-EAB8-40A8-9745-2AA4841024B4}|Infrastructure\\MessageApp.Infrastructure\\MessageApp.Infrastructure.csproj|c:\\users\\kadirkuzu\\desktop\\my projects\\message-app\\backend\\messageapp\\infrastructure\\messageapp.infrastructure\\services\\storage\\storageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A9FA6481-EAB8-40A8-9745-2AA4841024B4}|Infrastructure\\MessageApp.Infrastructure\\MessageApp.Infrastructure.csproj|solutionrelative:infrastructure\\messageapp.infrastructure\\services\\storage\\storageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB44314A-E724-435B-9567-294ABEDD7A31}|Core\\MessageApp.Application\\MessageApp.Application.csproj|c:\\users\\kadirkuzu\\desktop\\my projects\\message-app\\backend\\messageapp\\core\\messageapp.application\\abstractions\\storage\\istorageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB44314A-E724-435B-9567-294ABEDD7A31}|Core\\MessageApp.Application\\MessageApp.Application.csproj|solutionrelative:core\\messageapp.application\\abstractions\\storage\\istorageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{565D5A77-D13E-4378-905D-CBAEEBC95DD9}|MessageApp.API\\MessageApp.API.csproj|c:\\users\\kadirkuzu\\desktop\\my projects\\message-app\\backend\\messageapp\\messageapp.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{565D5A77-D13E-4378-905D-CBAEEBC95DD9}|MessageApp.API\\MessageApp.API.csproj|solutionrelative:messageapp.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -43,66 +27,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "File.cs",
-              "DocumentMoniker": "C:\\Users\\KadirKuzu\\Desktop\\My Projects\\Message-App\\Backend\\MessageApp\\Core\\MessageApp.Domain\\Entities\\File.cs",
-              "RelativeDocumentMoniker": "Core\\MessageApp.Domain\\Entities\\File.cs",
-              "ToolTip": "C:\\Users\\KadirKuzu\\Desktop\\My Projects\\Message-App\\Backend\\MessageApp\\Core\\MessageApp.Domain\\Entities\\File.cs",
-              "RelativeToolTip": "Core\\MessageApp.Domain\\Entities\\File.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T23:41:58.752Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\KadirKuzu\\Desktop\\My Projects\\Message-App\\Backend\\MessageApp\\Presentation\\MessageApp.API\\Program.cs",
-              "RelativeDocumentMoniker": "Presentation\\MessageApp.API\\Program.cs",
-              "ToolTip": "C:\\Users\\KadirKuzu\\Desktop\\My Projects\\Message-App\\Backend\\MessageApp\\Presentation\\MessageApp.API\\Program.cs",
-              "RelativeToolTip": "Presentation\\MessageApp.API\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T23:36:51.13Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ServiceRegistration.cs",
-              "DocumentMoniker": "C:\\Users\\KadirKuzu\\Desktop\\My Projects\\Message-App\\Backend\\MessageApp\\Infrastructure\\MessageApp.Infrastructure\\ServiceRegistration.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\MessageApp.Infrastructure\\ServiceRegistration.cs",
-              "ToolTip": "C:\\Users\\KadirKuzu\\Desktop\\My Projects\\Message-App\\Backend\\MessageApp\\Infrastructure\\MessageApp.Infrastructure\\ServiceRegistration.cs",
-              "RelativeToolTip": "Infrastructure\\MessageApp.Infrastructure\\ServiceRegistration.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T23:33:52.23Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "StorageService.cs",
-              "DocumentMoniker": "C:\\Users\\KadirKuzu\\Desktop\\My Projects\\Message-App\\Backend\\MessageApp\\Infrastructure\\MessageApp.Infrastructure\\Services\\Storage\\StorageService.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\MessageApp.Infrastructure\\Services\\Storage\\StorageService.cs",
-              "ToolTip": "C:\\Users\\KadirKuzu\\Desktop\\My Projects\\Message-App\\Backend\\MessageApp\\Infrastructure\\MessageApp.Infrastructure\\Services\\Storage\\StorageService.cs",
-              "RelativeToolTip": "Infrastructure\\MessageApp.Infrastructure\\Services\\Storage\\StorageService.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAQwBgAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T23:30:06.695Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "IStorageService.cs",
-              "DocumentMoniker": "C:\\Users\\KadirKuzu\\Desktop\\My Projects\\Message-App\\Backend\\MessageApp\\Core\\MessageApp.Application\\Abstractions\\Storage\\IStorageService.cs",
-              "RelativeDocumentMoniker": "Core\\MessageApp.Application\\Abstractions\\Storage\\IStorageService.cs",
-              "ToolTip": "C:\\Users\\KadirKuzu\\Desktop\\My Projects\\Message-App\\Backend\\MessageApp\\Core\\MessageApp.Application\\Abstractions\\Storage\\IStorageService.cs",
-              "RelativeToolTip": "Core\\MessageApp.Application\\Abstractions\\Storage\\IStorageService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T23:29:02.857Z",
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\KadirKuzu\\Desktop\\My Projects\\Message-App\\Backend\\MessageApp\\MessageApp.API\\appsettings.json",
+              "RelativeDocumentMoniker": "MessageApp.API\\appsettings.json",
+              "ToolTip": "C:\\Users\\KadirKuzu\\Desktop\\My Projects\\Message-App\\Backend\\MessageApp\\MessageApp.API\\appsettings.json",
+              "RelativeToolTip": "MessageApp.API\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-29T00:38:13.617Z",
               "EditorCaption": ""
             }
           ]
