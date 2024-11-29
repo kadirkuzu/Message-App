@@ -1,0 +1,49 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.cache
+*.pdb
+*.obj
+*.exe
+*.dll
+*.log
+*.ipch
+*.psess
+*.pyc
+*.pyo
+*.pyd
+*.tmp
+*.ide
+
+# Build sonuçları
+bin/
+obj/
+Debug/
+Release/
+out/
+
+# Paketler
+*.nupkg
+*.snupkg
+packages/
+*.pdb
+
+# Kestrel sertifikaları
+*.db
+
+# Rider
+.idea/
+
+# Resharper
+_ReSharper*/
+
+# User specific files
+*.rsuser
+*.sln.docstates
+
+# Azure Pipelines
+*.published/
+
+# ASP.NET
+wwwroot/

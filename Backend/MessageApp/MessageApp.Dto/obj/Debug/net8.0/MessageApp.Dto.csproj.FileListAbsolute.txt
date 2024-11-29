@@ -9,3 +9,15 @@ C:\Users\KadirKuzu\Desktop\project\MessageApp\MessageApp.Dto\obj\Debug\net8.0\Me
 C:\Users\KadirKuzu\Desktop\project\MessageApp\MessageApp.Dto\obj\Debug\net8.0\refint\MessageApp.Dto.dll
 C:\Users\KadirKuzu\Desktop\project\MessageApp\MessageApp.Dto\obj\Debug\net8.0\MessageApp.Dto.pdb
 C:\Users\KadirKuzu\Desktop\project\MessageApp\MessageApp.Dto\obj\Debug\net8.0\ref\MessageApp.Dto.dll
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\MessageApp.Dto\bin\Debug\net8.0\MessageApp.Dto.deps.json
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\MessageApp.Dto\bin\Debug\net8.0\MessageApp.Dto.dll
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\MessageApp.Dto\bin\Debug\net8.0\MessageApp.Dto.pdb
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\MessageApp.Dto\obj\Debug\net8.0\MessageApp.Dto.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\MessageApp.Dto\obj\Debug\net8.0\MessageApp.Dto.AssemblyInfoInputs.cache
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\MessageApp.Dto\obj\Debug\net8.0\MessageApp.Dto.AssemblyInfo.cs
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\MessageApp.Dto\obj\Debug\net8.0\MessageApp.Dto.csproj.CoreCompileInputs.cache
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\MessageApp.Dto\obj\Debug\net8.0\MessageApp.Dto.sourcelink.json
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\MessageApp.Dto\obj\Debug\net8.0\MessageApp.Dto.dll
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\MessageApp.Dto\obj\Debug\net8.0\refint\MessageApp.Dto.dll
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\MessageApp.Dto\obj\Debug\net8.0\MessageApp.Dto.pdb
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\MessageApp.Dto\obj\Debug\net8.0\ref\MessageApp.Dto.dll

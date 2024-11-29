@@ -9,3 +9,15 @@ C:\Users\KadirKuzu\Desktop\project\MessageApp\MessageApp.Domain\obj\Debug\net8.0
 C:\Users\KadirKuzu\Desktop\project\MessageApp\MessageApp.Domain\obj\Debug\net8.0\refint\MessageApp.Domain.dll
 C:\Users\KadirKuzu\Desktop\project\MessageApp\MessageApp.Domain\obj\Debug\net8.0\MessageApp.Domain.pdb
 C:\Users\KadirKuzu\Desktop\project\MessageApp\MessageApp.Domain\obj\Debug\net8.0\ref\MessageApp.Domain.dll
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\MessageApp.Domain\bin\Debug\net8.0\MessageApp.Domain.deps.json
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\MessageApp.Domain\bin\Debug\net8.0\MessageApp.Domain.dll
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\MessageApp.Domain\bin\Debug\net8.0\MessageApp.Domain.pdb
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\MessageApp.Domain\obj\Debug\net8.0\MessageApp.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\MessageApp.Domain\obj\Debug\net8.0\MessageApp.Domain.AssemblyInfoInputs.cache
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\MessageApp.Domain\obj\Debug\net8.0\MessageApp.Domain.AssemblyInfo.cs
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\MessageApp.Domain\obj\Debug\net8.0\MessageApp.Domain.csproj.CoreCompileInputs.cache
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\MessageApp.Domain\obj\Debug\net8.0\MessageApp.Domain.sourcelink.json
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\MessageApp.Domain\obj\Debug\net8.0\MessageApp.Domain.dll
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\MessageApp.Domain\obj\Debug\net8.0\refint\MessageApp.Domain.dll
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\MessageApp.Domain\obj\Debug\net8.0\MessageApp.Domain.pdb
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\MessageApp.Domain\obj\Debug\net8.0\ref\MessageApp.Domain.dll

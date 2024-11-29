@@ -19,3 +19,25 @@ C:\Users\KadirKuzu\Desktop\project\MessageApp\MessageApp.Queries\obj\Debug\net8.
 C:\Users\KadirKuzu\Desktop\project\MessageApp\MessageApp.Queries\obj\Debug\net8.0\refint\MessageApp.Queries.dll
 C:\Users\KadirKuzu\Desktop\project\MessageApp\MessageApp.Queries\obj\Debug\net8.0\MessageApp.Queries.pdb
 C:\Users\KadirKuzu\Desktop\project\MessageApp\MessageApp.Queries\obj\Debug\net8.0\ref\MessageApp.Queries.dll
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\MessageApp.Queries\bin\Debug\net8.0\MessageApp.Queries.deps.json
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\MessageApp.Queries\bin\Debug\net8.0\MessageApp.Queries.dll
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\MessageApp.Queries\bin\Debug\net8.0\MessageApp.Queries.pdb
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\MessageApp.Queries\bin\Debug\net8.0\MessageApp.Domain.dll
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\MessageApp.Queries\bin\Debug\net8.0\MessageApp.Dto.dll
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\MessageApp.Queries\bin\Debug\net8.0\MessageApp.Repository.dll
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\MessageApp.Queries\bin\Debug\net8.0\MessageApp.Services.dll
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\MessageApp.Queries\bin\Debug\net8.0\MessageApp.Dto.pdb
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\MessageApp.Queries\bin\Debug\net8.0\MessageApp.Services.pdb
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\MessageApp.Queries\bin\Debug\net8.0\MessageApp.Domain.pdb
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\MessageApp.Queries\bin\Debug\net8.0\MessageApp.Repository.pdb
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\MessageApp.Queries\obj\Debug\net8.0\MessageApp.Queries.csproj.AssemblyReference.cache
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\MessageApp.Queries\obj\Debug\net8.0\MessageApp.Queries.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\MessageApp.Queries\obj\Debug\net8.0\MessageApp.Queries.AssemblyInfoInputs.cache
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\MessageApp.Queries\obj\Debug\net8.0\MessageApp.Queries.AssemblyInfo.cs
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\MessageApp.Queries\obj\Debug\net8.0\MessageApp.Queries.csproj.CoreCompileInputs.cache
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\MessageApp.Queries\obj\Debug\net8.0\MessageApp.Queries.sourcelink.json
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\MessageApp.Queries\obj\Debug\net8.0\MessageA.D151656E.Up2Date
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\MessageApp.Queries\obj\Debug\net8.0\MessageApp.Queries.dll
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\MessageApp.Queries\obj\Debug\net8.0\refint\MessageApp.Queries.dll
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\MessageApp.Queries\obj\Debug\net8.0\MessageApp.Queries.pdb
+C:\Users\KadirKuzu\Desktop\My Projects\Message-App\Backend\MessageApp\MessageApp.Queries\obj\Debug\net8.0\ref\MessageApp.Queries.dll
