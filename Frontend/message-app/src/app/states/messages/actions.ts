@@ -1,6 +1,6 @@
 import { createAction, props } from "@ngrx/store";
 import {Message} from "../../models/message";
-import {ActionBase} from "../common/actionBase";
+import {ActionBase} from "../common/action-base";
 
 class Actions extends ActionBase {
   constructor(type:string) {super(type)}

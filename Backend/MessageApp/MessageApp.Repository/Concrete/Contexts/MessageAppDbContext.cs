@@ -1,8 +1,9 @@
 ﻿using MessageApp.Domain.Entities;
 using MessageApp.Domain.Entities.Common;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace MessageApp.Repository.Concrete.Contexts; 
-public class MessageAppDbContext : DbContext
+public class MessageAppDbContext : IdentityDbContext<User, UserRole, Guid>
 {
     public MessageAppDbContext(DbContextOptions options) : base(options) { }
     public DbSet<Message> Messages { get; set; }

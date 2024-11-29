@@ -18,8 +18,4 @@
     <ProjectReference Include="..\MessageApp.Features\MessageApp.Features.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
 </Project>

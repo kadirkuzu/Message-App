@@ -1,10 +1,9 @@
-﻿using MessageApp.Domain.Entities.Common;
+﻿using Microsoft.AspNetCore.Identity;
 
 namespace MessageApp.Domain.Entities; 
-public class User : BaseEntity
+public class User : IdentityUser<Guid>
 {
-    public string Name { get; set; }
-    public string DisplayName { get; set; }
+    public string FullName { get; set; }
     public string Status { get; set; }
     public ICollection<Chat> Chats { get; set; }
 }

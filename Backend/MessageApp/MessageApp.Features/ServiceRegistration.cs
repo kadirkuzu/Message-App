@@ -1,4 +1,5 @@
 ﻿using MessageApp.Commands.Messages.AddMessage;
+using MessageApp.Domain.Entities;
 using MessageApp.Queries.Messages.GetMessages;
 using MessageApp.Repository.Abstract;
 using MessageApp.Repository.Concrete;
@@ -19,6 +20,7 @@ namespace MessageApp.Features
             services.AddStorage<AzureStorage>();
 
             services.AddDbContext<MessageAppDbContext>(options => options.UseNpgsql(Configuration.ConnectionString));
+            services.AddIdentity<User, UserRole>().AddEntityFrameworkStores<MessageAppDbContext>();
             services.AddScoped(typeof(IReadRepository<>), typeof(ReadRepository<>));
             services.AddScoped(typeof(IWriteRepository<>), typeof(WriteRepository<>));
         }
