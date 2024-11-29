@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using MessageApp.Commands.Users.CreateUser;
 using MessageApp.Commands.Users.Login;
+using MessageApp.Commands.Users.RefreshToken;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MessageApp.API.Controllers
@@ -24,6 +25,12 @@ namespace MessageApp.API.Controllers
         
         [HttpPost("[action]")] 
         public async Task<IActionResult> Login(LoginCommand command)
+        {
+            return Ok(await _mediator.Send(command));
+        }  
+        
+        [HttpPost("[action]")] 
+        public async Task<IActionResult> RefreshToken(RefreshTokenCommand command)
         {
             return Ok(await _mediator.Send(command));
         }

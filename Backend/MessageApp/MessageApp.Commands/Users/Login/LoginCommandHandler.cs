@@ -29,7 +29,11 @@ public class LoginCommandHandler : IRequestHandler<LoginCommand, UserToken>
         var result = await _signInManager.CheckPasswordSignInAsync(user, request.Password, false);
 
         if (result.Succeeded) {
-            return _tokenHandler.CreateAccessToken();
+            UserToken token = _tokenHandler.CreateAccessToken();
+            user.RefreshToken = token.RefreshToken;
+            user.RefreshTokenEndDate = token.Expiration.AddHours(1);
+            await _userManager.UpdateAsync(user);
+            return token;
         }
         else
         {

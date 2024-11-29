@@ -2,17 +2,20 @@ using MessageApp.Features;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using Serilog;
+using Serilog.Core;
+using Microsoft.AspNetCore.HttpLogging;
+using MessageApp.API.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddCors(options => options.AddDefaultPolicy(policy => policy.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod()));
 
 builder.Services.AddFeaturesServices();
+
 builder.Services
     .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
@@ -31,6 +34,25 @@ builder.Services
         };
     });
 
+
+Logger log = new LoggerConfiguration()
+    .WriteTo.Console()
+    .WriteTo.File("Logs/log.txt")
+    .WriteTo.PostgreSQL(builder.Configuration.GetConnectionString("PostgreSQL"),"Logs", needAutoCreateTable: true)
+    .MinimumLevel.Information()
+    .CreateLogger();
+
+builder.Host.UseSerilog();
+
+builder.Services.AddHttpLogging(logging =>
+{
+    logging.LoggingFields = HttpLoggingFields.All;
+    logging.RequestHeaders.Add("sec-ch-ua");
+    logging.MediaTypeOptions.AddText("application/javascript");
+    logging.RequestBodyLogLimit = 4096;
+    logging.ResponseBodyLogLimit = 4096;
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -40,9 +62,19 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.ConfigureExceptionHandler<Program>(app.Services.GetRequiredService<ILogger<Program>>());
+
+app.UseStaticFiles();
+
+app.UseSerilogRequestLogging();
+app.UseHttpLogging();
+
 app.UseHttpsRedirection();
 
+app.UseCors();
+
 app.UseAuthentication();
+
 app.UseAuthorization();
 
 app.MapControllers();
