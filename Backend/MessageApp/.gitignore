@@ -1,49 +1,114 @@
-# Visual Studio
-.vs/
+# User-specific files
+*.rsuser
 *.user
 *.suo
-*.cache
-*.pdb
-*.obj
-*.exe
-*.dll
-*.log
-*.ipch
-*.psess
-*.pyc
-*.pyo
-*.pyd
-*.tmp
-*.ide
+*.userosscache
+*.sln.docstates
 
-# Build sonuçları
-bin/
-obj/
-Debug/
-Release/
+# User-specific folders
+.vs/
+.vscode/
+.idea/
+
+# Build results
+[Dd]ebug*/
+[Rr]elease*/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
 out/
 
-# Paketler
-*.nupkg
-*.snupkg
-packages/
+# OS generated files
+*.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Visual Studio working folder
+*.vcxproj.*
+*.opensdf
+*.opensdf.lock
+*.tlog
+*.lastbuildstate
 *.pdb
 
-# Kestrel sertifikaları
-*.db
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# Azure SDK files
+.publishsettings
+*.Publish.xml
+*.publish.xml
+
+# Windows image file caches
+*.iobj
+*.idb
+*.ilk
 
 # Rider
 .idea/
+.idea/*
+*.iml
 
-# Resharper
-_ReSharper*/
+# SQL Server files
+*.mdf
+*.ldf
+*.ndf
 
-# User specific files
-*.rsuser
-*.sln.docstates
+# Web.config files
+web.config
+appsettings.json
+appsettings.Development.json
 
-# Azure Pipelines
-*.published/
+# MacOS specific files
+.DS_Store
+.AppleDouble
+.LSOverride
 
-# ASP.NET
-wwwroot/
+# Python cache files
+__pycache__/
+*.py[cod]
+
+# npm debug log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Optional npm cache directory
+.npm/
+
+# Optional yarn cache directory
+.yarn/
+
+# Packages
+*.nupkg
+*.snupkg
+packages/
+
+# Backup & temporary files
+*.bak
+*.backup
+*.tmp
+*.temp
+
+# JetBrains Rider
+.idea/
+
+# Certificates
+*.pfx
+*.p12
+
+# JSON configuration files (optional, depending on your use case)
+*.json
+
+# Others
+*.log
+*.cache
+*.db

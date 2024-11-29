@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\KadirKuzu\\Desktop\\My Projects\\Message-App\\Backend\\MessageApp\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\KadirKuzu\\Desktop\\My Projects\\Message-App\\Backend\\MessageApp\\MessageApp.Repository\\Migrations\\20241129004405_initialize.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MessageApp.Repository\\Migrations\\20241129004405_initialize.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\KadirKuzu\\Desktop\\My Projects\\Message-App\\Backend\\MessageApp\\MessageApp.Repository\\Migrations\\20241129004311_initialize.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MessageApp.Repository\\Migrations\\20241129004311_initialize.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -27,6 +31,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "20241129004405_initialize.cs",
+              "DocumentMoniker": "C:\\Users\\KadirKuzu\\Desktop\\My Projects\\Message-App\\Backend\\MessageApp\\MessageApp.Repository\\Migrations\\20241129004405_initialize.cs",
+              "RelativeDocumentMoniker": "MessageApp.Repository\\Migrations\\20241129004405_initialize.cs",
+              "ToolTip": "C:\\Users\\KadirKuzu\\Desktop\\My Projects\\Message-App\\Backend\\MessageApp\\MessageApp.Repository\\Migrations\\20241129004405_initialize.cs",
+              "RelativeToolTip": "MessageApp.Repository\\Migrations\\20241129004405_initialize.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-29T00:44:05.873Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "20241129004311_initialize.cs",
               "DocumentMoniker": "C:\\Users\\KadirKuzu\\Desktop\\My Projects\\Message-App\\Backend\\MessageApp\\MessageApp.Repository\\Migrations\\20241129004311_initialize.cs",
               "RelativeDocumentMoniker": "MessageApp.Repository\\Migrations\\20241129004311_initialize.cs",
