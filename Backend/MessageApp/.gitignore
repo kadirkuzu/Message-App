@@ -1,114 +1,37 @@
-# User-specific files
 *.rsuser
-*.user
 *.suo
+*.user
 *.userosscache
 *.sln.docstates
 
-# User-specific folders
-.vs/
-.vscode/
-.idea/
-
-# Build results
-[Dd]ebug*/
-[Rr]elease*/
-x64/
-x86/
-[Aa][Rr][Mm]/
-[Aa][Rr][Mm]64/
-bld/
-[Bb]in/
-[Oo]bj/
-[Ll]og/
-[Ll]ogs/
-out/
-
-# OS generated files
-*.DS_Store
-Thumbs.db
-ehthumbs.db
-Desktop.ini
-$RECYCLE.BIN/
-
-# Visual Studio working folder
-*.vcxproj.*
-*.opensdf
-*.opensdf.lock
-*.tlog
-*.lastbuildstate
-*.pdb
-
-# ASP.NET Scaffolding
-ScaffoldingReadMe.txt
-
-# Azure SDK files
-.publishsettings
-*.Publish.xml
-*.publish.xml
-
-# Windows image file caches
-*.iobj
-*.idb
-*.ilk
-
-# Rider
-.idea/
-.idea/*
-*.iml
-
-# SQL Server files
-*.mdf
-*.ldf
-*.ndf
-
-# Web.config files
-web.config
-appsettings.json
-appsettings.Development.json
-
-# MacOS specific files
 .DS_Store
-.AppleDouble
-.LSOverride
+.vs/
 
-# Python cache files
-__pycache__/
-*.py[cod]
-
-# npm debug log files
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Optional npm cache directory
-.npm/
-
-# Optional yarn cache directory
-.yarn/
-
-# Packages
-*.nupkg
-*.snupkg
-packages/
-
-# Backup & temporary files
-*.bak
-*.backup
+*_i.c
+*_p.c
+*_h.h
+*.ilk
+*.meta
+*.obj
+*.iobj
+*.pch
+*.pdb
+*.ipdb
+*.pgc
+*.pgd
+*.rsp
+*.sbr
+*.tlb
+*.tli
+*.tlh
 *.tmp
-*.temp
-
-# JetBrains Rider
-.idea/
-
-# Certificates
-*.pfx
-*.p12
-
-# JSON configuration files (optional, depending on your use case)
-*.json
-
-# Others
+*.tmp_proj
+*_wpftmp.csproj
 *.log
-*.cache
-*.db
+*.tlog
+*.vspscc
+*.vssscc
+.builds
+*.pidb
+*.svclog
+*.scc
