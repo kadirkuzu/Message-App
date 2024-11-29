@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Message} from "../models/message";
+import {Message} from "../../models/message";
 import {ApiService} from "./common/api.service";
 
 @Injectable({
@@ -9,6 +9,6 @@ export class MessagesService {
   constructor(private apiService: ApiService) {}
 
   getAll() {
-    return this.apiService.get<Message[]>(`/messages`);
+    return this.apiService.get<Message[]>(`messages`);
   }
 }

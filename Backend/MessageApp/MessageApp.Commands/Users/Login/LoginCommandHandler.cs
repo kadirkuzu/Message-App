@@ -1,9 +1,9 @@
 ﻿using MessageApp.Domain.Entities;
 using MessageApp.Dto.User;
-using MessageApp.Services.Abstract.Token;
+using MessageApp.Services.Abstract;
 using Microsoft.AspNetCore.Identity;
 
-namespace MessageApp.Commands.Users.Login; 
+namespace MessageApp.Commands.Users.Login;
 
 public record LoginCommand(string UserNameOrEmail, string Password): IRequest<UserToken>;
 

@@ -1,12 +1,12 @@
 ﻿using MessageApp.Dto.User;
-using MessageApp.Services.Abstract.Token;
+using MessageApp.Services.Abstract;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace MessageApp.Services.Concrete.Token;
+namespace MessageApp.Services.Concrete;
 
 public class TokenHandler : ITokenHandler
 {
@@ -36,7 +36,7 @@ public class TokenHandler : ITokenHandler
             );
 
         JwtSecurityTokenHandler tokenHandler = new();
-        token.AccessToken = tokenHandler.WriteToken( securityToken );
+        token.AccessToken = tokenHandler.WriteToken(securityToken);
 
         token.RefreshToken = CreateRefreshToken();
 

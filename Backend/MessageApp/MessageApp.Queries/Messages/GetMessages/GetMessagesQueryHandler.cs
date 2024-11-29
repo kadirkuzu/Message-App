@@ -1,12 +1,22 @@
-﻿using MessageApp.Dto.Message;
+﻿using MessageApp.Domain.Entities;
+using MessageApp.Dto.Message;
+using MessageApp.Repository.Abstract;
+using Microsoft.EntityFrameworkCore;
 
 namespace MessageApp.Queries.Messages.GetMessages; 
 
-public record GetMessagesQuery (int Skip, int Take, Guid GroupId) : IRequest<MessageDto>;
-public class GetMessagesQueryHandler : IRequestHandler<GetMessagesQuery, MessageDto>
+public record GetMessagesQuery (Guid GroupId) : IRequest<IEnumerable<MessageDto>>;
+public class GetMessagesQueryHandler : IRequestHandler<GetMessagesQuery, IEnumerable<MessageDto>>
 {
-    public Task<MessageDto> Handle(GetMessagesQuery request, CancellationToken cancellationToken)
+    readonly IReadRepository<Message> _messages;
+
+    public GetMessagesQueryHandler(IReadRepository<Message> messages)
     {
-        throw new NotImplementedException();
+        _messages = messages;
+    }
+
+    public async Task<IEnumerable<MessageDto>> Handle(GetMessagesQuery request, CancellationToken cancellationToken)
+    {
+        return _messages.GetAll().AsNoTracking().Select(x=>new MessageDto());
     }
 }

@@ -6,13 +6,18 @@ using Serilog;
 using Serilog.Core;
 using Microsoft.AspNetCore.HttpLogging;
 using MessageApp.API.Extensions;
+using MessageApp.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddCors(options => options.AddDefaultPolicy(policy => policy.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod()));
+builder.Services.AddCors(options => options.AddDefaultPolicy(policy => 
+        policy.AllowAnyOrigin()
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+));
 
 builder.Services.AddFeaturesServices();
 
@@ -64,6 +69,8 @@ if (app.Environment.IsDevelopment())
 
 app.ConfigureExceptionHandler<Program>(app.Services.GetRequiredService<ILogger<Program>>());
 
+app.AddSignalRHub();
+
 app.UseStaticFiles();
 
 app.UseSerilogRequestLogging();
@@ -72,6 +79,8 @@ app.UseHttpLogging();
 app.UseHttpsRedirection();
 
 app.UseCors();
+
+app.UseRouting();
 
 app.UseAuthentication();
 

@@ -1,6 +1,6 @@
 ﻿using MessageApp.Dto.User;
 
-namespace MessageApp.Services.Abstract.Token; 
+namespace MessageApp.Services.Abstract;
 
 public interface ITokenHandler
 {

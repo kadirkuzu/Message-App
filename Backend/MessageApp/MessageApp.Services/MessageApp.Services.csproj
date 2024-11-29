@@ -19,4 +19,8 @@
     <ProjectReference Include="..\MessageApp.Repository\MessageApp.Repository.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Concrete\Signalr\HubServices\" />
+  </ItemGroup>
+
 </Project>
