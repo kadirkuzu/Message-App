@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+@import './assets/styles/components/components.scss' ;
+@import './assets/styles/helpers.scss' ;
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(180deg, $gray-600, $gray-800);
+}

@@ -17,6 +17,7 @@ public class GetMessagesQueryHandler : IRequestHandler<GetMessagesQuery, IEnumer
 
     public async Task<IEnumerable<MessageDto>> Handle(GetMessagesQuery request, CancellationToken cancellationToken)
     {
-        return _messages.GetAll().AsNoTracking().Select(x=>new MessageDto());
+        var messages = await _messages.GetAll().AsNoTracking().ToListAsync(cancellationToken);
+        return messages.Select(x => new MessageDto());
     }
 }

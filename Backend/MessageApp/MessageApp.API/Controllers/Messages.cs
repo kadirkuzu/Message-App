@@ -16,8 +16,8 @@ namespace MessageApp.API.Controllers
         }
 
         [HttpGet]
-        public IActionResult Get() {
-            return Ok(_mediator.Send(new GetMessagesQuery(new Guid())));
+        public async Task<IActionResult> Get() {
+            return Ok(await _mediator.Send(new GetMessagesQuery(new Guid())));
         }
     }
 }

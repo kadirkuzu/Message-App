@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-
-const routes: Routes = [
-  {path: 'chats' , loadChildren : () => import("../app/pages/chats/chats.module").then(module=>module.ChatsModule)}
-];
-
+import { PagesRoutingModule } from './pages/pages.routing.module';
+import { RouterModule } from '@angular/router';
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [
+    PagesRoutingModule
+  ],
+  exports: [
+    RouterModule
+  ]
 })
 export class AppRoutingModule { }

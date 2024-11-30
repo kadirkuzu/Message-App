@@ -11,7 +11,6 @@ import {PagesModule} from "./pages/pages.module";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {environment} from "../environments/environment";
 import {StoreDevtoolsModule} from "@ngrx/store-devtools";
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +23,7 @@ import {StoreDevtoolsModule} from "@ngrx/store-devtools";
     PagesModule,
     StoreModule.forRoot(reducers, {metaReducers}),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
-    EffectsModule.forRoot(effects)
+    EffectsModule.forRoot(effects),
   ],
   providers: [],
   bootstrap: [AppComponent]

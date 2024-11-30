@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {MessagesComponent} from "./messages/messages.component";
-import {Router, RouterModule} from "@angular/router";
+import {RouterModule} from "@angular/router";
 
 @NgModule({
   declarations: [
