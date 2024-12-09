@@ -1,23 +1,23 @@
 ﻿using MediatR;
-using MessageApp.Commands.Users.CreateUser;
-using MessageApp.Commands.Users.Login;
-using MessageApp.Commands.Users.RefreshToken;
+using MessageApp.Commands.Auth.CreateUser;
+using MessageApp.Commands.Auth.Login;
+using MessageApp.Commands.Auth.RefreshToken;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MessageApp.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UsersController : ControllerBase
+    public class AuthController : ControllerBase
     {
         readonly IMediator _mediator;
 
-        public UsersController(IMediator mediator)
+        public AuthController(IMediator mediator)
         {
             _mediator = mediator;
         }
 
-        [HttpPost] 
+        [HttpPost("create-account")] 
         public async Task<IActionResult> Create(CreateUserCommand command)
         {
             return Ok(await _mediator.Send(command));

@@ -3,7 +3,7 @@ using MessageApp.Dto.User;
 using MessageApp.Services.Abstract;
 using Microsoft.AspNetCore.Identity;
 
-namespace MessageApp.Commands.Users.Login;
+namespace MessageApp.Commands.Auth.Login;
 
 public record LoginCommand(string UserNameOrEmail, string Password): IRequest<UserToken>;
 

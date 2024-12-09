@@ -1,8 +1,10 @@
 <div class="login-page">
     <div class="page-container">
-        <app-text-input  placeholder="Email or User Name" [control]="emailOrUserName"></app-text-input>
-        <div class="mt-10">
-            <app-password-input placeholder="Password" [control]="password"/>
+        <app-text-input label="Email or User Name" placeholder="Email or User Name" [control]="emailOrUserName"></app-text-input>
+        <app-password-input class="mt-10" label="Password" placeholder="Password" [control]="password"/>
+        <div class="text-center">
+            <button class="btn btn-primary mt-30">Login</button>
+            <p class="mt-10">Don't have an account? <a class="link c-pointer" routerLink="/create-account">Create account</a></p>
         </div>
     </div>
 </div>

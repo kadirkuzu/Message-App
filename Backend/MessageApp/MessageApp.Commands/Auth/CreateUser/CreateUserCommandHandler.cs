@@ -2,7 +2,7 @@
 using MessageApp.Dto.User;
 using Microsoft.AspNetCore.Identity;
 
-namespace MessageApp.Commands.Users.CreateUser;
+namespace MessageApp.Commands.Auth.CreateUser;
 
 public record CreateUserCommand(string Email, string UserName, string FullName, string PhoneNumber, string Password) : IRequest<UserDto>;
 

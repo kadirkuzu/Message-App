@@ -3,6 +3,8 @@ import { TextInputComponent } from './components/inputs/text-input/text-input.co
 import { SpinnnerComponent } from './components/spinnner/spinnner.component';
 import { PasswordInputComponent } from './components/inputs/password-input/password-input.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PhoneInputComponent } from './components/inputs/phone-input/phone-input.component';
+import { EmailInputComponent } from './components/inputs/email-input/email-input.component';
 
 @NgModule({
   imports: [
@@ -12,12 +14,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   declarations: [
     TextInputComponent,
     SpinnnerComponent,
-    PasswordInputComponent
+    PasswordInputComponent,
+    PhoneInputComponent,
+    EmailInputComponent
   ],
   exports: [
     TextInputComponent,
     SpinnnerComponent,
-    PasswordInputComponent
+    PasswordInputComponent,
+    PhoneInputComponent,
+    EmailInputComponent
   ]
 })
 export class SharedModule { }

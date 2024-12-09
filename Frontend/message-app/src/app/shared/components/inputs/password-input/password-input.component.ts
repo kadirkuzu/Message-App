@@ -9,4 +9,6 @@ import { FormControl } from '@angular/forms';
 export class PasswordInputComponent {
   @Input({required: true}) control!:FormControl
   @Input() placeholder = ''
+  @Input() label = ''
+  @Input() class = ''
 }

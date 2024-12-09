@@ -7,10 +7,14 @@ using Serilog.Core;
 using Microsoft.AspNetCore.HttpLogging;
 using MessageApp.API.Extensions;
 using MessageApp.Services;
+using MessageApp.API.Filters;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers();
+builder.Services.AddControllers(options =>
+{
+    options.Filters.Add<RolePermissionFilter>();
+});
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddCors(options => options.AddDefaultPolicy(policy => 

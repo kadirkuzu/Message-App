@@ -1,0 +1,9 @@
+@import '../variables.scss';
+
+button {
+    min-width: 80px;
+    height: $form-height !important;
+    border-radius: $form-border-radius !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+}

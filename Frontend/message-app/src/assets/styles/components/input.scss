@@ -1,14 +1,18 @@
 @import '../variables.scss';
-.form-control {
-    background-color: $gray-500 !important;
-    color: $white !important;
-    border: 0 !important;
+input {
     box-shadow: none !important;
-    height: $input-height !important;
-    border-radius: $input-border-radius;
+    height: $form-height !important;
+    border-radius: $form-border-radius !important;
     font-size: $input-font-size;
+    border-color: $gray-400 !important;
 
-    &::placeholder {
-        color: white !important;
+    &:focus {
+        border-color: $gray-600 !important;
     }
+}
+
+.input-label {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
 }

@@ -4,8 +4,7 @@ using MessageApp.Services.Abstract;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
-namespace MessageApp.Commands.Users.RefreshToken;
-
+namespace MessageApp.Commands.Auth.RefreshToken;
 public record RefreshTokenCommand(string RefreshToken) : IRequest<UserToken>;
 public class RefreshTokenCommandHandler : IRequestHandler<RefreshTokenCommand, UserToken>
 {
