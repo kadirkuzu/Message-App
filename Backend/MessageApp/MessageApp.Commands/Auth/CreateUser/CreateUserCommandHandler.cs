@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace MessageApp.Commands.Auth.CreateUser;
 
-public record CreateUserCommand(string Email, string UserName, string FullName, string PhoneNumber, string Password) : IRequest<UserDto>;
+public record CreateUserCommand(string Email, string FullName, string PhoneNumber, string Password) : IRequest<UserDto>;
 
 public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, UserDto>
 {
@@ -18,9 +18,9 @@ public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, UserD
     public async Task<UserDto> Handle(CreateUserCommand request, CancellationToken cancellationToken)
     {
         var user = new User {
-            Id = new Guid(),
+            Id = Guid.NewGuid(),
             Email = request.Email,
-            UserName = request.UserName,
+            UserName = request.Email,
             FullName = request.FullName,
             PhoneNumber =request.PhoneNumber,
           };
