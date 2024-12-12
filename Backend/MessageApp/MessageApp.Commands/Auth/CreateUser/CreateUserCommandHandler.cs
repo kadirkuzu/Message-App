@@ -1,12 +1,13 @@
 ﻿using MessageApp.Domain.Entities;
+using MessageApp.Dto.Common;
 using MessageApp.Dto.User;
 using Microsoft.AspNetCore.Identity;
 
 namespace MessageApp.Commands.Auth.CreateUser;
 
-public record CreateUserCommand(string Email, string FullName, string PhoneNumber, string Password) : IRequest<UserDto>;
+public record CreateUserCommand(string Email, string FullName, string PhoneNumber, string Password) : IRequest<BoolDto>;
 
-public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, UserDto>
+public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, BoolDto>
 {
     readonly UserManager<User> _userManager;
 
@@ -15,7 +16,7 @@ public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, UserD
         _userManager = userManager;
     }
 
-    public async Task<UserDto> Handle(CreateUserCommand request, CancellationToken cancellationToken)
+    public async Task<BoolDto> Handle(CreateUserCommand request, CancellationToken cancellationToken)
     {
         var user = new User {
             Id = Guid.NewGuid(),
@@ -25,8 +26,9 @@ public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, UserD
             PhoneNumber =request.PhoneNumber,
           };
         var result = await _userManager.CreateAsync(user,request.Password);
-        if (result.Succeeded) {
-            return new UserDto();
+        if (result.Succeeded)
+        {
+            return new BoolDto { Result = true };
         }
         else
         {

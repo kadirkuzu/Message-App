@@ -9,6 +9,10 @@ input {
     &:focus {
         border-color: $gray-600 !important;
     }
+
+  &.is-invalid {
+    border-color: #dc3545 !important;
+  }
 }
 
 .input-label {

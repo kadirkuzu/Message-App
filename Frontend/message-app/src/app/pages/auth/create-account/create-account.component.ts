@@ -12,19 +12,17 @@ export class CreateAccountComponent {
   form = new FormGroup({
     fullName: new FormControl('', Validators.required),
     email: new FormControl('', Validators.required),
-    userName: new FormControl('', Validators.required),
     phoneNumber: new FormControl('', Validators.required),
     password: new FormControl('', Validators.required)
   })
 
   get email() { return this.form.controls.email}
   get fullName() { return this.form.controls.fullName}
-  get userName() { return this.form.controls.userName}
   get phoneNumber() { return this.form.controls.phoneNumber}
   get password() { return this.form.controls.password}
-  
+
   constructor(private store:Store){}
-  
+
   createAccount(){
     if(this.form.invalid) return this.form.markAllAsTouched()
     this.store.dispatch(AuthActions.createAccount({payload: this.form.value}))

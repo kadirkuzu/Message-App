@@ -10,6 +10,11 @@ export class AuthEffects {
 
   createAccount$ = createEffect(() => this.actions$.pipe(ofType(AuthActions.createAccount),
     mergeMap((action) => this.authService.createAccount(action.payload).pipe(
-      map(payload => AuthActions.createAccountSuccess({payload})),
+      map(payload => AuthActions.createAccountSuccess()),
+      catchError(errors => of(AuthActions.errorAction({errors:errors})))))));
+
+  login = createEffect(() => this.actions$.pipe(ofType(AuthActions.login),
+    mergeMap((action) => this.authService.login(action.payload).pipe(
+      map(payload => AuthActions.loginSuccess(payload)),
       catchError(errors => of(AuthActions.errorAction({errors:errors})))))));
 }

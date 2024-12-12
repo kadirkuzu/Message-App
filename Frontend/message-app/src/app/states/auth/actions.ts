@@ -10,8 +10,17 @@ class Actions extends ActionBase {
   )
 
   createAccountSuccess = createAction(
-    `${this.type} Create Account Success`,
+    `${this.type} Create Account Success`
+  )
+
+  login = createAction(
+    `${this.type} Login`,
     props<{ payload: any }>()
+  )
+
+  loginSuccess = createAction(
+    `${this.type} Login Success`,
+    props<{ token: string }>()
   )
 
 }

@@ -11,4 +11,7 @@ export class AuthService {
   createAccount(payload: any) {
     return this.apiService.post<any>(`auth/create-account`, payload);
   }
+  login(payload: any) {
+    return this.apiService.post<{token : string}>(`auth/login`, payload);
+  }
 }

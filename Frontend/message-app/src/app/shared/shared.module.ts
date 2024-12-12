@@ -23,7 +23,9 @@ import { EmailInputComponent } from './components/inputs/email-input/email-input
     SpinnnerComponent,
     PasswordInputComponent,
     PhoneInputComponent,
-    EmailInputComponent
+    EmailInputComponent,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class SharedModule { }

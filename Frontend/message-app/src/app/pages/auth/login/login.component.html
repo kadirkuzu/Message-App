@@ -3,7 +3,7 @@
         <app-text-input label="Email or User Name" placeholder="Email or User Name" [control]="emailOrUserName"></app-text-input>
         <app-password-input class="mt-10" label="Password" placeholder="Password" [control]="password"/>
         <div class="text-center">
-            <button class="btn btn-primary mt-30">Login</button>
+            <button class="btn btn-primary mt-30" (click)="login()" >Login</button>
             <p class="mt-10">Don't have an account? <a class="link c-pointer" routerLink="/create-account">Create account</a></p>
         </div>
     </div>
