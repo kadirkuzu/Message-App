@@ -30,10 +30,15 @@ public class SendFriendRequestCommandHandler : IRequestHandler<SendFriendRequest
 
         if (friendRequest != null) throw new Exception("Friend Request Already Exists");
 
-        var result = await _writeRepository.AddAsync(new FriendRequest(_user.Id,request.ReceiverId));
+        var newFriendRequest = new FriendRequest(_user.Id, request.ReceiverId);
+        var result = await _writeRepository.AddAsync(newFriendRequest);
         await _writeRepository.SaveAsync();
 
-        await _messageHub.SendToUser(request.ReceiverId, SignalRTarget.MessageAdded, "Added");
+        var notification = new SignalRNotificationDto {
+            Object = newFriendRequest
+        };
+
+        await _messageHub.SendToUser(request.ReceiverId, SignalRTarget.MessageAdded, notification);
 
         return new BoolDto { Result = result };
 

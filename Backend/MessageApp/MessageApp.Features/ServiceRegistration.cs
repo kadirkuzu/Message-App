@@ -33,8 +33,8 @@ namespace MessageApp.Features
 
                 return new User
                 {
-                    Id = Guid.Parse(GetValueFromClaim(user, "userId")),
-                    UserName = GetValueFromClaim(user, ClaimTypes.NameIdentifier),
+                    Id = Guid.Parse(GetValueFromClaim(user, ClaimTypes.NameIdentifier)),
+                    UserName = GetValueFromClaim(user, "userName"),
                     FullName = GetValueFromClaim(user, ClaimTypes.Name.ToString()),
                     Email = GetValueFromClaim(user, ClaimTypes.Email.ToString()),
                     PhoneNumber = GetValueFromClaim(user, ClaimTypes.MobilePhone.ToString())

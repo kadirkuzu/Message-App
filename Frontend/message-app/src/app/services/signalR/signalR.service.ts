@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HubConnection, HubConnectionBuilder, HubConnectionState } from '@microsoft/signalr';
-import { environment } from '../../environments/environment';
-import { Store } from '@ngrx/store';
-import { AuthSelector } from '../states/auth/selectors';
+import { environment } from '../../../environments/environment';
+import { ActionCreator, Store } from '@ngrx/store';
+import { AuthSelector } from '../../states/auth/selectors';
 import { filter, skipWhile } from 'rxjs';
-import { AuthService } from './auth.service';
+import { AuthService } from '../auth.service';
+import { SignalRTarget, SignalRTargets } from './targets';
 
 @Injectable({
   providedIn: 'root'
@@ -37,6 +38,7 @@ export class SignalRService {
           })
           .catch(err => setTimeout(() => this.start(), 2000))
         this._connection = hubConnection
+        SignalRTargets.forEach(x=>this.on(x.target,x.action,x.callBack))
       }
 
       this._connection.onreconnected(connectionId => console.log("Reconnected", connectionId))
@@ -67,8 +69,16 @@ export class SignalRService {
     }
   }
 
-  on(procedureName: string, callback: (...params: string[]) => void) {
-    this._connection?.on(procedureName, callback)
+  on(target: string, action?: any, callback?: (data:SignalRTarget) => void) {
+    this._connection?.on(target, (data)=> {
+      if(action) {
+        this.store.dispatch(action(data[0]))
+      }
+      
+      else if(callback) {
+        callback(data as SignalRTarget)
+      }
+    })
   }
 
 }

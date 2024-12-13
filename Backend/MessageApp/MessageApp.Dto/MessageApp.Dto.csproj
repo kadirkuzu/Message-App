@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MessageApp.Domain\MessageApp.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

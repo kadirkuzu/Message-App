@@ -34,8 +34,8 @@ public class TokenService : ITokenService
                 new (ClaimTypes.Email,user.Email!),
                 new (ClaimTypes.MobilePhone,user.PhoneNumber!),
                 new (ClaimTypes.Name,user.FullName),
-                new (ClaimTypes.NameIdentifier, user.UserName!),
-                new ("userId", user.Id.ToString()),
+                new (ClaimTypes.NameIdentifier, user.Id.ToString()),
+                new ("userName", user.UserName!),
                 new (ClaimsIdentity.DefaultRoleClaimType, "User"),
             };
 

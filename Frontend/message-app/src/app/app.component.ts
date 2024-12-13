@@ -3,7 +3,7 @@ import { AuthService } from './services/auth.service';
 import { Store } from '@ngrx/store';
 import { AuthActions } from './states/auth/actions';
 import { AuthSelector } from './states/auth/selectors';
-import { SignalRService } from './services/signalR.service';
+import { SignalRService } from './services/signalR/signalR.service';
 
 @Component({
   selector: 'app-root',
