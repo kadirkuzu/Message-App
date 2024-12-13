@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.SignalR;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.SignalR;
 
 namespace MessageApp.Services.Concrete.Signalr
 {
+    [Authorize]
     public class SignalRHub : Hub
     {
         public async Task JoinGroup(string groupName)
