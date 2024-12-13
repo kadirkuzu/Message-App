@@ -7,12 +7,15 @@ import { PhoneInputComponent } from './components/inputs/phone-input/phone-input
 import { EmailInputComponent } from './components/inputs/email-input/email-input.component';
 import { CommonModule } from '@angular/common';
 import { NameInputComponent } from './components/inputs/name-input/name-input.component';
+import { TabsComponent } from './components/tabs/tabs.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
     ReactiveFormsModule,
     FormsModule,
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   declarations: [
     TextInputComponent,
@@ -20,7 +23,8 @@ import { NameInputComponent } from './components/inputs/name-input/name-input.co
     PasswordInputComponent,
     PhoneInputComponent,
     EmailInputComponent,
-    NameInputComponent
+    NameInputComponent,
+    TabsComponent
   ],
   exports: [
     TextInputComponent,
@@ -30,7 +34,8 @@ import { NameInputComponent } from './components/inputs/name-input/name-input.co
     EmailInputComponent,
     NameInputComponent,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    TabsComponent
   ]
 })
 export class SharedModule { }

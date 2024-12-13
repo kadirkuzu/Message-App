@@ -3,7 +3,7 @@
         <form (submit)="createAccount()">
             <h2 class="text-center text-white mb-30">Create Account</h2>
             <app-name-input class="mt-10" label="User Name" placeholder="User Name"
-                [control]="userName"></app-name-input>
+                [control]="userName" [checkUser]="true"></app-name-input>
             <app-text-input class="mt-10" label="Full Name" placeholder="Full Name"
                 [control]="fullName"></app-text-input>
             <app-email-input class="mt-10" label="Email" placeholder="Enter Your Email"

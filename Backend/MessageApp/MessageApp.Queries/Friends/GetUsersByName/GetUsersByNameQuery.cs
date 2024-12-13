@@ -1,5 +1,6 @@
 ﻿using MessageApp.Domain.Entities;
 using MessageApp.Dto.User;
+using MessageApp.Repository.Abstract;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,21 +11,39 @@ public record GetUsersByNameQuery (string UserName): IRequest<IEnumerable<AddFri
 public class GetUsersByNameQueryHandler : IRequestHandler<GetUsersByNameQuery, IEnumerable<AddFriendRequestUserDto>>
 {
     readonly UserManager<User> _userManager;
+    readonly IReadRepository<FriendRequest> _readFriendRequests;
+    readonly User _user;
 
-    public GetUsersByNameQueryHandler(UserManager<User> userManager)
+    public GetUsersByNameQueryHandler(UserManager<User> userManager, User user, IReadRepository<FriendRequest> readFriendRequests)
     {
         _userManager = userManager;
+        _user = user;
+        _readFriendRequests = readFriendRequests;
     }
 
     public async Task<IEnumerable<AddFriendRequestUserDto>> Handle(GetUsersByNameQuery request, CancellationToken cancellationToken)
     {
-        var users = await _userManager.Users.Where(x => x.UserName == request.UserName || x.FullName == request.UserName).ToListAsync(cancellationToken);
+        var users = await _userManager.Users
+            .Where(x=>x.Id != _user.Id)
+            .Where(x => x.UserName!.Contains(request.UserName) || x.FullName.Contains(request.UserName))
+            .AsNoTracking()
+            .ToListAsync(cancellationToken);
 
-        return users.Select(x => new AddFriendRequestUserDto
+        var friendRequests = await _readFriendRequests.GetWhere(x => x.SenderId == _user.Id || x.ReceiverId == _user.Id).ToListAsync(cancellationToken); 
+
+
+        return users.Select(x =>
         {
-            FullName = x.FullName,
-            UserName = x.UserName!,
-            Id = x.Id,
+            var friendRequest = friendRequests.FirstOrDefault(x=>x.Id == x.SenderId || x.ReceiverId == _user.Id);
+
+            return new AddFriendRequestUserDto
+            {
+                FullName = x.FullName,
+                UserName = x.UserName!,
+                Id = x.Id,
+                IsFriend = friendRequest?.IsAccepted ?? false,
+                IsSended = friendRequest != null,
+            };
         });
     }
 }

@@ -2,7 +2,7 @@
     @if (label) {
         <label class="input-label" [ngClass]="theme">{{ label }}</label>
     }
-    <input class="form-control" [placeholder]="placeholder" [ngClass]="theme"
+    <input class="form-control" [placeholder]="placeholder" [ngClass]="theme + ' ' + inputClass"
         [class.is-invalid]="control.invalid && (control.touched || control.dirty)" type="email" [formControl]="control">
 
     @if(userNameAvailable && control.valid){

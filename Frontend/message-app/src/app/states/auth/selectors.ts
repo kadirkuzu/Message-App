@@ -6,8 +6,10 @@ const getState = createFeatureSelector<State>('auth');
 class Selector {
 
   loading = createSelector(getState, (state: State) => state.isLoading > 0)
+  activeUser = createSelector(getState, (state: State) => state.activeUser)
+  loggedIn = createSelector(getState, (state: State) => !!state.activeUser)
 
 }
 
-export const MessagesSelector = new Selector()
+export const AuthSelector = new Selector()
 

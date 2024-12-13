@@ -1,0 +1,26 @@
+<h4 class="text-white mb-30">Add Friends With User Name</h4>
+<app-name-input inputClass="w-100" [control]="control" [placeholder]="'Find Friends With User Name or Full Name'" />
+
+@if(users.length) {
+    <div class="users">
+        @for (user of users; track $index) {
+            <div class="user">
+                <div class="information">
+                    <img src="../../../../assets/images/chat.png" class="image" />
+                    <div class="name-wrapper">
+                        <div class="mb-10 full-name">{{user.fullName}}</div>
+                        <div class="user-name">({{user.userName}})</div>
+                    </div>
+                </div>
+                <div>
+                    @if (user.isSended && !user.isFriend) {
+                        <button class="btn btn-primary" disabled>Sent</button>
+                    }
+                    @else if (!user.isSended) {
+                        <button class="btn btn-primary" (click)="sendRequest(user.id)">Send Request</button>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+}

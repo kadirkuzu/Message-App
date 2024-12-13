@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { AuthActions } from '@/app/states/auth/actions';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-mobile-header',
@@ -6,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrl: './mobile-header.component.scss'
 })
 export class MobileHeaderComponent {
+  openBar = false
 
+  constructor(private store: Store){}
+
+  logout(){
+    this.store.dispatch(AuthActions.logout())
+  }
 }

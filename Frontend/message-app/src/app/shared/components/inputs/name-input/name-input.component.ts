@@ -13,7 +13,9 @@ export class NameInputComponent implements OnInit, OnDestroy {
   @Input() placeholder = ''
   @Input() label = ''
   @Input() class = ''
+  @Input() inputClass = ''
   @Input() theme: 'dark' | 'light' = 'dark'
+  @Input() checkUser = false
   @Input() userNameAvailable?:boolean
 
   unsubscribe$ = new Subject<void>();
@@ -21,13 +23,15 @@ export class NameInputComponent implements OnInit, OnDestroy {
   constructor(private authApiService:AuthApiService){}
 
   ngOnInit(): void {
-    this.control.valueChanges.pipe(takeUntil(this.unsubscribe$), debounceTime(300)).subscribe(name => {
-      if (this.control.invalid) return
-      this.authApiService.checkUserNameAvailable(name!).subscribe(data => {
-        this.control.setErrors( data.result ? null : {isNotAvailable: !data.result})
-        this.userNameAvailable = data.result
+    if(this.checkUser) {
+      this.control.valueChanges.pipe(takeUntil(this.unsubscribe$), debounceTime(300)).subscribe(name => {
+        if (this.control.invalid) return
+        this.authApiService.checkUserNameAvailable(name!).subscribe(data => {
+          this.control.setErrors( data.result ? null : {isNotAvailable: !data.result})
+          this.userNameAvailable = data.result
+        })
       })
-    })
+    }
   }
 
   ngOnDestroy() {

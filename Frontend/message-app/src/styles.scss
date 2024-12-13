@@ -1,5 +1,6 @@
-@import './assets/styles/components/components.scss' ;
-@import './assets/styles/helpers.scss' ;
+@import './assets/styles/components/components.scss';
+@import './assets/styles/helpers.scss';
+@import '../node_modules/@fortawesome/fontawesome-free/css/all.css';
 
 html,
 body {
@@ -8,6 +9,50 @@ body {
     background: linear-gradient(135deg, $primary, $background-color);
 }
 
-.c-pointer { 
+.c-pointer {
     cursor: pointer;
+}
+
+@media (min-width: 1600px) {
+    .container {
+        max-width: 1400px !important;
+    }
+}
+
+@media (min-width: 1920px) {
+    .container {
+        max-width: 1700px !important;
+    }
+}
+
+.page-card {
+    background-color: $secondary;
+    border-radius: 10px;
+    width: 100%;
+    margin: 50px 0;
+    min-height: calc(100vh - 200px);
+    border: 1px solid $secondary;
+
+    .sidebar {
+        min-width: 250px;
+        background-color: $background-color;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+
+        .page-title {
+            color: $white;
+            padding: 20px;
+            margin-bottom: 20px !important;
+            font-weight: 400;
+        
+            &:not(.borderless) {
+                border-bottom: 1px solid $secondary;
+            }
+        }
+    }
+
+    .content {
+        padding: 20px;
+        width: 100%;
+    }
 }

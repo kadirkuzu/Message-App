@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.HttpLogging;
 using MessageApp.API.Extensions;
 using MessageApp.Services;
 using MessageApp.API.Filters;
+using System.Security.Claims;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -43,7 +44,9 @@ builder.Services.AddAuthentication(x =>
             ValidAudience = builder.Configuration["Token:Audience"],
             ValidIssuer = builder.Configuration["Token:Issuer"],
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Token:SecurityKey"])),
-            LifetimeValidator = (notBefore,expires,securityToken,validationParameters) => expires == null || expires > DateTime.UtcNow
+            LifetimeValidator = (notBefore, expires, securityToken, validationParameters) => expires == null || expires > DateTime.UtcNow,
+
+            NameClaimType = "userId"
         };
     });
 
@@ -77,8 +80,6 @@ if (app.Environment.IsDevelopment())
 
 app.ConfigureExceptionHandler<Program>(app.Services.GetRequiredService<ILogger<Program>>());
 
-app.AddSignalRHub();
-
 app.UseStaticFiles();
 
 app.UseSerilogRequestLogging();
@@ -91,6 +92,8 @@ app.UseCors();
 app.UseAuthentication();
 
 app.UseAuthorization();
+
+app.AddSignalRHub();
 
 app.MapControllers();
 

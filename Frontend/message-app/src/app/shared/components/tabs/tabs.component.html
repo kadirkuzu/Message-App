@@ -1,0 +1,5 @@
+<div class="routes">
+    @for (tab of tabs; track tab.route) {
+        <div class="route" routerLink='{{tab.route}}' routerLinkActive="active-link">{{tab.label}}</div>
+    }
+</div>

@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {ApiService} from "./common/api.service";
 import { CreateAccountDto, LoginDto, UserToken } from '@/app/models/auth';
 import { BoolDto } from '@/app/models/common/bool';
+import { User } from '@/app/models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -19,5 +20,9 @@ export class AuthApiService {
 
   checkUserNameAvailable(userName: string) {
     return this.apiService.get<BoolDto>(`auth/check-user-name-available`, {userName});
+  }
+
+  getUser() {
+    return this.apiService.get<User>(`auth/me`);
   }
 }

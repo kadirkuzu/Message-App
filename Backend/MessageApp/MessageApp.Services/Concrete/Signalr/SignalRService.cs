@@ -12,18 +12,18 @@ public class SignalRService : IMessageHubService
         _hubContext = hubContext;
     }
 
-    public Task Send(string target, string message)
+    public async Task Send(string target, string message)
     {
-        return _hubContext.Clients.All.SendAsync(target, message);
+        await _hubContext.Clients.All.SendAsync(target, message);
     }
 
-    public Task SendToGroup(string group, string target, string message)
+    public async Task SendToGroup(string group, string target, string message)
     {
-        return _hubContext.Clients.Group(group).SendAsync(target, message);
+        await _hubContext.Clients.Group(group).SendAsync(target, message);
     }
 
-    public Task SendToUser(Guid userId, string target, string message)
+    public async Task SendToUser(Guid userId, string target, string message)
     {
-        return _hubContext.Clients.User(userId.ToString()).SendAsync(target, message);
+        await _hubContext.Clients.User(userId.ToString()).SendAsync(target, message);
     }
 }

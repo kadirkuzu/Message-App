@@ -1,0 +1,21 @@
+@import 'src/assets/styles/variables.scss';
+
+.routes {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 10px ;
+    .route {
+        color: $white;
+        cursor: pointer;
+        font-size: 19px;
+        padding: 5px 10px;
+        border-radius: 5px;
+        &:hover {
+            background-color: $secondary;
+        }
+        &.active-link {
+            background-color: $secondary
+        }
+    }
+}

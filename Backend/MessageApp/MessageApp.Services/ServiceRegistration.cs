@@ -16,6 +16,7 @@ namespace MessageApp.Services
             services.AddScoped<IStorageService, StorageService>();
             services.AddScoped<ITokenService, TokenService>();
             services.AddTransient<IMessageHubService, SignalRService>();
+            services.AddHttpContextAccessor();
             services.AddSignalR();
 
         }

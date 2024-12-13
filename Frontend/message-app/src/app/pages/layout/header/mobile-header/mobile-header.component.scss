@@ -1,0 +1,42 @@
+@import 'src/assets/styles/variables.scss' ;
+
+.offcanvas {
+    background-color: $background-color;
+
+    .route {
+        padding: 5px 0;
+        color: $white;
+        &:not(.borderless) {
+            border-bottom: 1px solid $secondary;
+        }
+    }
+
+    .fa-solid {
+        color: $white !important;
+        font-size: 30px;
+    }
+}
+
+.bar {
+    padding-right: 15px;
+    .bar1, .bar2, .bar3 {
+        width: 35px;
+        height: 5px;
+        background-color: $white;
+        margin: 6px 0;
+        transition: 0.2s;
+    }
+    
+    &.change {
+        .bar1{
+            transform: translate(0, 11px) rotate(-45deg);
+        }
+        .bar2 {
+            opacity: 0
+        }
+        .bar3 {
+            transform: translate(0, -11px) rotate(45deg);
+        }
+    }
+}
+
