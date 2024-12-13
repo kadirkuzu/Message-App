@@ -9,9 +9,9 @@ public record RefreshTokenCommand(string RefreshToken) : IRequest<UserToken>;
 public class RefreshTokenCommandHandler : IRequestHandler<RefreshTokenCommand, UserToken>
 {
     readonly UserManager<User> _userManager;
-    readonly ITokenHandler _tokenHandler;
+    readonly ITokenService _tokenHandler;
 
-    public RefreshTokenCommandHandler(UserManager<User> userManager, ITokenHandler tokenHandler)
+    public RefreshTokenCommandHandler(UserManager<User> userManager, ITokenService tokenHandler)
     {
         _userManager = userManager;
         _tokenHandler = tokenHandler;
@@ -23,7 +23,7 @@ public class RefreshTokenCommandHandler : IRequestHandler<RefreshTokenCommand, U
         if (user == null || user.RefreshTokenEndDate < DateTime.UtcNow) throw new Exception("Bad Token");
         else
         {
-            var token = _tokenHandler.CreateAccessToken();
+            var token = _tokenHandler.CreateAccessToken(user);
             user.RefreshToken = token.RefreshToken;
             user.RefreshTokenEndDate = token.Expiration.AddHours(1);
             return token;

@@ -5,18 +5,22 @@ import { PasswordInputComponent } from './components/inputs/password-input/passw
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PhoneInputComponent } from './components/inputs/phone-input/phone-input.component';
 import { EmailInputComponent } from './components/inputs/email-input/email-input.component';
+import { CommonModule } from '@angular/common';
+import { NameInputComponent } from './components/inputs/name-input/name-input.component';
 
 @NgModule({
   imports: [
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    CommonModule
   ],
   declarations: [
     TextInputComponent,
     SpinnnerComponent,
     PasswordInputComponent,
     PhoneInputComponent,
-    EmailInputComponent
+    EmailInputComponent,
+    NameInputComponent
   ],
   exports: [
     TextInputComponent,
@@ -24,6 +28,7 @@ import { EmailInputComponent } from './components/inputs/email-input/email-input
     PasswordInputComponent,
     PhoneInputComponent,
     EmailInputComponent,
+    NameInputComponent,
     ReactiveFormsModule,
     FormsModule
   ]

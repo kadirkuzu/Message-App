@@ -1,23 +1,25 @@
-﻿using MessageApp.Dto.User;
+﻿using MessageApp.Domain.Entities;
+using MessageApp.Dto.User;
 using MessageApp.Services.Abstract;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
 
 namespace MessageApp.Services.Concrete;
 
-public class TokenHandler : ITokenHandler
+public class TokenService : ITokenService
 {
     readonly IConfiguration _configuration;
 
-    public TokenHandler(IConfiguration configuration)
+    public TokenService(IConfiguration configuration)
     {
         _configuration = configuration;
     }
 
-    public UserToken CreateAccessToken()
+    public UserToken CreateAccessToken(User user)
     {
         var token = new UserToken();
 
@@ -25,17 +27,28 @@ public class TokenHandler : ITokenHandler
 
         SigningCredentials signingCredentials = new(securityKey, SecurityAlgorithms.HmacSha256);
 
-
         token.Expiration = DateTime.UtcNow.AddDays(1);
+
+        var claims = new List<Claim>
+            {
+                new (ClaimTypes.Email,user.Email!),
+                new (ClaimTypes.Name,user.FullName),
+                new (ClaimTypes.NameIdentifier, user.UserName!),
+                new ("userId", user.Id.ToString()),
+                new (ClaimsIdentity.DefaultRoleClaimType, "User"),
+            };
+
         JwtSecurityToken securityToken = new JwtSecurityToken(
                 audience: _configuration["Token:Audience"],
                 issuer: _configuration["Token:Issuer"],
                 expires: token.Expiration,
                 notBefore: DateTime.UtcNow,
-                signingCredentials: signingCredentials
+                signingCredentials: signingCredentials,
+                claims: claims
             );
 
         JwtSecurityTokenHandler tokenHandler = new();
+
         token.AccessToken = tokenHandler.WriteToken(securityToken);
 
         token.RefreshToken = CreateRefreshToken();

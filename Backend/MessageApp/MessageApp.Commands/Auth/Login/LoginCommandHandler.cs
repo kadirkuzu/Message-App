@@ -5,15 +5,15 @@ using Microsoft.AspNetCore.Identity;
 
 namespace MessageApp.Commands.Auth.Login;
 
-public record LoginCommand(string UserNameOrEmail, string Password): IRequest<UserToken>;
+public record LoginCommand(string EmailOrUserName, string Password): IRequest<UserToken>;
 
 public class LoginCommandHandler : IRequestHandler<LoginCommand, UserToken>
 {
     readonly UserManager<User> _userManager;
     readonly SignInManager<User> _signInManager;
-    readonly ITokenHandler _tokenHandler;
+    readonly ITokenService _tokenHandler;
 
-    public LoginCommandHandler(UserManager<User> userManager, SignInManager<User> signInManager, ITokenHandler tokenHandler)
+    public LoginCommandHandler(UserManager<User> userManager, SignInManager<User> signInManager, ITokenService tokenHandler)
     {
         _userManager = userManager;
         _signInManager = signInManager;
@@ -22,14 +22,12 @@ public class LoginCommandHandler : IRequestHandler<LoginCommand, UserToken>
 
     public async Task<UserToken> Handle(LoginCommand request, CancellationToken cancellationToken)
     {
-        var user = await _userManager.FindByNameAsync(request.UserNameOrEmail);
-        user ??= await _userManager.FindByEmailAsync(request.UserNameOrEmail);
-        if (user == null) throw new Exception("Email or password is not correct");
-
+        var user = await _userManager.FindByNameAsync(request.EmailOrUserName);
+        user ??= await _userManager.FindByEmailAsync(request.EmailOrUserName) ?? throw new Exception("User Not Found"); 
         var result = await _signInManager.CheckPasswordSignInAsync(user, request.Password, false);
 
         if (result.Succeeded) {
-            UserToken token = _tokenHandler.CreateAccessToken();
+            UserToken token = _tokenHandler.CreateAccessToken(user);
             user.RefreshToken = token.RefreshToken;
             user.RefreshTokenEndDate = token.Expiration.AddHours(1);
             await _userManager.UpdateAsync(user);

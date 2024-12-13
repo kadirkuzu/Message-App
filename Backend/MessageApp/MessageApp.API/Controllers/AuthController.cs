@@ -2,6 +2,7 @@
 using MessageApp.Commands.Auth.CreateUser;
 using MessageApp.Commands.Auth.Login;
 using MessageApp.Commands.Auth.RefreshToken;
+using MessageApp.Queries.Auth.CheckUserNameAvailable;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MessageApp.API.Controllers
@@ -18,7 +19,7 @@ namespace MessageApp.API.Controllers
         }
 
         [HttpPost("create-account")] 
-        public async Task<IActionResult> Create(CreateUserCommand command)
+        public async Task<IActionResult> CreateAccount(CreateUserCommand command)
         {
             return Ok(await _mediator.Send(command));
         }       
@@ -31,6 +32,12 @@ namespace MessageApp.API.Controllers
         
         [HttpPost("[action]")] 
         public async Task<IActionResult> RefreshToken(RefreshTokenCommand command)
+        {
+            return Ok(await _mediator.Send(command));
+        }
+
+        [HttpGet("check-user-name-available")]
+        public async Task<IActionResult> CheckUserNameAvailable([FromQuery] CheckUserNameAvailableQuery command)
         {
             return Ok(await _mediator.Send(command));
         }

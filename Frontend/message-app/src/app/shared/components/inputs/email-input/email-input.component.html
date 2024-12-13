@@ -1,7 +1,7 @@
 <div class="{{class}}">
   @if (label) {
-    <label class="input-label">{{ label }}</label>
+    <label class="input-label" [ngClass]="theme">{{ label }}</label>
   }
-  <input class="form-control" type="text" [placeholder]="placeholder"
-         [class.is-invalid]="control.invalid && (control.touched ||control.dirty)" [formControl]="control">
+  <input class="form-control" [placeholder]="placeholder" [ngClass]="theme"
+    [class.is-invalid]="control.invalid && (control.touched ||control.dirty)" type="email" [formControl]="control">
 </div>

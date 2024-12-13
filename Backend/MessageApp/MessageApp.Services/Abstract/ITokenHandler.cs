@@ -1,9 +1,10 @@
-﻿using MessageApp.Dto.User;
+﻿using MessageApp.Domain.Entities;
+using MessageApp.Dto.User;
 
 namespace MessageApp.Services.Abstract;
 
-public interface ITokenHandler
+public interface ITokenService
 {
-    UserToken CreateAccessToken();
+    UserToken CreateAccessToken(User user);
     string CreateRefreshToken();
 }

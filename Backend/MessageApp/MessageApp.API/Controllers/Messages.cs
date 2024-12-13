@@ -1,11 +1,13 @@
 ﻿using MediatR;
 using MessageApp.Queries.Messages.GetMessages;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MessageApp.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class Messages : ControllerBase
     {
         readonly IMediator _mediator;

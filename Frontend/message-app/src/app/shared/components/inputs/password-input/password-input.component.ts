@@ -11,4 +11,5 @@ export class PasswordInputComponent {
   @Input() placeholder = ''
   @Input() label = ''
   @Input() class = ''
+  @Input() theme: 'dark' | 'light' = 'dark'
 }

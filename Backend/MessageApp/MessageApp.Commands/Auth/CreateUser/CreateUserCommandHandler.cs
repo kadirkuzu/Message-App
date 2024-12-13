@@ -1,11 +1,10 @@
 ﻿using MessageApp.Domain.Entities;
 using MessageApp.Dto.Common;
-using MessageApp.Dto.User;
 using Microsoft.AspNetCore.Identity;
 
 namespace MessageApp.Commands.Auth.CreateUser;
 
-public record CreateUserCommand(string Email, string FullName, string PhoneNumber, string Password) : IRequest<BoolDto>;
+public record CreateUserCommand(string UserName ,string Email, string FullName, string PhoneNumber, string Password) : IRequest<BoolDto>;
 
 public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, BoolDto>
 {
@@ -21,7 +20,7 @@ public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, BoolD
         var user = new User {
             Id = Guid.NewGuid(),
             Email = request.Email,
-            UserName = request.Email,
+            UserName = request.UserName,
             FullName = request.FullName,
             PhoneNumber =request.PhoneNumber,
           };

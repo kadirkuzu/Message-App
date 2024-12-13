@@ -14,7 +14,7 @@ namespace MessageApp.Services
         public static void AddServices(this IServiceCollection services)
         {
             services.AddScoped<IStorageService, StorageService>();
-            services.AddScoped<ITokenHandler, TokenHandler>();
+            services.AddScoped<ITokenService, TokenService>();
             services.AddTransient<IMessageHubService, SignalRService>();
             services.AddSignalR();
 

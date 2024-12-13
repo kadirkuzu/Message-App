@@ -1,14 +1,32 @@
 @import '../variables.scss';
+
 input {
-    box-shadow: none !important;
-    height: $form-height !important;
-    border-radius: $form-border-radius !important;
-    font-size: $input-font-size;
+  box-shadow: none !important;
+  height: $form-height !important;
+  border-radius: $form-border-radius !important;
+  font-size: $input-font-size;
+
+  &.light {
+    background-color: $white !important;
     border-color: $gray-400 !important;
+    &:focus {
+      border-color: $gray-600 !important;
+    }
+  }
+
+  &.dark {
+    background-color: $secondary !important;
+    border-color: $dark-placeholder-color !important;
+    color: $white !important;
 
     &:focus {
-        border-color: $gray-600 !important;
+      border-color: $white !important;
     }
+
+    &::placeholder {
+      color: $dark-placeholder-color;
+    }
+  }
 
   &.is-invalid {
     border-color: #dc3545 !important;
@@ -16,7 +34,27 @@ input {
 }
 
 .input-label {
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 6px;
+
+  &.dark {
+    color: $white;
+  }
+
+  &.light {
+    color: $secondary;
+  }
+}
+
+.input-message {
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 5px;
+  &.valid {
+    color: $success;
+  }
+  &.inValid {
+    color: $danger;
+  }
 }

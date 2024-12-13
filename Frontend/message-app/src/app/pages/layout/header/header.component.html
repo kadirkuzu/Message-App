@@ -1,0 +1,16 @@
+<header class="app-header">
+    <div class="logo">
+        <img src="../../../../assets/images/chat.png" />
+        Message Safely
+    </div>
+    @if(windowWidth > 767.8){
+        <div class="routes">
+            <div class="route" routerLink='/chats' routerLinkActive="active-link">Chats</div>
+            <div class="route" routerLink='/friends'>Friends</div>
+            <div class="route" routerLink='/profile'>Profile</div>
+        </div>
+    }
+    @else {
+        <app-mobile-header/>
+    }
+</header>

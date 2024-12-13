@@ -1,0 +1,19 @@
+<div class="{{class}}">
+    @if (label) {
+        <label class="input-label" [ngClass]="theme">{{ label }}</label>
+    }
+    <input class="form-control" [placeholder]="placeholder" [ngClass]="theme"
+        [class.is-invalid]="control.invalid && (control.touched || control.dirty)" type="email" [formControl]="control">
+
+    @if(userNameAvailable && control.valid){
+        <p class="valid input-message">
+            User Name Available
+        </p>
+    }
+
+    @if(control.invalid && (control.dirty || control.touched)) {
+        <p class="inValid input-message">
+            {{userNameAvailable == false ? 'This username is already taken by another user' : 'Invalid User Name'}}
+        </p>
+    }
+</div>

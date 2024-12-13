@@ -1,5 +1,11 @@
+@import './root.scss';
+
 $white: white;
-$primary: var(--bs-primary);
+$primary: var(--primary-color);
+$secondary: var(--secondary-color);
+$success: var(--bs-success);
+$danger: var(--bs-danger);
+$background-color: var(--background-color);
 $gray-100: var(--bs-gray-100);
 $gray-200: var(--bs-gray-200);
 $gray-300: var(--bs-gray-300);
@@ -13,3 +19,4 @@ $gray-900: var(--bs-gray-900);
 $form-height: 45px;
 $form-border-radius: 8px;
 $input-font-size: 18px;
+$dark-placeholder-color: var(--dark-placeholder-color);

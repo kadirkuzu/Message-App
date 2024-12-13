@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import {Store} from "@ngrx/store";
-import {MessageActions} from "./states/messages/actions";
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -9,8 +8,9 @@ import {MessageActions} from "./states/messages/actions";
 })
 export class AppComponent {
   title = 'message-app';
+  isLoggedIn = false
 
-  constructor(private store:Store) {
-    store.dispatch(MessageActions.getAll())
+  constructor(private authService:AuthService){
+    this.isLoggedIn = authService.isLoggedIn()
   }
 }
