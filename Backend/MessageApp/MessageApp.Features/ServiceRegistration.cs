@@ -37,7 +37,7 @@ namespace MessageApp.Features
                     UserName = GetValueFromClaim(user, ClaimTypes.NameIdentifier),
                     FullName = GetValueFromClaim(user, ClaimTypes.Name.ToString()),
                     Email = GetValueFromClaim(user, ClaimTypes.Email.ToString()),
-                    PhoneNumber = GetValueFromClaim(user, ClaimTypes.Email.ToString())
+                    PhoneNumber = GetValueFromClaim(user, ClaimTypes.MobilePhone.ToString())
                 }; ;
             });
         }

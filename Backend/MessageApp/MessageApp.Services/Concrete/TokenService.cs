@@ -32,6 +32,7 @@ public class TokenService : ITokenService
         var claims = new List<Claim>
             {
                 new (ClaimTypes.Email,user.Email!),
+                new (ClaimTypes.MobilePhone,user.PhoneNumber!),
                 new (ClaimTypes.Name,user.FullName),
                 new (ClaimTypes.NameIdentifier, user.UserName!),
                 new ("userId", user.Id.ToString()),

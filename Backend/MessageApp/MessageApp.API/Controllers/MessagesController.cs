@@ -8,11 +8,11 @@ namespace MessageApp.API.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Authorize]
-    public class Messages : ControllerBase
+    public class MessagesController : ControllerBase
     {
         readonly IMediator _mediator;
 
-        public Messages(IMediator mediator)
+        public MessagesController(IMediator mediator)
         {
             _mediator = mediator;
         }
