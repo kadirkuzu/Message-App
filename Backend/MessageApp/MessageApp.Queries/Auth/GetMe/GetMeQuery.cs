@@ -21,13 +21,6 @@ public class GetMeQueryHandler : IRequestHandler<GetMeQuery, UserDto>
     {
         var user = await _userManager.FindByIdAsync(_user.Id.ToString());
 
-        return (new UserDto {
-            Id = user!.Id,
-            Email = user.Email!,
-            FullName = user.FullName,
-            PhoneNumber = user.PhoneNumber!,
-            UserName = user.UserName!,
-            HasPhoto = user.HasPhoto!,
-        });
+        return (new UserDto(user));
     }
 }

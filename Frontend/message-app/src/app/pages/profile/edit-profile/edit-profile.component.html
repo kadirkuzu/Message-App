@@ -1,7 +1,7 @@
 @if(user){
     <div class="row">
         <div class="col-8">
-            <form (submit)="saveChanges()">
+            <form>
                 <app-name-input class="mt-10" label="User Name" placeholder="User Name" [initValue]="user.userName"
                     [control]="form.controls.userName" [checkUser]="true"></app-name-input>
                 <app-text-input class="mt-10" label="Full Name" placeholder="Full Name"

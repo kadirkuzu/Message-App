@@ -15,3 +15,10 @@ export class AddFriendRequestUser{
     isSended!: boolean
     hasPhoto!: boolean
 }
+
+export class UpdateUserDto {
+    email!:string
+    userName!:string
+    fullName!:string
+    phoneNumber!:string
+}

@@ -1,4 +1,4 @@
-import { AuthSelector } from '@/app/states/auth/selectors';
+import { UserSelector } from '@/app/states/user/selectors';
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 
@@ -9,7 +9,8 @@ import { Store } from '@ngrx/store';
 })
 export class HeaderComponent {
   windowWidth = window.innerWidth
-  activeUser$ = this.store.select(AuthSelector.activeUser)
+  activeUser$ = this.store.select(UserSelector.activeUser)
+  uploadLoading$ = this.store.select(UserSelector.uploadLoading)
 
   constructor(private store:Store){}
 }

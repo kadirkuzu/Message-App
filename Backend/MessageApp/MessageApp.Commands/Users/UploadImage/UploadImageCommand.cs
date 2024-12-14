@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
-namespace MessageApp.Commands.Documents.UploadImage;
+namespace MessageApp.Commands.Users.UploadImage;
 public record UploadImageCommand(IFormFileCollection Files) : IRequest<BoolDto>;
 
 public record UploadImageCommandHandler : IRequestHandler<UploadImageCommand, BoolDto>

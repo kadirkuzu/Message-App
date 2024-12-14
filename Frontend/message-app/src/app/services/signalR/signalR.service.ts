@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HubConnection, HubConnectionBuilder, HubConnectionState } from '@microsoft/signalr';
 import { environment } from '../../../environments/environment';
-import { ActionCreator, Store } from '@ngrx/store';
-import { AuthSelector } from '../../states/auth/selectors';
-import { filter, skipWhile } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { filter } from 'rxjs';
 import { AuthService } from '../auth.service';
 import { SignalRTarget, SignalRTargets } from './targets';
+import { UserSelector } from '@/app/states/user/selectors';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +15,7 @@ export class SignalRService {
   private toJoinGroups: string[] = []
   private toLeaveGroups: string[] = []
 
-  user$ = this.store.select(AuthSelector.activeUser)
+  user$ = this.store.select(UserSelector.activeUser)
 
   constructor(private store: Store, private authService: AuthService) { }
 

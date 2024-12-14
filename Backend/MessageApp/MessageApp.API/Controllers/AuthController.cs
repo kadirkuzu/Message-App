@@ -3,8 +3,6 @@ using MessageApp.Commands.Auth.CreateUser;
 using MessageApp.Commands.Auth.Login;
 using MessageApp.Commands.Auth.RefreshToken;
 using MessageApp.Queries.Auth.CheckUserNameAvailable;
-using MessageApp.Queries.Auth.GetMe;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MessageApp.API.Controllers
@@ -35,13 +33,6 @@ namespace MessageApp.API.Controllers
         public async Task<IActionResult> CheckUserNameAvailable([FromQuery] CheckUserNameAvailableQuery command)
         {
             return Ok(await mediator.Send(command));
-        }
-
-        [HttpGet("me")]
-        [Authorize]
-        public async Task<IActionResult> Me()
-        {
-            return Ok(await mediator.Send(new GetMeQuery()));
         }
     }
 }

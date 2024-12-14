@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { AuthService } from './services/auth.service';
 import { Store } from '@ngrx/store';
-import { AuthActions } from './states/auth/actions';
-import { AuthSelector } from './states/auth/selectors';
 import { SignalRService } from './services/signalR/signalR.service';
+import { UserActions } from './states/user/actions';
+import { UserSelector } from './states/user/selectors';
 
 @Component({
   selector: 'app-root',
@@ -12,12 +12,12 @@ import { SignalRService } from './services/signalR/signalR.service';
 })
 export class AppComponent {
   title = 'message-app';
-  loggedIn$ = this.store.select(AuthSelector.loggedIn)
+  loggedIn$ = this.store.select(UserSelector.loggedIn)
 
   constructor(private authService:AuthService,private store:Store, private signalRService:SignalRService){
     signalRService.start()
     if(this.authService.isLoggedIn()) {
-      this.store.dispatch(AuthActions.getUser())
+      this.store.dispatch(UserActions.getUser())
     }
   }
 }

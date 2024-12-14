@@ -18,7 +18,7 @@
                                 <div>{{user.fullName}}</div>
                                 <div>{{user.userName}}</div>
                             </div>
-                            <app-profile-photo [hasPhoto]="user.hasPhoto" [userId]="user.id" [height]="50" />
+                            <app-profile-photo [isLoading]="(uploadLoading$ | async)!" [hasPhoto]="user.hasPhoto" [userId]="user.id" [height]="50" />
                         </div>
                     </div>
                 }
