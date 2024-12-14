@@ -1,5 +1,10 @@
 <div class="routes">
     @for (tab of tabs; track tab.route) {
-        <div class="route" routerLink='{{tab.route}}' routerLinkActive="active-link">{{tab.label}}</div>
+        <div class="route" routerLink='{{tab.route}}' routerLinkActive="active-link">
+            <span>{{tab.label}}</span>
+            @if (tab.count$ | async; as count) {
+                <span class="float-end">{{count}}</span>
+            }
+        </div>
     }
 </div>

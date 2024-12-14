@@ -1,5 +1,6 @@
 ﻿using MessageApp.Domain.Entities;
 using MessageApp.Dto.Common;
+using MessageApp.Dto.FriendRequest;
 using MessageApp.Repository.Abstract;
 using MessageApp.Services.Abstract.SignalR.HubServices;
 using MessageApp.Services.Concrete.Signalr;
@@ -35,10 +36,17 @@ public class SendFriendRequestCommandHandler : IRequestHandler<SendFriendRequest
         await _writeRepository.SaveAsync();
 
         var notification = new SignalRNotificationDto {
-            Object = newFriendRequest
+            Object = new FriendRequestDto
+            {
+                Id = newFriendRequest.Id,
+                CreatedDate = DateTime.UtcNow,
+                UserId = _user.Id,
+                FullName = _user.FullName,
+                UserName = _user.UserName!,
+            }
         };
 
-        await _messageHub.SendToUser(request.ReceiverId, SignalRTarget.MessageAdded, notification);
+        await _messageHub.SendToUser(request.ReceiverId, SignalRTarget.FriendRequestAdded, notification);
 
         return new BoolDto { Result = result };
 

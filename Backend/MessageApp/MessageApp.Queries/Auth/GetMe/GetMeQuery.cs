@@ -16,6 +16,6 @@ public class GetMeQueryHandler : IRequestHandler<GetMeQuery, UserDto>
 
     public Task<UserDto> Handle(GetMeQuery request, CancellationToken cancellationToken)
     {
-        return Task.FromResult(new UserDto { Email = _user.Email, FullName = _user.FullName, Phone = _user.PhoneNumber, UserName = _user.UserName, Id = _user.Id });
+        return Task.FromResult(new UserDto { Email = _user.Email, FullName = _user.FullName, PhoneNumber = _user.PhoneNumber, UserName = _user.UserName, Id = _user.Id });
     }
 }

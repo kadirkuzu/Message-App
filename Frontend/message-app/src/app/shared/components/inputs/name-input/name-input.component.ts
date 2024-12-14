@@ -16,6 +16,7 @@ export class NameInputComponent implements OnInit, OnDestroy {
   @Input() inputClass = ''
   @Input() theme: 'dark' | 'light' = 'dark'
   @Input() checkUser = false
+  @Input() initValue = ''
   @Input() userNameAvailable?:boolean
 
   unsubscribe$ = new Subject<void>();
@@ -25,7 +26,7 @@ export class NameInputComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     if(this.checkUser) {
       this.control.valueChanges.pipe(takeUntil(this.unsubscribe$), debounceTime(300)).subscribe(name => {
-        if (this.control.invalid) return
+        if (this.control.invalid || this.initValue == name) return
         this.authApiService.checkUserNameAvailable(name!).subscribe(data => {
           this.control.setErrors( data.result ? null : {isNotAvailable: !data.result})
           this.userNameAvailable = data.result

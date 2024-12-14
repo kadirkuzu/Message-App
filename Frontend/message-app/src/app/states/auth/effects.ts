@@ -38,7 +38,8 @@ export class AuthEffects {
       mergeMap(payload => {
         return [
           AuthActions.getUserSuccess({ payload }),
-          FriendActions.getAllFriendRequests()
+          FriendActions.getAllFriendRequests(),
+          FriendActions.getAllFriends()
         ]
       }),
       catchError(errors => of(AuthActions.errorAction({ errors: errors })))))));

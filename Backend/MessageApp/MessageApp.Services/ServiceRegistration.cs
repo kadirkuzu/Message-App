@@ -4,6 +4,7 @@ using MessageApp.Services.Abstract.Storage;
 using MessageApp.Services.Concrete;
 using MessageApp.Services.Concrete.Signalr;
 using MessageApp.Services.Concrete.Storage;
+using MessageApp.Services.Concrete.Storage.Azure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -18,6 +19,7 @@ namespace MessageApp.Services
             services.AddTransient<IMessageHubService, SignalRService>();
             services.AddHttpContextAccessor();
             services.AddSignalR();
+            services.AddStorage<AzureStorage>();
 
         }
         public static void AddSignalRHub(this WebApplication webApplication) {

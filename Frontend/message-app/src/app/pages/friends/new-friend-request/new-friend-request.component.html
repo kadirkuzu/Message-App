@@ -6,7 +6,7 @@
         @for (user of users; track $index) {
             <div class="user">
                 <div class="information">
-                    <img src="../../../../assets/images/chat.png" class="image" />
+                    <app-profile-photo/>
                     <div class="name-wrapper">
                         <div class="mb-10 full-name">{{user.fullName}}</div>
                         <div class="user-name">({{user.userName}})</div>

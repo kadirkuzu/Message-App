@@ -9,6 +9,8 @@ import { CommonModule } from '@angular/common';
 import { NameInputComponent } from './components/inputs/name-input/name-input.component';
 import { TabsComponent } from './components/tabs/tabs.component';
 import { RouterModule } from '@angular/router';
+import { ProfilePhotoComponent } from './components/profile-photo/profile-photo.component';
+import { UploadImageComponent } from './components/upload-image/upload-image.component';
 
 @NgModule({
   imports: [
@@ -24,7 +26,9 @@ import { RouterModule } from '@angular/router';
     PhoneInputComponent,
     EmailInputComponent,
     NameInputComponent,
-    TabsComponent
+    TabsComponent,
+    ProfilePhotoComponent,
+    UploadImageComponent
   ],
   exports: [
     TextInputComponent,
@@ -35,7 +39,9 @@ import { RouterModule } from '@angular/router';
     NameInputComponent,
     ReactiveFormsModule,
     FormsModule,
-    TabsComponent
+    TabsComponent,
+    ProfilePhotoComponent,
+    UploadImageComponent
   ]
 })
 export class SharedModule { }

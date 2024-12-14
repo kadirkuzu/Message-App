@@ -1,18 +1,25 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { RouterModule } from '@angular/router';
+import { ProfileComponent } from './profile/profile.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { SharedModule } from '@/app/shared/shared.module';
 
 
 
 @NgModule({
   declarations: [
-    ProfilePageComponent
+    ProfileComponent,
+    EditProfileComponent
   ],
   imports: [
     CommonModule,
+    SharedModule,
     RouterModule.forChild([
-      {path: '', component: ProfilePageComponent}
+      {path: '', component: ProfileComponent, children: [
+        {path: '' , redirectTo: 'edit-profile', pathMatch: 'full'},
+        {path: 'edit-profile' , component: EditProfileComponent}
+      ]}
     ])
   ]
 })

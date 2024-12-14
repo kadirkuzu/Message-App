@@ -1,1 +1,18 @@
-asdasd
+<h4 class="text-white mb-30">Search Friends By User Name or Full Name</h4>
+<app-name-input inputClass="w-100" [control]="control" [placeholder]="'Search Friends By User Name or Full Name'" />
+
+@if(friends.length) {
+    <div class="users">
+        @for (friend of friends | friendsFilter: control.value; track $index) {
+            <div class="user">
+                <div class="information">
+                    <app-profile-photo/>
+                    <div class="name-wrapper">
+                        <div class="mb-10 full-name">{{friend.fullName}}</div>
+                        <div class="user-name">({{friend.userName}})</div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}

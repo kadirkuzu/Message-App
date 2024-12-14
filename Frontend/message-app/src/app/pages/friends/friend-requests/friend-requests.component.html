@@ -6,15 +6,19 @@
         @for (request of friendRequests | friendRequestFilter: control.value; track $index) {
             <div class="user">
                 <div class="information">
-                    <img src="../../../../assets/images/chat.png" class="image" />
+                    <app-profile-photo/>
                     <div class="name-wrapper">
                         <div class="mb-10 full-name">{{request.fullName}}</div>
                         <div class="user-name">({{request.userName}})</div>
                     </div>
                 </div>
                 <div>
-                    <!-- <button class="btn btn-primary" disabled>Sent</button>
-                    <button class="btn btn-primary">Send Request</button> -->
+                    <span class="icon approve" (click)="approve(request)">
+                        <i class="fa-solid fa-check"></i>
+                    </span>
+                    <span class="icon reject" (click)="reject(request)">
+                        <i class="fa-solid fa-xmark"></i>
+                    </span>
                 </div>
             </div>
         }

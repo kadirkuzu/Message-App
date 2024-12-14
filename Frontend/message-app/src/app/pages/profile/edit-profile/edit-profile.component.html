@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-8">
+        <form (submit)="saveChanges()">
+            <app-name-input class="mt-10" label="User Name" placeholder="User Name" [initValue]="user?.userName!"
+                [control]="form.controls.userName" [checkUser]="true"></app-name-input>
+            <app-text-input class="mt-10" label="Full Name" placeholder="Full Name"
+                [control]="form.controls.fullName"></app-text-input>
+            <app-email-input class="mt-10" label="Email" placeholder="Enter Your Email"
+                [control]="form.controls.email"></app-email-input>
+            <app-phone-input class="mt-10" label="Phone Number" placeholder="Enter Your Phone Number"
+                [control]="form.controls.phoneNumber"></app-phone-input>
+
+            @if(form.dirty){
+            <div class="d-flex gap-3 mt-30">
+                <button class="btn btn-secondary w-50" (click)="discardChanges()">Discard Changes</button>
+                <button class="btn btn-primary w-50" (click)="saveChanges()">Save Changes</button>
+            </div>
+            }
+
+        </form>
+    </div>
+    <div class="col-4 text-end">
+        <div class="d-flex justify-content-end">
+            <div class="profile-image-container" data-bs-toggle="modal" data-bs-target="#uploadImageModal">
+                <div class="profile-image">
+                    <app-profile-photo [height]="150" borderRadius="20px" />
+                </div>
+                <div class="overlay">
+                    <i class="fa-solid fa-camera"></i>
+                </div>
+                <input type="file" class="image-input" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-upload-image modalId="uploadImageModal" />

@@ -1,4 +1,5 @@
 import { FriendRequest } from '@/app/models/friend-requets';
+import { FriendActions } from '@/app/states/friends/actions';
 import { FriendsSelector } from '@/app/states/friends/selectors';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
@@ -31,6 +32,17 @@ export class FriendRequestsComponent implements OnInit,OnDestroy {
   ngOnDestroy() {
     this.unsubscribe$.next();
     this.unsubscribe$.complete();
+  }
+
+  approve(friendRequest: FriendRequest){
+    this.store.dispatch(FriendActions.approveFriendRequest({
+      friendRequestId: friendRequest.id,
+      senderId: friendRequest.userId
+    }))
+  }
+
+  reject(friendRequest: FriendRequest){
+
   }
 
 }

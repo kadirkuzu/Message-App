@@ -9,6 +9,8 @@ class Selector {
 
   friendRequests = createSelector(getState, (state: State) => state.friendRequests)
 
+  friends = createSelector(getState, (state: State) => state.friends)
+
 }
 
 export const FriendsSelector = new Selector()

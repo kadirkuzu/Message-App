@@ -1,0 +1,18 @@
+@import 'src/assets/styles/variables.scss' ;
+.image-preview img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.upload-box {
+  border: 1px solid $secondary;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  gap: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+}

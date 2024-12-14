@@ -7,6 +7,7 @@ import { SharedModule } from '@/app/shared/shared.module';
 import { NewFriendRequestComponent } from './new-friend-request/new-friend-request.component';
 import { FriendRequestsComponent } from './friend-requests/friend-requests.component';
 import { FriendRequestFilterPipe } from './pipes/friend-requests-filter.pipe';
+import { FriendsFilterPipe } from './pipes/friends-filter.pipe';
 
 
 
@@ -16,7 +17,8 @@ import { FriendRequestFilterPipe } from './pipes/friend-requests-filter.pipe';
     FriendsComponent,
     NewFriendRequestComponent,
     FriendRequestsComponent,
-    FriendRequestFilterPipe
+    FriendRequestFilterPipe,
+    FriendsFilterPipe
   ],
   imports: [
     CommonModule,

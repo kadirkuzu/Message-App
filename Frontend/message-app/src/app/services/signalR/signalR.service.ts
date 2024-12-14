@@ -72,7 +72,7 @@ export class SignalRService {
   on(target: string, action?: any, callback?: (data:SignalRTarget) => void) {
     this._connection?.on(target, (data)=> {
       if(action) {
-        this.store.dispatch(action(data[0]))
+        this.store.dispatch(action({data}))
       }
       
       else if(callback) {

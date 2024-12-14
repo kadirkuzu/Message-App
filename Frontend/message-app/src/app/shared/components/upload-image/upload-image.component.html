@@ -1,0 +1,28 @@
+<div class="modal fade" id="{{modalId}}" tabindex="-1" aria-hidden="true" (hidden.bs.modal)="clear()">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="{{modalId}}">Upload Profile Image</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" #close aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <div *ngIf="imagePreview" class="image-preview mb-3">
+                    <img [src]="imagePreview" alt="Preview" class="img-thumbnail" />
+                </div>
+                <div class="upload-box" (click)="imageInput.click()" >
+                    <i class="fa-solid fa-upload"></i>
+                    <span class="text-muted">Choose an image to upload</span>
+                </div>
+                <input #imageInput type="file" accept="image/*" class="d-none" (change)="onImageSelected($event)" />
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    Cancel
+                </button>
+                <button type="button" class="btn btn-primary" [disabled]="!selectedFile" (click)="uploadImage();close.click()">
+                    Upload
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

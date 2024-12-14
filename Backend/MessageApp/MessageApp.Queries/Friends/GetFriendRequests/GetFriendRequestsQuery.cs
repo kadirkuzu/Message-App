@@ -27,6 +27,7 @@ public class GetFriendRequestsQueryHandler : IRequestHandler<GetFriendRequestsQu
 
         return requests.Select(x => new FriendRequestDto
         {
+            Id = x.Id,
             CreatedDate = x.CreatedDate,
             FullName = x.Sender.FullName,
             UserId = x.SenderId,

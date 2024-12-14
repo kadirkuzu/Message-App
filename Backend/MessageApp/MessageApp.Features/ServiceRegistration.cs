@@ -5,7 +5,6 @@ using MessageApp.Repository.Abstract;
 using MessageApp.Repository.Concrete;
 using MessageApp.Repository.Concrete.Contexts;
 using MessageApp.Services;
-using MessageApp.Services.Concrete.Storage.Azure;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -19,7 +18,6 @@ namespace MessageApp.Features
         {
             services.AddMediatR(options => options.RegisterServicesFromAssemblies(typeof(GetMessagesQuery).Assembly, typeof(AddMessageCommand).Assembly));
             services.AddServices();
-            services.AddStorage<AzureStorage>();
             services.AddDbContext<MessageAppDbContext>(options => options.UseNpgsql(Configuration.ConnectionString));
             services.AddIdentity<User, UserRole>().AddEntityFrameworkStores<MessageAppDbContext>();
             services.AddScoped(typeof(IReadRepository<>), typeof(ReadRepository<>));

@@ -1,3 +1,4 @@
+import { Patterns } from '@/app/common/helpers/form-patterns';
 import { CreateAccountDto } from '@/app/models/auth';
 import { AuthActions } from '@/app/states/auth/actions';
 import { Component } from '@angular/core';
@@ -12,7 +13,7 @@ import { Store } from '@ngrx/store';
 export class CreateAccountComponent {
   form = new FormGroup({
     fullName: new FormControl('', Validators.required),
-    userName: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z0-9_.-]{3,20}$')]),
+    userName: new FormControl('', [Validators.required, Validators.pattern(Patterns.UserNamePattern)]),
     email: new FormControl('', Validators.required),
     phoneNumber: new FormControl('', Validators.required),
     password: new FormControl('', Validators.required)

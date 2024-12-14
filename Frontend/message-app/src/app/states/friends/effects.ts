@@ -9,8 +9,23 @@ import { FriendsApiService } from "@/app/services/api/friends.api.service";
 export class FriendEffects {
   constructor(private actions$: Actions, private friendsApiService: FriendsApiService, private store: Store) {}
 
-  getAll$ = createEffect(() => this.actions$.pipe(ofType(FriendActions.getAllFriendRequests),
+  getAllFriendRequests$ = createEffect(() => this.actions$.pipe(ofType(FriendActions.getAllFriendRequests),
     mergeMap((action) => this.friendsApiService.getFriendRequests().pipe(
       map(payload => FriendActions.getAllFriendRequestsSuccess({payload})),
+      catchError(errors => of(FriendActions.errorAction({errors:errors})))))));
+
+  getAllFriends$ = createEffect(() => this.actions$.pipe(ofType(FriendActions.getAllFriends),
+    mergeMap((action) => this.friendsApiService.getFriends().pipe(
+      map(payload => FriendActions.getAllFriendsSuccess({payload})),
+      catchError(errors => of(FriendActions.errorAction({errors:errors})))))));
+
+  approveFriendRequest$ = createEffect(() => this.actions$.pipe(ofType(FriendActions.approveFriendRequest),
+    mergeMap((action) => this.friendsApiService.approveFriendRequest(action.friendRequestId,action.senderId).pipe(
+      map(friend => FriendActions.approveFriendRequestSuccess({friend})),
+      catchError(errors => of(FriendActions.errorAction({errors:errors})))))));
+
+  rejectFriendRequest$ = createEffect(() => this.actions$.pipe(ofType(FriendActions.rejectFriendRequest),
+    mergeMap((action) => this.friendsApiService.rejectFriendRequest(action.friendRequestId,action.senderId).pipe(
+      map(payload => FriendActions.rejectFriendRequestSuccess()),
       catchError(errors => of(FriendActions.errorAction({errors:errors})))))));
 }

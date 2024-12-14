@@ -6,6 +6,7 @@ public class FriendRequest : BaseEntity
     public Guid SenderId { get; set; }
     public Guid ReceiverId { get; set; }
     public bool IsAccepted { get; set; }
+    public DateTime? AcceptedDate { get; set; }
     public User Sender { get; set; }
     public User Receiver { get; set; }
 
@@ -14,5 +15,11 @@ public class FriendRequest : BaseEntity
         SenderId = senderId;
         ReceiverId = receiverId;
         IsAccepted = isAccepted;
+    }
+
+    public void Accept()
+    {
+        IsAccepted = true;
+        AcceptedDate = DateTime.UtcNow;
     }
 }

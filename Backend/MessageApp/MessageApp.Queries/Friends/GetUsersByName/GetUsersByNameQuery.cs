@@ -31,10 +31,9 @@ public class GetUsersByNameQueryHandler : IRequestHandler<GetUsersByNameQuery, I
 
         var friendRequests = await _readFriendRequests.GetWhere(x => x.SenderId == _user.Id || x.ReceiverId == _user.Id).ToListAsync(cancellationToken); 
 
-
         return users.Select(x =>
         {
-            var friendRequest = friendRequests.FirstOrDefault(x=>x.Id == x.SenderId || x.ReceiverId == _user.Id);
+            var friendRequest = friendRequests.FirstOrDefault(x=>x.SenderId == _user.Id || x.ReceiverId == _user.Id);
 
             return new AddFriendRequestUserDto
             {
