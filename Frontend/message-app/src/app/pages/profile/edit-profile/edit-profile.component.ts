@@ -1,10 +1,12 @@
 import { Patterns } from '@/app/common/helpers/form-patterns';
 import { User } from '@/app/models/user';
+import { AuthApiService } from '@/app/services/api/auth.api.service';
+import { AuthActions } from '@/app/states/auth/actions';
 import { AuthSelector } from '@/app/states/auth/selectors';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
-import { Subject, take, takeUntil } from 'rxjs';
+import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-edit-profile',
@@ -21,12 +23,13 @@ export class EditProfileComponent implements OnInit,OnDestroy {
   })
 
   activeUser$ = this.store.select(AuthSelector.activeUser)
+  uploadLoading$ = this.store.select(AuthSelector.uploadLoading)
 
   user?:User
 
   unsubscribe$ = new Subject<void>();
 
-  constructor(private store: Store) { }
+  constructor(private store: Store,private authService:AuthApiService) { }
 
   ngOnInit(): void {
     this.activeUser$.pipe(takeUntil(this.unsubscribe$)).subscribe(data => {
@@ -46,5 +49,11 @@ export class EditProfileComponent implements OnInit,OnDestroy {
 
   saveChanges() {
 
+  }
+
+  uploadImage(file:File){
+    let formData = new FormData()
+    formData.append(this.user?.id!,file)
+    this.store.dispatch(AuthActions.uploadImage({formData}))
   }
 }

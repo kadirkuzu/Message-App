@@ -31,7 +31,8 @@ public class GetFriendRequestsQueryHandler : IRequestHandler<GetFriendRequestsQu
             CreatedDate = x.CreatedDate,
             FullName = x.Sender.FullName,
             UserId = x.SenderId,
-            UserName = x.Sender.UserName!
+            UserName = x.Sender.UserName!,
+            HasPhoto = x.Sender.HasPhoto,
         });
 
     }

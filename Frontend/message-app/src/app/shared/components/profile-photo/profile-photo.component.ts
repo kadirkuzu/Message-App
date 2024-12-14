@@ -8,4 +8,7 @@ import { Component, Input } from '@angular/core';
 export class ProfilePhotoComponent {
   @Input() height = 40
   @Input() borderRadius = '100%'
+  @Input() hasPhoto = false
+  @Input() userId = ''
+  @Input() isLoading = false
 }

@@ -44,7 +44,7 @@ public class AzureStorage: IAzureStorage
         foreach (var file in files)
         {
             BlobClient blobClient = _blobContainerClient.GetBlobClient(file.Name);
-            await blobClient.UploadAsync(file.OpenReadStream());
+            await blobClient.UploadAsync(file.OpenReadStream(), new BlobUploadOptions { HttpHeaders = new BlobHttpHeaders { ContentType = "image/jpeg" }, Conditions = null });
             result.Add((file.Name,Path.Combine(container,file.Name)));
         }
         return result;

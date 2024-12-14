@@ -44,6 +44,10 @@ export class AuthEffects {
       }),
       catchError(errors => of(AuthActions.errorAction({ errors: errors })))))));
 
+  uploadImage$ = createEffect(() => this.actions$.pipe(ofType(AuthActions.uploadImage),
+    mergeMap((action) => this.authApiService.uploadImage(action.formData).pipe(
+      map(payload => AuthActions.uploadImageSuccess() ),
+      catchError(errors => of(AuthActions.errorAction({ errors: errors })))))));
 
   logout$ = createEffect(() => this.actions$.pipe(ofType(AuthActions.logout),
     map(() => {

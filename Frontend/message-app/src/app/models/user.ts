@@ -4,6 +4,7 @@ export class User {
     phoneNumber!:string
     fullName!: string
     userName!: string
+    hasPhoto!: boolean
 }
 
 export class AddFriendRequestUser{
@@ -12,4 +13,5 @@ export class AddFriendRequestUser{
     userName!: string
     isFriend!: boolean
     isSended!: boolean
+    hasPhoto!: boolean
 }

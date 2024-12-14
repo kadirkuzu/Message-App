@@ -33,6 +33,16 @@ class Actions extends ActionBase {
     props<{payload:User}>()
   )
 
+  
+  uploadImage = createAction(
+    `${this.type} Upload Image`,
+    props<{formData:FormData}>()
+  )
+
+  uploadImageSuccess = createAction(
+    `${this.type} Upload Image Success`
+  )
+
   logout = createAction(
     `${this.type} Logout`
   )

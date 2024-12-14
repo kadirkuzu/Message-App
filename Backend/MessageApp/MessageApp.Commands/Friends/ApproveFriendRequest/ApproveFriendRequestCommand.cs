@@ -47,7 +47,8 @@ public class ApproveFriendRequestCommandHandler : IRequestHandler<ApproveFriendR
                 FullName = _user.FullName!,
                 PhoneNumber = _user.PhoneNumber!,
                 UserId = _user.Id,
-                UserName = _user.UserName!
+                UserName = _user.UserName!,
+                HasPhoto = _user.HasPhoto
             }
         };
 
@@ -62,7 +63,8 @@ public class ApproveFriendRequestCommandHandler : IRequestHandler<ApproveFriendR
             FullName = sender?.FullName!,
             PhoneNumber = sender?.PhoneNumber!,
             UserId = friendRequest.SenderId,
-            UserName = sender?.UserName!
+            UserName = sender?.UserName!,
+            HasPhoto = sender?.HasPhoto ?? false
         };
     }
 }

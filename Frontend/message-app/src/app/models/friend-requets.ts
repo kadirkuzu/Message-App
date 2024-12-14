@@ -4,6 +4,7 @@ export class FriendRequest {
     createdDate!: Date
     userName!: string
     fullName!: string
+    hasPhoto!: boolean
 }
 
 export class Friend extends FriendRequest {

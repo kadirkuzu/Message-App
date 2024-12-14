@@ -7,4 +7,5 @@ public class UserDto
     public string PhoneNumber { get; set; }
     public string FullName { get; set; }
     public string UserName { get; set; }
+    public bool HasPhoto { get; set; }
 }

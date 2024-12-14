@@ -25,4 +25,8 @@ export class AuthApiService {
   getUser() {
     return this.apiService.get<User>(`auth/me`);
   }
+
+  uploadImage(formData:FormData) {
+    return this.apiService.post<BoolDto>(`documents/upload-image`, formData);
+  }
 }

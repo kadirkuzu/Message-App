@@ -11,6 +11,7 @@ import { TabsComponent } from './components/tabs/tabs.component';
 import { RouterModule } from '@angular/router';
 import { ProfilePhotoComponent } from './components/profile-photo/profile-photo.component';
 import { UploadImageComponent } from './components/upload-image/upload-image.component';
+import { BlobImageDirective } from './directives/blob-image.directive';
 
 @NgModule({
   imports: [
@@ -28,7 +29,8 @@ import { UploadImageComponent } from './components/upload-image/upload-image.com
     NameInputComponent,
     TabsComponent,
     ProfilePhotoComponent,
-    UploadImageComponent
+    UploadImageComponent,
+    BlobImageDirective
   ],
   exports: [
     TextInputComponent,
@@ -41,7 +43,8 @@ import { UploadImageComponent } from './components/upload-image/upload-image.com
     FormsModule,
     TabsComponent,
     ProfilePhotoComponent,
-    UploadImageComponent
+    UploadImageComponent,
+    BlobImageDirective
   ]
 })
 export class SharedModule { }

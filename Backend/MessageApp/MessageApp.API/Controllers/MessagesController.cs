@@ -8,18 +8,11 @@ namespace MessageApp.API.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Authorize]
-    public class MessagesController : ControllerBase
+    public class MessagesController(IMediator mediator) : ControllerBase
     {
-        readonly IMediator _mediator;
-
-        public MessagesController(IMediator mediator)
-        {
-            _mediator = mediator;
-        }
-
         [HttpGet]
         public async Task<IActionResult> Get() {
-            return Ok(await _mediator.Send(new GetMessagesQuery(new Guid())));
+            return Ok(await mediator.Send(new GetMessagesQuery(new Guid())));
         }
     }
 }

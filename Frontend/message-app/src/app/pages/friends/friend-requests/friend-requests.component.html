@@ -6,7 +6,7 @@
         @for (request of friendRequests | friendRequestFilter: control.value; track $index) {
             <div class="user">
                 <div class="information">
-                    <app-profile-photo/>
+                    <app-profile-photo [hasPhoto]="request.hasPhoto" [userId]="request.userId"/>
                     <div class="name-wrapper">
                         <div class="mb-10 full-name">{{request.fullName}}</div>
                         <div class="user-name">({{request.userName}})</div>

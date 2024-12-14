@@ -8,4 +8,5 @@ public class User : IdentityUser<Guid>
     public string? RefreshToken { get; set; }
     public DateTime? RefreshTokenEndDate { get; set; }
     public ICollection<Chat> Chats { get; set; }
+    public bool HasPhoto { get; set; }
 }

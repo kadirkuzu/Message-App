@@ -21,6 +21,7 @@
         align-items: center;
         gap: 20px;
         padding-right: 20px;
+        white-space: nowrap;
     }
 
     .routes {
@@ -45,4 +46,12 @@
         }
     }
 
+    .user-info-wrapper {
+        gap: 20px;
+
+        .user-info {
+            border-right: 2px solid  $gray-700;
+            padding-right: 20px;
+        }
+    }
 }

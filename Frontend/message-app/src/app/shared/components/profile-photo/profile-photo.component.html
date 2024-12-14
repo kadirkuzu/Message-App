@@ -1,1 +1,9 @@
-<img src="../../../../assets/images/user-icon.png" [style.height]="height + 'px'" [style.width]="height + 'px'" [style.borderRadius]="borderRadius" class="image" />
+@if(isLoading){
+    <div class="loading" [style.height]="height + 'px'" [style.width]="height + 'px'" [style.borderRadius]="borderRadius"></div>
+}
+@else if(hasPhoto){
+    <img [blobImage]="{id:userId,container:'profile-images'}" [style.height]="height + 'px'" [style.width]="height + 'px'" [style.borderRadius]="borderRadius" class="image" />
+}
+@else {
+    <img src="../../../../assets/images/user-icon.png" [style.height]="height + 'px'" [style.width]="height + 'px'" [style.borderRadius]="borderRadius" class="image-placeholder" />
+}

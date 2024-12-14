@@ -43,6 +43,7 @@ public class SendFriendRequestCommandHandler : IRequestHandler<SendFriendRequest
                 UserId = _user.Id,
                 FullName = _user.FullName,
                 UserName = _user.UserName!,
+                HasPhoto = _user.HasPhoto,
             }
         };
 

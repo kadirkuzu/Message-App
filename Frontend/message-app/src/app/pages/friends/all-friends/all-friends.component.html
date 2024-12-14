@@ -6,7 +6,7 @@
         @for (friend of friends | friendsFilter: control.value; track $index) {
             <div class="user">
                 <div class="information">
-                    <app-profile-photo/>
+                    <app-profile-photo [hasPhoto]="friend.hasPhoto" [userId]="friend.userId"/>
                     <div class="name-wrapper">
                         <div class="mb-10 full-name">{{friend.fullName}}</div>
                         <div class="user-name">({{friend.userName}})</div>

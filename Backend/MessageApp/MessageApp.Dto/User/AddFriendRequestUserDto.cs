@@ -7,5 +7,6 @@ public class AddFriendRequestUserDto
     public string FullName { get; set; }
     public bool IsSended { get; set; }
     public bool IsFriend { get; set; }
+    public bool HasPhoto { get; set; }
 
 }

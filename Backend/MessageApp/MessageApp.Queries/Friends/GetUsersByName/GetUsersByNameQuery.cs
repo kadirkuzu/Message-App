@@ -42,6 +42,7 @@ public class GetUsersByNameQueryHandler : IRequestHandler<GetUsersByNameQuery, I
                 Id = x.Id,
                 IsFriend = friendRequest?.IsAccepted ?? false,
                 IsSended = friendRequest != null,
+                HasPhoto = x.HasPhoto
             };
         });
     }

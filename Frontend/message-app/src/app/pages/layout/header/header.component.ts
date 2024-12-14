@@ -1,4 +1,6 @@
+import { AuthSelector } from '@/app/states/auth/selectors';
 import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-header',
@@ -7,4 +9,7 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
   windowWidth = window.innerWidth
+  activeUser$ = this.store.select(AuthSelector.activeUser)
+
+  constructor(private store:Store){}
 }

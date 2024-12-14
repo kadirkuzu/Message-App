@@ -7,4 +7,5 @@ public class FriendRequestDto
     public DateTime CreatedDate { get; set; }
     public string UserName { get; set; }
     public string FullName { get; set; }
+    public bool HasPhoto { get; set; }
 }

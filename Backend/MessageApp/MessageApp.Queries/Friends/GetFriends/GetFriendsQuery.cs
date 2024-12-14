@@ -21,20 +21,27 @@ public class GetFriendsQueryHandler : IRequestHandler<GetFriendsQuery, IEnumerab
 
     public async Task<IEnumerable<FriendDto>> Handle(GetFriendsQuery request, CancellationToken cancellationToken)
     {
-        var list = await _readRepository.GetWhere(x => x.IsAccepted && x.SenderId == _user.Id || x.ReceiverId == _user.Id)
+        var list = await _readRepository.GetWhere(x => x.IsAccepted && (x.SenderId == _user.Id || x.ReceiverId == _user.Id))
                         .AsNoTracking()
                         .OrderByDescending(x => x.AcceptedDate)
                         .Include(x => x.Sender)
+                        .Include(x=>x.Receiver)
+                        .AsSplitQuery()
                         .ToListAsync(cancellationToken);
 
-        return list.Select(x => new FriendDto
+        return list.Select(x =>
         {
-            AcceptedDate = x.AcceptedDate ?? DateTime.UtcNow,
-            Email = x.Sender.Email!,
-            FullName = x.Sender.FullName,
-            PhoneNumber = x.Sender.PhoneNumber!,
-            UserId = x.Sender.Id,
-            UserName = x.Sender.UserName!
+            var user = x.SenderId == _user.Id ? x.Receiver : x.Sender; 
+            return new FriendDto
+            {
+                AcceptedDate = x.AcceptedDate ?? DateTime.UtcNow,
+                Email = user.Email!,
+                FullName = user.FullName,
+                PhoneNumber = user.PhoneNumber!,
+                UserId = user.Id,
+                UserName = user.UserName!,
+                HasPhoto = user.HasPhoto,
+            };
         });
     }
 }
