@@ -1,7 +1,8 @@
 import { FriendsSelector } from '@/app/states/friends/selectors';
 import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { BehaviorSubject, map } from 'rxjs';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-friends',
@@ -30,5 +31,5 @@ export class FriendsComponent {
     }
   ]
 
-  constructor(private store:Store){}
+  constructor(private store:Store,public activatedRoute:ActivatedRoute,public router:Router){ }
 }

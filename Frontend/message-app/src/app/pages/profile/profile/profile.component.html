@@ -1,10 +1,10 @@
 <div class="container">
-    <div class="page-card d-flex">
+    <div class="page-card">
         <div class="sidebar">
             <h3 class="page-title">
                 Profile
             </h3>
-            <app-tabs [tabs]="tabs"/>
+            <app-tabs [tabs]="tabs" [router]="router" [activatedRoute]="activatedRoute"/>
         </div>
         <div class="content">
             <router-outlet></router-outlet>

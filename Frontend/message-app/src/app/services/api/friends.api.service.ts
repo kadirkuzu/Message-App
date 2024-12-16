@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
 import {ApiService} from "./common/api.service";
-import { AddFriendRequestUser } from '@/app/models/user';
 import { BoolDto } from '@/app/models/common/bool';
 import { Friend, FriendRequest } from '@/app/models/friend-requets';
 
@@ -10,12 +9,12 @@ import { Friend, FriendRequest } from '@/app/models/friend-requets';
 export class FriendsApiService {
   constructor(private apiService: ApiService) {}
 
-  searchUsers(userName:string) {
-    return this.apiService.get<AddFriendRequestUser[]>(`friends/search-users-by-name`, {userName});
+  sendFriendRequest(receiverId:string) {
+    return this.apiService.post<BoolDto>(`friends/friend-requests/send`, {receiverId});
   }
 
-  sendFriendRequest(receiverId:string) {
-    return this.apiService.post<BoolDto>(`friends/send-friend-request`, {receiverId});
+  cancelFriendRequest(receiverId:string) {
+    return this.apiService.post<BoolDto>(`friends/friend-requests/cancel`, {receiverId});
   }
 
   getFriendRequests() {

@@ -26,14 +26,18 @@ class Actions extends ActionBase {
 
   addFriendRequestSignalR = createAction (
     `${this.type} Add Friend Request SignalR`,
-    props<{ data: SignalRData }>()
+    props<{ data: SignalRData<FriendRequest> }>()
+  )
+
+  removeFriendRequestSignalR = createAction (
+    `${this.type} Remove Friend Request SignalR`,
+    props<{ data: SignalRData<{id:string}> }>()
   )
 
   addFriendSignalR = createAction (
     `${this.type} Add Friend SignalR`,
-    props<{ data: SignalRData }>()
+    props<{ data: SignalRData<Friend> }>()
   )
-
 
   approveFriendRequest = createAction (
     `${this.type} Approve Friend Request`,

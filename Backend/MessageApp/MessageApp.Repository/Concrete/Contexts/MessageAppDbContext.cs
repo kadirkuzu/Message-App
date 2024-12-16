@@ -19,12 +19,12 @@ public class MessageAppDbContext : IdentityDbContext<User, UserRole, Guid>
     {
         var datas = ChangeTracker.Entries<BaseEntity>();
 
-        foreach (var data in datas) {
-            _ = data.State switch
-            {
-                EntityState.Added => data.Entity.CreatedDate = DateTime.UtcNow,
-                EntityState.Modified => data.Entity.UpdatedDate = DateTime.UtcNow,
-            };
+        foreach (var data in datas)
+        {
+            if (data.State == EntityState.Added)
+                data.Entity.CreatedDate = DateTime.UtcNow;
+            else if (data.State == EntityState.Modified)
+                data.Entity.UpdatedDate = DateTime.UtcNow;
         }
 
         return await base.SaveChangesAsync(cancellationToken);

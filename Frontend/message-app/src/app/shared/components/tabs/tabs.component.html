@@ -1,10 +1,30 @@
+@if(windowWidth > 767.8){
 <div class="routes">
     @for (tab of tabs; track tab.route) {
-        <div class="route" routerLink='{{tab.route}}' routerLinkActive="active-link">
-            <span>{{tab.label}}</span>
-            @if (tab.count$ | async; as count) {
-                <span class="float-end">{{count}}</span>
-            }
-        </div>
+    <div class="route" routerLink='{{tab.route}}' routerLinkActive="active-link">
+        <span>{{tab.label}}</span>
+        @if (tab.count$ | async; as count) {
+        <span class="float-end">{{count}}</span>
+        }
+    </div>
     }
 </div>
+}
+
+@else {
+    <div class="dropdown">
+        <span role="button" id="tabsDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            {{title}} <i class="fa-solid ml-4 fa-caret-right"></i>
+        </span>
+        <ul class="dropdown-menu" aria-labelledby="tabsDropdown">
+            @for (tab of tabs; track tab.route) {
+                <li class="option" routerLink='{{tab.route}}' routerLinkActive="active-link">
+                    <span>{{tab.label}}</span>
+                    @if (tab.count$ | async; as count) {
+                        <span class="float-end">{{count}}</span>
+                    }
+                </li>
+            }
+        </ul>
+    </div>
+}

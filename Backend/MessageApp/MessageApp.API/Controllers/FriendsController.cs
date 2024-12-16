@@ -1,9 +1,9 @@
 ﻿using MediatR;
 using MessageApp.Commands.Friends.ApproveFriendRequest;
+using MessageApp.Commands.Friends.CancelFriendRequest;
 using MessageApp.Commands.Friends.SendFriendRequest;
 using MessageApp.Queries.Friends.GetFriendRequests;
 using MessageApp.Queries.Friends.GetFriends;
-using MessageApp.Queries.Friends.GetUsersByName;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,24 +20,24 @@ namespace MessageApp.API.Controllers
             return Ok(await mediator.Send(new GetFriendsQuery()));
         }
 
-        [HttpGet("search-users-by-name")]
-        public async Task<IActionResult> SearchUsersByName([FromQuery] string UserName)
-        {
-            return Ok(await mediator.Send(new GetUsersByNameQuery(UserName)));
-        }
-
         [HttpGet("friend-requests")]
         public async Task<IActionResult> GetFriendRequests()
         {
             return Ok(await mediator.Send(new GetFriendRequestsQuery()));
         }
 
-        [HttpPost("send-friend-request")]
+        [HttpPost("friend-requests/send")]
         public async Task<IActionResult> SendFriendRequest([FromBody] SendFriendRequestCommand command)
         {
             return Ok(await mediator.Send(command));
-        }     
-        
+        }
+
+        [HttpPost("friend-requests/cancel")]
+        public async Task<IActionResult> CancelFriendRequest([FromBody] CancelFriendRequestCommand command)
+        {
+            return Ok(await mediator.Send(command));
+        }
+
         [HttpPost("friend-requests/approve")]
         public async Task<IActionResult> ApproveFriendRequest([FromBody] ApproveFriendRequestCommand command)
         {

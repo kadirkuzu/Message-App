@@ -17,7 +17,7 @@ class Actions extends ActionBase {
 
   addSignalR = createAction(
     `${this.type} AddSignalr`,
-    props<{data:SignalRData}>()
+    props<{data:SignalRData<Message>}>()
   )
 }
 export const MessageActions = new Actions('[Messages/API]')

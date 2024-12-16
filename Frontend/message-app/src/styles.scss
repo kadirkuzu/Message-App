@@ -32,6 +32,7 @@ body {
     margin: 50px 0;
     min-height: calc(100vh - 200px);
     border: 1px solid $secondary;
+    display: flex;
 
     .sidebar {
         min-width: 250px;
@@ -55,4 +56,26 @@ body {
         padding: 20px;
         width: 100%;
     }
+
+    @media (max-width: 992px) {
+        display: block;
+        .sidebar {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            border-bottom-left-radius: 0;
+            border-bottom: 1px solid $secondary;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .page-title {
+                border-bottom: none !important;
+                margin-bottom: 0px !important;
+            }
+        }
+    }
+}
+
+.min-width-400{
+    min-width: 400px;
 }

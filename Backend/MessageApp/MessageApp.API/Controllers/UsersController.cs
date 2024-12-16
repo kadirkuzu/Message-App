@@ -2,6 +2,7 @@
 using MessageApp.Commands.Users.UpdateUser;
 using MessageApp.Commands.Users.UploadImage;
 using MessageApp.Queries.Auth.GetMe;
+using MessageApp.Queries.Friends.GetUsersByName;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -29,6 +30,13 @@ namespace MessageApp.API.Controllers
         public async Task<IActionResult> Me()
         {
             return Ok(await mediator.Send(new GetMeQuery()));
+        }
+
+
+        [HttpGet("search-users-by-name")]
+        public async Task<IActionResult> SearchUsersByName([FromQuery] string UserName)
+        {
+            return Ok(await mediator.Send(new GetUsersByNameQuery(UserName)));
         }
     }
 }

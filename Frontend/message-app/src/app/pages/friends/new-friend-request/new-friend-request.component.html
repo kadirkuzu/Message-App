@@ -2,23 +2,25 @@
 <app-name-input inputClass="w-100" [control]="control" [placeholder]="'Find Friends With User Name or Full Name'" />
 
 @if(users.length) {
-    <div class="users">
+    <div class="row">
         @for (user of users; track $index) {
-            <div class="user">
-                <div class="information">
-                    <app-profile-photo [hasPhoto]="user.hasPhoto" [userId]="user.id"/>
-                    <div class="name-wrapper">
-                        <div class="mb-10 full-name">{{user.fullName}}</div>
-                        <div class="user-name">({{user.userName}})</div>
+            <div class="col-12 col-md-4 min-width-400">
+                <div class="user">
+                    <div class="information">
+                        <app-profile-photo [hasPhoto]="user.hasPhoto" [userId]="user.id"/>
+                        <div class="name-wrapper">
+                            <div class="mb-10 full-name">{{user.fullName}}</div>
+                            <div class="user-name">{{'@' + user.userName}}</div>
+                        </div>
                     </div>
-                </div>
-                <div>
-                    @if (user.isSended && !user.isFriend) {
-                        <button class="btn btn-primary" disabled>Sent</button>
-                    }
-                    @else if (!user.isSended) {
-                        <button class="btn btn-primary" (click)="sendRequest(user.id)">Send Request</button>
-                    }
+                    <div>
+                        @if (user.isSended && !user.isFriend) {
+                            <button class="btn btn-danger" (click)="cancelRequest(user.id)">Cancel Request</button>
+                        }
+                        @else if (!user.isSended) {
+                            <button class="btn btn-primary" (click)="sendRequest(user.id)">Send Request</button>
+                        }
+                    </div>
                 </div>
             </div>
         }

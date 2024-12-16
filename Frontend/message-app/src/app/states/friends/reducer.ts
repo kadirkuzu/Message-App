@@ -21,7 +21,8 @@ export const reducer = createReducer(
   on(Actions.getAllFriendRequestsSuccess, (state, { payload }) => ({ ...state, isLoading: state.isLoading - 1,friendRequests: payload })),
   on(Actions.getAllFriends, (state) => ({ ...state, isLoading: state.isLoading + 1 })),
   on(Actions.getAllFriendsSuccess, (state, { payload }) => ({ ...state, isLoading: state.isLoading - 1,friends: payload })),
-  on(Actions.addFriendRequestSignalR, (state, { data }) => ({ ...state, friendRequests: [data.object as FriendRequest,...state.friendRequests] })),
-  on(Actions.addFriendSignalR, (state, { data }) => ({ ...state, friends: [data.object as Friend,...state.friends], friendRequests: state.friendRequests.filter(x=>x.userId != (data.object as Friend).userId) })),
+  on(Actions.addFriendRequestSignalR, (state, { data }) => ({ ...state, friendRequests: [data.object,...state.friendRequests] })),
+  on(Actions.removeFriendRequestSignalR, (state, { data }) => ({ ...state, friendRequests: state.friendRequests.filter(x=>x.id != data.object.id) })),
+  on(Actions.addFriendSignalR, (state, { data }) => ({ ...state, friends: [data.object,...state.friends], friendRequests: state.friendRequests.filter(x=>x.userId != data.object.userId) })),
   on(Actions.approveFriendRequestSuccess, (state, {friend}) => ({ ...state, friends: [friend,...state.friends], friendRequests: state.friendRequests.filter(x=>x.userId != friend.userId) })),
 )
