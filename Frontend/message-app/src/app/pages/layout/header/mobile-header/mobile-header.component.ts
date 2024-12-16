@@ -1,5 +1,6 @@
 import { AuthActions } from '@/app/states/auth/actions';
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { UserSelector } from '@/app/states/user/selectors';
+import { Component} from '@angular/core';
 import { Store } from '@ngrx/store';
 
 @Component({
@@ -9,6 +10,8 @@ import { Store } from '@ngrx/store';
 })
 export class MobileHeaderComponent {
   openBar = false
+  activeUser$ = this.store.select(UserSelector.activeUser)
+  uploadLoading$ = this.store.select(UserSelector.uploadLoading)
 
   constructor(private store: Store){}
 

@@ -23,4 +23,8 @@ export const SignalRTargets: SignalRTarget[] = [
         target: 'FriendAdded',
         action: FriendActions.addFriendSignalR
     },
+    {
+        target: 'FriendRemoved',
+        action: FriendActions.removeFriendSignalR
+    },
 ]

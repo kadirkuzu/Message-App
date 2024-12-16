@@ -22,7 +22,7 @@ export class ApiService {
     return this.httpClient.put<T>(environment.api + url , body)
   }
 
-  delete<T>(url: string): Observable<T> {
-    return this.httpClient.delete<T>(environment.api + url)
+  delete<T>(url: string, params = {}): Observable<T> {
+    return this.httpClient.delete<T>(environment.api + url, {params})
   }
 }

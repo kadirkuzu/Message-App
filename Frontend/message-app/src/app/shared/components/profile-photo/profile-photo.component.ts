@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
   styleUrl: './profile-photo.component.scss'
 })
 export class ProfilePhotoComponent {
-  @Input() height = 40
+  @Input() height = 60
   @Input() borderRadius = '100%'
   @Input() hasPhoto = false
   @Input() userId = ''

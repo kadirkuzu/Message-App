@@ -2,6 +2,7 @@
 using MessageApp.Commands.Friends.ApproveFriendRequest;
 using MessageApp.Commands.Friends.CancelFriendRequest;
 using MessageApp.Commands.Friends.RejectFriendRequest;
+using MessageApp.Commands.Friends.RemoveFriend;
 using MessageApp.Commands.Friends.SendFriendRequest;
 using MessageApp.Queries.Friends.GetFriendRequests;
 using MessageApp.Queries.Friends.GetFriends;
@@ -49,6 +50,12 @@ namespace MessageApp.API.Controllers
         public async Task<IActionResult> RejectFriendRequest([FromBody] RejectFriendRequestCommand command)
         {
             return Ok(await mediator.Send(command));
+        }
+
+        [HttpDelete("{friendRequestId}")]
+        public async Task<IActionResult> RemoveFriend(Guid friendRequestId)
+        {
+            return Ok(await mediator.Send(new RemoveFriendCommand(friendRequestId)));
         }
     }
 }

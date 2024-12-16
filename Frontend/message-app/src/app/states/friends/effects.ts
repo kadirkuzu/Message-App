@@ -28,4 +28,9 @@ export class FriendEffects {
     mergeMap((action) => this.friendsApiService.rejectFriendRequest(action.friendRequestId,action.senderId).pipe(
       map(payload => FriendActions.rejectFriendRequestSuccess(payload)),
       catchError(errors => of(FriendActions.errorAction({errors:errors})))))));
+
+  removeFriend$ = createEffect(() => this.actions$.pipe(ofType(FriendActions.removeFriend),
+    mergeMap((action) => this.friendsApiService.removeFriend(action.friendRequestId).pipe(
+      map(payload => FriendActions.removeFriendSuccess(payload)),
+      catchError(errors => of(FriendActions.errorAction({errors:errors})))))));
 }

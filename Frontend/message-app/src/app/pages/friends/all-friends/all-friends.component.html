@@ -7,11 +7,30 @@
             <div class="col-12 col-lg-4 min-width-400">
                 <div class="user">
                     <div class="information">
-                        <app-profile-photo [hasPhoto]="friend.hasPhoto" [userId]="friend.userId"/>
+                        <app-profile-photo [hasPhoto]="friend.hasPhoto" [userId]="friend.userId" />
                         <div class="name-wrapper">
                             <div class="mb-10 full-name">{{friend.fullName}}</div>
                             <div class="user-name">{{'@' + friend.userName}}</div>
                         </div>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" role="button" id="friendActions" data-bs-toggle="dropdown" aria-expanded="false">
+                            Actions
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="friendActions">
+                            <li>
+                                <a class="dropdown-item">Send Message</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="tel:{{friend.phoneNumber}}">Call</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="mailto:{{friend.email}}">Send Mail</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item text-danger" (click)="remove(friend.friendRequestId)">Remove</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>

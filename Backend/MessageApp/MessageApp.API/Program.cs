@@ -19,7 +19,7 @@ builder.Services.AddControllers(options =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddCors(options => options.AddDefaultPolicy(policy => 
-        policy.WithOrigins("http://localhost:4200")
+        policy.WithOrigins("http://localhost:4200", "https://a86c-95-70-248-70.ngrok-free.app")
             .AllowAnyHeader()
             .AllowAnyMethod()
             .AllowCredentials()

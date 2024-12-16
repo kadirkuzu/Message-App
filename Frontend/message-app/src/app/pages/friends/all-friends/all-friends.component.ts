@@ -1,4 +1,5 @@
 import { Friend } from '@/app/models/friend-requets';
+import { FriendActions } from '@/app/states/friends/actions';
 import { FriendsSelector } from '@/app/states/friends/selectors';
 import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
@@ -31,6 +32,10 @@ export class AllFriendsComponent {
   ngOnDestroy() {
     this.unsubscribe$.next();
     this.unsubscribe$.complete();
+  }
+
+  remove(friendRequestId: string) {
+    this.store.dispatch(FriendActions.removeFriend({friendRequestId}))
   }
 
 }

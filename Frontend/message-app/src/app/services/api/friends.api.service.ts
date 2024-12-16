@@ -33,4 +33,8 @@ export class FriendsApiService {
     return this.apiService.post<{id:string}>(`friends/friend-requests/reject`, {friendRequestId, senderId});
   }
 
+  removeFriend(friendRequestId: string) {
+    return this.apiService.delete<{id:string}>(`friends/${friendRequestId}`);
+  }
+
 }

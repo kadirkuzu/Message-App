@@ -26,4 +26,7 @@ export const reducer = createReducer(
   on(Actions.rejectFriendRequestSuccess, (state, { id }) => ({ ...state, friendRequests: state.friendRequests.filter(x=>x.id != id) })),
   on(Actions.addFriendSignalR, (state, { data }) => ({ ...state, friends: [data.object,...state.friends], friendRequests: state.friendRequests.filter(x=>x.userId != data.object.userId) })),
   on(Actions.approveFriendRequestSuccess, (state, {friend}) => ({ ...state, friends: [friend,...state.friends], friendRequests: state.friendRequests.filter(x=>x.userId != friend.userId) })),
+  on(Actions.removeFriendSignalR, (state, { data }) => ({ ...state, friends: state.friends.filter(x=>x.friendRequestId != data.object.id) })),
+  on(Actions.removeFriendSuccess, (state, { id }) => ({ ...state, friends: state.friends.filter(x=>x.friendRequestId != id) })),
+
 )

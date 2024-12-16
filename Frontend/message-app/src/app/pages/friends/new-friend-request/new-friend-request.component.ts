@@ -1,8 +1,10 @@
 import { AddFriendRequestUser } from '@/app/models/user';
 import { FriendsApiService } from '@/app/services/api/friends.api.service';
 import { UsersApiService } from '@/app/services/api/users.api.service';
+import { FriendActions } from '@/app/states/friends/actions';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { Actions, ofType } from '@ngrx/effects';
 import { debounceTime, Subject, takeUntil } from 'rxjs';
 
 @Component({
@@ -17,7 +19,7 @@ export class NewFriendRequestComponent implements OnInit, OnDestroy {
 
   unsubscribe$ = new Subject<void>();
 
-  constructor(private friendsApiService: FriendsApiService, private usersApiService:UsersApiService) { }
+  constructor(private friendsApiService: FriendsApiService, private usersApiService:UsersApiService,private actions$:Actions) { }
 
   ngOnInit(): void {
     this.control.valueChanges.pipe(takeUntil(this.unsubscribe$),debounceTime(300)).subscribe(data => {
@@ -27,6 +29,11 @@ export class NewFriendRequestComponent implements OnInit, OnDestroy {
         })
       }
     })
+
+    this.actions$.pipe(ofType(FriendActions.addFriendSignalR),takeUntil(this.unsubscribe$)).subscribe(({data})=>{
+      this.users = this.users.map(x=>x.id == data.object.userId ? ({...x,isFriend: true}) : x)
+    })
+
   }
 
   ngOnDestroy() {

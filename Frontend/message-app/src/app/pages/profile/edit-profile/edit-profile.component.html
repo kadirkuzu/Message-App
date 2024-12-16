@@ -1,6 +1,6 @@
 @if(user){
     <div class="row">
-        <div class="col-8">
+        <div class="col-12 col-md-8 order-2 order-md-1">
             <form>
                 <app-name-input class="mt-10" label="User Name" placeholder="User Name" [initValue]="user.userName"
                     [control]="form.controls.userName" [checkUser]="true"></app-name-input>
@@ -20,8 +20,8 @@
     
             </form>
         </div>
-        <div class="col-4 text-end">
-            <div class="d-flex justify-content-end">
+        <div class="col-12 col-md-4 order-1 order-md-2">
+            <div class="d-md-flex justify-content-end mt-20 mt-md-0">
                 <div class="profile-image-container" data-bs-toggle="modal" data-bs-target="#uploadImageModal">
                     <app-profile-photo [isLoading]="(uploadLoading$ | async)!" [hasPhoto]="user.hasPhoto" [userId]="user.id" [height]="150" borderRadius="20px" />
                     <div class="overlay">

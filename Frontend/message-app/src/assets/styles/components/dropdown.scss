@@ -1,0 +1,15 @@
+@import '../variables.scss';
+
+.dropdown {
+    color: white;
+    .dropdown-menu {
+        border-radius: 10px !important;
+        .dropdown-item {
+            cursor: pointer;
+            &:hover {
+                background-color: $gray-600;
+                color: $white;
+            }
+        }
+    }
+}

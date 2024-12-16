@@ -2,6 +2,7 @@
 
 public class FriendDto
 {
+    public Guid FriendRequestId { get; set; }
     public Guid UserId { get; set; }
     public DateTime AcceptedDate { get; set; }
     public string UserName { get; set; }

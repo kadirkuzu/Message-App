@@ -41,6 +41,7 @@ public class GetFriendsQueryHandler : IRequestHandler<GetFriendsQuery, IEnumerab
                 UserId = user.Id,
                 UserName = user.UserName!,
                 HasPhoto = user.HasPhoto,
+                FriendRequestId = x.Id
             };
         });
     }

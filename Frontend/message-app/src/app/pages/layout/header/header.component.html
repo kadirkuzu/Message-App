@@ -18,7 +18,16 @@
                                 <div>{{user.fullName}}</div>
                                 <div>{{'@' + user.userName}}</div>
                             </div>
-                            <app-profile-photo [isLoading]="(uploadLoading$ | async)!" [hasPhoto]="user.hasPhoto" [userId]="user.id" [height]="50" />
+                            <div class="dropdown">
+                                <span class="c-pointer" id="logout" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <app-profile-photo [isLoading]="(uploadLoading$ | async)!" [hasPhoto]="user.hasPhoto" [userId]="user.id" [height]="50" />
+                                </span>
+                                <ul class="dropdown-menu" aria-labelledby="logout">
+                                    <li>
+                                        <a class="dropdown-item text-danger" (click)="logout()">Logout</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 }

@@ -58,5 +58,21 @@ class Actions extends ActionBase {
     `${this.type} Reject Friend Request Success`,
     props<{ id: string}>()
   )
+
+  removeFriend = createAction (
+    `${this.type} Remove Friend`,
+    props<{ friendRequestId: string }>()
+  )
+
+  removeFriendSuccess = createAction (
+    `${this.type} Remove Friend Success`,
+    props<{ id: string}>()
+  )
+
+  removeFriendSignalR = createAction (
+    `${this.type} Remove Friend SignalR`,
+    props<{ data: SignalRData<{id:string}> }>()
+  )
+
 }
 export const FriendActions = new Actions('[Friends/API]')
