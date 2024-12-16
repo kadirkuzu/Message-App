@@ -14,7 +14,7 @@ namespace MessageApp.API.Controllers
     public class UsersController(IMediator mediator) : ControllerBase
     {
 
-        [HttpPost]
+        [HttpPut]
         public async Task<IActionResult> Update([FromBody] UpdateUserCommand command)
         {
             return Ok(await mediator.Send(command));

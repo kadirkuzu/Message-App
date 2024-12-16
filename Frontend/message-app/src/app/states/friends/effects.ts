@@ -26,6 +26,6 @@ export class FriendEffects {
 
   rejectFriendRequest$ = createEffect(() => this.actions$.pipe(ofType(FriendActions.rejectFriendRequest),
     mergeMap((action) => this.friendsApiService.rejectFriendRequest(action.friendRequestId,action.senderId).pipe(
-      map(payload => FriendActions.rejectFriendRequestSuccess()),
+      map(payload => FriendActions.rejectFriendRequestSuccess(payload)),
       catchError(errors => of(FriendActions.errorAction({errors:errors})))))));
 }

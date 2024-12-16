@@ -55,7 +55,8 @@ class Actions extends ActionBase {
   )
 
   rejectFriendRequestSuccess = createAction (
-    `${this.type} Reject Friend Request Success`
+    `${this.type} Reject Friend Request Success`,
+    props<{ id: string}>()
   )
 }
 export const FriendActions = new Actions('[Friends/API]')

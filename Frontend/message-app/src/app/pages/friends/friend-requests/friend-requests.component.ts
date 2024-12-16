@@ -42,7 +42,10 @@ export class FriendRequestsComponent implements OnInit,OnDestroy {
   }
 
   reject(friendRequest: FriendRequest){
-
+    this.store.dispatch(FriendActions.rejectFriendRequest({
+      friendRequestId: friendRequest.id,
+      senderId: friendRequest.userId
+    }))
   }
 
 }

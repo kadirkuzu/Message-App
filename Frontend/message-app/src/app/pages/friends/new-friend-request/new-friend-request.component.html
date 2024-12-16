@@ -20,6 +20,9 @@
                         @else if (!user.isSended) {
                             <button class="btn btn-primary" (click)="sendRequest(user.id)">Send Request</button>
                         }
+                        @else if (user.isFriend) {
+                            <button class="btn btn-success" disabled>Friend</button>
+                        }
                     </div>
                 </div>
             </div>

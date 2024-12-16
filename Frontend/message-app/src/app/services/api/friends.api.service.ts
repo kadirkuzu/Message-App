@@ -30,7 +30,7 @@ export class FriendsApiService {
   }
 
   rejectFriendRequest(friendRequestId:string, senderId: string) {
-    return this.apiService.post<Friend>(`friends/friend-requests/reject`, {friendRequestId, senderId});
+    return this.apiService.post<{id:string}>(`friends/friend-requests/reject`, {friendRequestId, senderId});
   }
 
 }

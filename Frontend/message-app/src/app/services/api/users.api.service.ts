@@ -14,7 +14,7 @@ export class UsersApiService {
   }
 
   update(payload:UpdateUserDto) {
-    return this.apiService.post<User>(`users`, payload);
+    return this.apiService.put<User>(`users`, payload);
   }
 
   getUser() {

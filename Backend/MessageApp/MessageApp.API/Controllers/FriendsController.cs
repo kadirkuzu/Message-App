@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using MessageApp.Commands.Friends.ApproveFriendRequest;
 using MessageApp.Commands.Friends.CancelFriendRequest;
+using MessageApp.Commands.Friends.RejectFriendRequest;
 using MessageApp.Commands.Friends.SendFriendRequest;
 using MessageApp.Queries.Friends.GetFriendRequests;
 using MessageApp.Queries.Friends.GetFriends;
@@ -40,6 +41,12 @@ namespace MessageApp.API.Controllers
 
         [HttpPost("friend-requests/approve")]
         public async Task<IActionResult> ApproveFriendRequest([FromBody] ApproveFriendRequestCommand command)
+        {
+            return Ok(await mediator.Send(command));
+        }      
+        
+        [HttpPost("friend-requests/reject")]
+        public async Task<IActionResult> RejectFriendRequest([FromBody] RejectFriendRequestCommand command)
         {
             return Ok(await mediator.Send(command));
         }
