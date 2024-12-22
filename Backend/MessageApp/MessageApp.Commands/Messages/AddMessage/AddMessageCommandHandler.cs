@@ -18,22 +18,23 @@ public class AddMessageCommandHandler : IRequestHandler<AddMessageCommand, Messa
     readonly IMapper _mapper;
     readonly IMessageHubService _messageHub;
 
-    public AddMessageCommandHandler(IReadRepository<Chat> chatReadRepository, IWriteRepository<Chat> chatWriteRepository, IWriteRepository<Message> writeRepository, User user, IMessageHubService messageHub)
+    public AddMessageCommandHandler(IReadRepository<Chat> chatReadRepository, IWriteRepository<Chat> chatWriteRepository, IWriteRepository<Message> writeRepository, User user, IMessageHubService messageHub, IMapper mapper)
     {
         _chatReadRepository = chatReadRepository;
         _chatWriteRepository = chatWriteRepository;
         _writeRepository = writeRepository;
         _user = user;
         _messageHub = messageHub;
+        _mapper = mapper;
     }
 
     public async Task<MessageDto> Handle(AddMessageCommand request, CancellationToken cancellationToken)
     {
-        var message = new Message(_user.Id,request.ChatId,request.Content);
+        var message = new Message(_user,request.ChatId,request.Content);
         await _writeRepository.AddAsync(message);
 
         var chat = await _chatReadRepository.GetFirstAsync(x=>x.Id == request.ChatId);
-        chat.AddMessage(message);
+        chat.AddMessage(message.Id);
 
         var mapped = _mapper.Map<MessageDto>(message);
 

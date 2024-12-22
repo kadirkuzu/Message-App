@@ -20,5 +20,15 @@ class Actions extends ActionBase {
     `${this.type} AddSignalr`,
     props<{data:SignalRData<Message>}>()
   )
+
+  sendMessage = createAction(
+    `${this.type} Send Message`,
+    props<{ content: string }>()
+  )
+
+  sendMessageSuccess = createAction(
+    `${this.type} Send Message Success`,
+    props<{ payload: Message }>()
+  )
 }
 export const MessageActions = new Actions('[Messages/API]')

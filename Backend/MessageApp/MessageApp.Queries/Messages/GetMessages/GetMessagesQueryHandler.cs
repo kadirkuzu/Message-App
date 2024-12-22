@@ -28,6 +28,8 @@ public class GetMessagesQueryHandler : IRequestHandler<GetMessagesQuery, IEnumer
     {
         var messages = await _readRepository
                             .GetWhere(x=>x.ChatId == request.ChatId)
+                            .Include(x=>x.Sender)
+                            .OrderBy(x=>x.CreatedDate)
                             .ToListAsync(cancellationToken);
 
         foreach (var message in messages)

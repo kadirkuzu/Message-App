@@ -18,9 +18,9 @@ export const initialState: State = adapter.getInitialState({
 export const reducer = createReducer(
   initialState,
   on(Actions.errorAction, (state, action) => ({ ...state, isLoading: action.dontChangeLoading ? state.isLoading  : state.isLoading - 1 })),
-  on(Actions.getAll, (state,action) => ({ ...state, isLoading: state.isLoading + 1, activeChatId: action.chatId })),
+  on(Actions.getAll, (state,action) => ({ ...state, isLoading: state.isLoading + 1, activeChatId: action.chatId})),
   on(Actions.getAllSuccess, (state, { payload }) => {
-    return adapter.addMany(payload, { ...state, isLoading: state.isLoading - 1 })
+    return adapter.setAll(payload, { ...state, isLoading: state.isLoading - 1 })
   }),
   on(Actions.addSignalR, (state, { data }) => {
     let message = data.object

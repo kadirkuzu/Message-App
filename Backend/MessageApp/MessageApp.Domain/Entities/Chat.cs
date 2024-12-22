@@ -7,6 +7,7 @@ public class Chat : BaseEntity
     public bool IsGroup { get; set; }
     public bool HasImage { get; set; }
     public int UnreadCount { get; set; }
+    public Guid? LastMessageId { get; set; }
     public ICollection<User> Users { get; set; } = new List<User>();
     public ICollection<Message> Messages { get; set; } = new List<Message>();
 
@@ -24,8 +25,9 @@ public class Chat : BaseEntity
         UnreadCount = 0;
     }
 
-    public void AddMessage(Message message)
+    public void AddMessage(Guid messageId)
     {
+        LastMessageId = messageId;
         UnreadCount++;
     }
 }

@@ -6,7 +6,7 @@ export class Chat {
     title!:string
     isGroup!: boolean
     hasImage!: boolean
-    createdDate!: string
+    createdDate!: Date
     users!: User[]
     unreadCount!: number
     lastMessage!: Message

@@ -11,4 +11,8 @@ export class MessagesApiService {
   getAll(chatId:string) {
     return this.apiService.get<Message[]>(`messages/${chatId}`);
   }
+
+  sendMessage(chatId:string,content:string) {
+    return this.apiService.post<Message>(`messages`, {chatId,content});
+  }
 }

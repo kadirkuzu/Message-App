@@ -1,0 +1,28 @@
+@import 'src/assets/styles/variables.scss' ;
+
+.chat-head {
+    color: $white;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    border-bottom: 1px solid $background-color;
+    padding-bottom: 20px;
+    position: absolute;
+    right: 0;
+    left: 0;
+
+    .group-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between ;
+
+        .created-date {
+            color: $muted;
+            font-size: 12px;
+        }
+        
+        .last-message {
+            color: $muted;
+        }
+    }
+}

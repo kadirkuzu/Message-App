@@ -1,3 +1,4 @@
+import { ChatActions } from "@/app/states/chats/actions"
 import { FriendActions } from "@/app/states/friends/actions"
 import { MessageActions } from "@/app/states/messages/actions"
 
@@ -27,5 +28,9 @@ export const SignalRTargets: SignalRTarget[] = [
     {
         target: 'FriendRemoved',
         action: FriendActions.removeFriendSignalR
+    },
+    {
+        target: 'ChatAdded',
+        action: ChatActions.addSignalR
     },
 ]

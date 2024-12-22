@@ -15,6 +15,8 @@ import { BlobImageDirective } from './directives/blob-image.directive';
 import { ApproveRejectFriendRequestComponent } from './components/approve-reject-friend-request/approve-reject-friend-request.component';
 import { TruncatePipe } from './pipes/truncate.pipe';
 import { FromNowPipe } from './pipes/from-now.pipe';
+import { DateUtcPipe } from './pipes/date-utc.pipe';
+import { MultilineInputComponent } from './components/inputs/multiline-input/multiline-input.component';
 
 @NgModule({
   imports: [
@@ -36,7 +38,9 @@ import { FromNowPipe } from './pipes/from-now.pipe';
     BlobImageDirective,
     ApproveRejectFriendRequestComponent,
     TruncatePipe,
-    FromNowPipe
+    FromNowPipe,
+    DateUtcPipe,
+    MultilineInputComponent
   ],
   exports: [
     TextInputComponent,
@@ -53,7 +57,9 @@ import { FromNowPipe } from './pipes/from-now.pipe';
     BlobImageDirective,
     ApproveRejectFriendRequestComponent,
     TruncatePipe,
-    FromNowPipe
+    FromNowPipe,
+    DateUtcPipe,
+    MultilineInputComponent
   ]
 })
 export class SharedModule { }

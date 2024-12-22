@@ -14,9 +14,9 @@ public class Message : BaseEntity
         
     }
 
-    public Message(Guid senderId,Guid chatId,string content)
+    public Message(User sender,Guid chatId,string content)
     {
-        SenderId = senderId;
+        SenderId = sender.Id;
         ChatId = chatId;
         Content = content;
         IsRead = false;

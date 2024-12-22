@@ -1,8 +1,7 @@
 @import '../variables.scss';
 
-input {
+input, textarea {
   box-shadow: none !important;
-  height: $form-height !important;
   border-radius: $form-border-radius !important;
   font-size: $input-font-size;
 
@@ -31,6 +30,18 @@ input {
   &.is-invalid {
     border-color: #dc3545 !important;
   }
+}
+
+input {
+  height: $form-height !important;
+}
+
+textarea {
+  width: 100%;
+  resize: none !important;
+  height: $form-height !important;
+  max-height: 150px; 
+  padding: 10px;
 }
 
 .input-label {

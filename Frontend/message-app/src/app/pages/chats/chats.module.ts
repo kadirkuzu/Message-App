@@ -6,6 +6,9 @@ import { CreateChatPageComponent } from './create-chat-page/create-chat-page.com
 import { SharedModule } from '@/app/shared/shared.module';
 import { ChatsComponent } from './chats.component';
 import { FriendsBarComponent } from './friends-bar/friends-bar.component';
+import { ChatHeadComponent } from './messages/chat-head/chat-head.component';
+import { UserMessageComponent } from './messages/user-message/user-message.component';
+import { ChatMessageComponent } from './messages/chat-message/chat-message.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +16,9 @@ import { FriendsBarComponent } from './friends-bar/friends-bar.component';
     ChatsComponent,
     CreateChatPageComponent,
     FriendsBarComponent,
+    ChatHeadComponent,
+    UserMessageComponent,
+    ChatMessageComponent,
   ],
   imports: [
     CommonModule,

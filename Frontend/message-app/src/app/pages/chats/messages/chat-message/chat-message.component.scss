@@ -1,0 +1,43 @@
+@import 'src/assets/styles/variables.scss';
+
+.chat-message {
+    margin-bottom: 10px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.message-box {
+    max-width: 70%;
+    word-wrap: break-word;
+    position: relative;
+
+    .message-content {
+        background-color: $white;
+        padding: 10px 15px;
+        border-radius: 15px;
+        place-self: start;
+        margin-left: 12px;
+
+        &.show-bubble {
+            margin-left: 0;
+            --r: 15px;
+            --t: 0.8em;
+    
+            max-width: 100%;
+            min-width: 120px;
+            border-inline: var(--t) solid #0000;
+            border-radius: calc(var(--r) + var(--t))/var(--r);
+            mask:
+                radial-gradient(100% 100% at var(--_p) 0, #0000 99%, #000 102%) var(--_p) 100%/var(--t) var(--t) no-repeat,
+                linear-gradient(#000 0 0) padding-box;
+            --_p: 0;
+            border-bottom-left-radius: 0 0;
+        }
+    }
+
+    .created-date {
+        color: white;
+        margin-top: 10px;
+        font-size: 12px;
+    }
+}

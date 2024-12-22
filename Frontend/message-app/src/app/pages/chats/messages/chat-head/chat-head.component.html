@@ -1,0 +1,23 @@
+@if(chat$ | async; as chat ) {
+    <div class="chat-head">
+        @if(chat.isGroup){
+            <app-profile-photo [id]="chat.id" [isGroup]="true" [hasPhoto]="chat.hasImage" [height]="50" />
+            <div class="group-info w-100">
+                <div class="w-100 d-flex align-items-center justify-content-between">
+                    <div>
+                        <div>{{chat.title | titlecase | truncate : 15}}</div>
+                        <div>{{getUsersName(chat)}}</div>
+                    </div>
+                    <div class="from-now">Created Date: {{chat.createdDate | dateUtc}}</div>
+                </div>
+            </div>
+        } @else {
+            <app-profile-photo [id]="chat.users[0].id" [hasPhoto]="chat.users[0].hasPhoto" [height]="50" />
+            <div class="group-info w-100">
+                <div class="w-100 d-flex align-items-center justify-content-between">
+                    <div>{{chat.users[0].userName | titlecase | truncate : 15}}</div>
+                </div>
+            </div>
+        }
+    </div>
+}

@@ -1,0 +1,10 @@
+<div class="chat-message">
+    <div class="message-box">
+        <div class="message-content" [class.show-bubble]="showTime">
+            {{ message.content }}
+        </div>
+        @if(showTime){
+            <div class="created-date">{{ message.createdDate | dateUtc : "HH:mm" }}</div>
+        }
+    </div>
+</div>

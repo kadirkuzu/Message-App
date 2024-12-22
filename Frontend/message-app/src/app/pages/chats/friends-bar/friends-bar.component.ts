@@ -1,4 +1,5 @@
 import { ChatsSelector } from '@/app/states/chats/selectors';
+import { UserSelector } from '@/app/states/user/selectors';
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 
@@ -9,6 +10,7 @@ import { Store } from '@ngrx/store';
 })
 export class FriendsBarComponent {
   chats$ = this.store.select(ChatsSelector.getAllFiltered)
+  user$ = this.store.select(UserSelector.activeUser)
 
   constructor(private store: Store){}
 }
