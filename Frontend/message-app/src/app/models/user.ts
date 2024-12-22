@@ -13,7 +13,9 @@ export class AddFriendRequestUser{
     userName!: string
     isFriend!: boolean
     isSended!: boolean
+    isReceived!: boolean
     hasPhoto!: boolean
+    friendRequestId?: string
 }
 
 export class UpdateUserDto {

@@ -1,4 +1,5 @@
-﻿using MessageApp.Domain.Entities;
+﻿using AutoMapper;
+using MessageApp.Domain.Entities;
 using MessageApp.Dto.Friend;
 using MessageApp.Repository.Abstract;
 using Microsoft.EntityFrameworkCore;
@@ -12,11 +13,13 @@ public class GetFriendsQueryHandler : IRequestHandler<GetFriendsQuery, IEnumerab
 
     readonly IReadRepository<FriendRequest> _readRepository;
     readonly User _user;
+    readonly IMapper _mapper;
 
-    public GetFriendsQueryHandler(IReadRepository<FriendRequest> readRepository, User user)
+    public GetFriendsQueryHandler(IReadRepository<FriendRequest> readRepository, User user, IMapper mapper)
     {
         _readRepository = readRepository;
         _user = user;
+        _mapper = mapper;
     }
 
     public async Task<IEnumerable<FriendDto>> Handle(GetFriendsQuery request, CancellationToken cancellationToken)
@@ -32,17 +35,12 @@ public class GetFriendsQueryHandler : IRequestHandler<GetFriendsQuery, IEnumerab
         return list.Select(x =>
         {
             var user = x.SenderId == _user.Id ? x.Receiver : x.Sender; 
-            return new FriendDto
-            {
-                AcceptedDate = x.AcceptedDate ?? DateTime.UtcNow,
-                Email = user.Email!,
-                FullName = user.FullName,
-                PhoneNumber = user.PhoneNumber!,
-                UserId = user.Id,
-                UserName = user.UserName!,
-                HasPhoto = user.HasPhoto,
-                FriendRequestId = x.Id
-            };
+            var dto = _mapper.Map<FriendDto>(user);
+
+            dto.AcceptedDate = x.AcceptedDate ?? DateTime.UtcNow;
+            dto.FriendRequestId = x.Id;
+            dto.UserId = user.Id;
+            return dto;
         });
     }
 }

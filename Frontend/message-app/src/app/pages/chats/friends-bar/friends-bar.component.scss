@@ -1,0 +1,36 @@
+@import 'src/assets/styles/variables.scss' ;
+
+.chat {
+    color: $white;
+    display: flex;
+    gap: 20px;
+    cursor: pointer;
+    padding: 15px 10px;
+
+    &.active {
+        background-color:  $active-background-color !important;
+    }
+
+    &:hover {
+        background-color: $secondary;
+    }
+
+    &:not(.borderless) {
+        border-top: 1px solid $secondary;
+    }
+
+    .group-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between ;
+
+        .from-now {
+            color: $muted;
+            font-size: 12px;
+        }
+        
+        .last-message {
+            color: $muted;
+        }
+    }
+}

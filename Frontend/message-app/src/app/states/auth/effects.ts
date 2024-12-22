@@ -14,7 +14,7 @@ export class AuthEffects {
   createAccount$ = createEffect(() => this.actions$.pipe(ofType(AuthActions.createAccount),
     mergeMap((action) => this.authApiService.createAccount(action.payload).pipe(
       map(payload => {
-        this.router.navigate(['login'])
+        this.router.navigate(['auth/login'])
         return AuthActions.createAccountSuccess()
       }),
       catchError(errors => of(AuthActions.errorAction({ errors: errors })))))));

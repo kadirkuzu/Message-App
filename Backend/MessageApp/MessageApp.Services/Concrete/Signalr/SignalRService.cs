@@ -32,5 +32,10 @@ public class SignalRService : IMessageHubService
     {
         message.SetUser(_user);
         await _hubContext.Clients.User(userId.ToString()).SendAsync(target, message);
+    } 
+    public async Task SendToUsers(IEnumerable<Guid> userIds, string target, SignalRNotificationDto message)
+    {
+        message.SetUser(_user);
+        await _hubContext.Clients.Users(userIds.Select(x=>x.ToString())).SendAsync(target, message);
     }
 }

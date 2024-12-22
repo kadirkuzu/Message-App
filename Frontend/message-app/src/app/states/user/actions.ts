@@ -1,5 +1,5 @@
 import { createAction, props } from "@ngrx/store";
-import {ActionBase} from "../common/action-base";
+import {ActionBase} from "../_common/action-base";
 import { UpdateUserDto, User } from "@/app/models/user";
 
 class Actions extends ActionBase {

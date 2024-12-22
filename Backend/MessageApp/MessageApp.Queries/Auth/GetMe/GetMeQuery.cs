@@ -1,4 +1,5 @@
-﻿using MessageApp.Domain.Entities;
+﻿using AutoMapper;
+using MessageApp.Domain.Entities;
 using MessageApp.Dto.User;
 using Microsoft.AspNetCore.Identity;
 
@@ -10,17 +11,19 @@ public class GetMeQueryHandler : IRequestHandler<GetMeQuery, UserDto>
 {
     readonly User _user;
     readonly UserManager<User> _userManager;
+    readonly IMapper _mapper;
 
-    public GetMeQueryHandler(User user, UserManager<User> userManager)
+    public GetMeQueryHandler(User user, UserManager<User> userManager, IMapper mapper)
     {
         _user = user;
         _userManager = userManager;
+        _mapper = mapper;
     }
 
     public async Task<UserDto> Handle(GetMeQuery request, CancellationToken cancellationToken)
     {
         var user = await _userManager.FindByIdAsync(_user.Id.ToString());
 
-        return (new UserDto(user));
+        return _mapper.Map<UserDto>(user);
     }
 }

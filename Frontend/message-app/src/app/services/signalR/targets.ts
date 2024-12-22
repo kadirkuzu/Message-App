@@ -1,4 +1,5 @@
 import { FriendActions } from "@/app/states/friends/actions"
+import { MessageActions } from "@/app/states/messages/actions"
 
 export class SignalRTarget {
     target!:string
@@ -9,7 +10,7 @@ export class SignalRTarget {
 export const SignalRTargets: SignalRTarget[] = [
     {
         target: 'MessageAdded',
-        callBack: (data:SignalRTarget)=>{console.log(data)}
+        action: MessageActions.addSignalR
     },
     {
         target: 'FriendRequestAdded',

@@ -1,3 +1,4 @@
+import { environment } from '@/environments/environment';
 import { Component, Input } from '@angular/core';
 
 @Component({
@@ -9,6 +10,10 @@ export class ProfilePhotoComponent {
   @Input() height = 60
   @Input() borderRadius = '100%'
   @Input() hasPhoto = false
-  @Input() userId = ''
+  @Input() id = ''
+  @Input() isGroup = false
   @Input() isLoading = false
+
+  groupImageContainer = environment.groupImageContainer
+  userImageContainer = environment.userImageContainer
 }

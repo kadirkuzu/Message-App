@@ -1,10 +1,12 @@
 import { Friend } from '@/app/models/friend-requets';
+import { ChatsSelector } from '@/app/states/chats/selectors';
 import { FriendActions } from '@/app/states/friends/actions';
 import { FriendsSelector } from '@/app/states/friends/selectors';
 import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { Subject, takeUntil } from 'rxjs';
+import { Subject, take, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-all-friends',
@@ -14,6 +16,7 @@ import { Subject, takeUntil } from 'rxjs';
 export class AllFriendsComponent {
 
   friends$ = this.store.select(FriendsSelector.friends)
+  chats$ = this.store.select(ChatsSelector.getAll)
 
   control = new FormControl()
 
@@ -21,7 +24,7 @@ export class AllFriendsComponent {
 
   unsubscribe$ = new Subject<void>();
 
-  constructor(private store: Store) { }
+  constructor(private store: Store,private router:Router) { }
 
   ngOnInit(): void {
     this.friends$.pipe(takeUntil(this.unsubscribe$)).subscribe(data => {
@@ -36,6 +39,13 @@ export class AllFriendsComponent {
 
   remove(friendRequestId: string) {
     this.store.dispatch(FriendActions.removeFriend({friendRequestId}))
+  }
+
+  sendMessage(userId: string){
+    this.chats$.pipe(take(1)).subscribe(chats=> {
+      let chat = chats.find(x=>x.users.length == 1 && x.users[0].id == userId)
+      this.router.navigateByUrl('chats/' + chat?.id)
+    })
   }
 
 }

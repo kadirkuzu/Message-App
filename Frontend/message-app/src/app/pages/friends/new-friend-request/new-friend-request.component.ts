@@ -57,4 +57,8 @@ export class NewFriendRequestComponent implements OnInit, OnDestroy {
     })
   }
 
+  onApproveOrReject(receiverId: string){
+    this.users = this.users.filter(x=>x.id != receiverId)
+  }
+
 }

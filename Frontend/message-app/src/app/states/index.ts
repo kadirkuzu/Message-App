@@ -4,9 +4,11 @@ import * as MessagesState from './messages/reducer';
 import * as AuthState from './auth/reducer';
 import * as FriendsState from './friends/reducer';
 import * as UserState from './user/reducer';
+import * as ChatsState from './chats/reducer';
 
 export interface State {
   auth: AuthState.State,
+  chats: ChatsState.State,
   friends: FriendsState.State,
   messages: MessagesState.State,
   users: UserState.State,
@@ -15,6 +17,7 @@ export interface State {
 
 export const reducers: ActionReducerMap<State> = {
   auth: AuthState.reducer,
+  chats: ChatsState.reducer,
   friends: FriendsState.reducer,
   messages: MessagesState.reducer,
   users: UserState.reducer,

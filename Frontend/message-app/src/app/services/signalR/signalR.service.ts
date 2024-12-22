@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HubConnection, HubConnectionBuilder, HubConnectionState } from '@microsoft/signalr';
+import signalR, { HubConnection, HubConnectionBuilder, HubConnectionState } from '@microsoft/signalr';
 import { environment } from '../../../environments/environment';
 import { Store } from '@ngrx/store';
 import { filter } from 'rxjs';
@@ -48,7 +48,7 @@ export class SignalRService {
   }
 
   joinGroup(group: string) {
-    if (!this._connection) {
+    if (!this._connection || this._connection.state !== HubConnectionState.Connected) {
       this.toJoinGroups.push(group)
     }
     else {

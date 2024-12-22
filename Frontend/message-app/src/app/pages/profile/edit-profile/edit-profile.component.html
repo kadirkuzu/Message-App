@@ -23,7 +23,7 @@
         <div class="col-12 col-md-4 order-1 order-md-2">
             <div class="d-md-flex justify-content-end mt-20 mt-md-0">
                 <div class="profile-image-container" data-bs-toggle="modal" data-bs-target="#uploadImageModal">
-                    <app-profile-photo [isLoading]="(uploadLoading$ | async)!" [hasPhoto]="user.hasPhoto" [userId]="user.id" [height]="150" borderRadius="20px" />
+                    <app-profile-photo [isLoading]="(uploadLoading$ | async)!" [hasPhoto]="user.hasPhoto" [id]="user.id" [height]="150" borderRadius="20px" />
                     <div class="overlay">
                         <i class="fa-solid fa-camera"></i>
                     </div>

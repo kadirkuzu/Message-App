@@ -7,20 +7,13 @@
             <div class="col-12 col-md-4 min-width-400">
                 <div class="user">
                     <div class="information">
-                        <app-profile-photo [hasPhoto]="request.hasPhoto" [userId]="request.userId"/>
+                        <app-profile-photo [hasPhoto]="request.hasPhoto" [id]="request.userId"/>
                         <div class="name-wrapper">
                             <div class="mb-10 full-name">{{request.fullName}}</div>
                             <div class="user-name">{{'@' + request.userName}}</div>
                         </div>
                     </div>
-                    <div>
-                        <span class="icon approve" (click)="approve(request)">
-                            <i class="fa-solid fa-check"></i>
-                        </span>
-                        <span class="icon reject" (click)="reject(request)">
-                            <i class="fa-solid fa-xmark"></i>
-                        </span>
-                    </div>
+                    <app-approve-reject-friend-request [friendRequestId]="request.id" [senderId]="request.userId" />
                 </div>
             </div>
         }

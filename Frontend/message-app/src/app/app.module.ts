@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import {StoreModule} from "@ngrx/store";
 import {metaReducers, reducers} from "./states";
 import {EffectsModule} from "@ngrx/effects";
-import {effects} from "./states/common/effects";
+import {effects} from "./states/_common/effects";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {PagesModule} from "./pages/pages.module";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";

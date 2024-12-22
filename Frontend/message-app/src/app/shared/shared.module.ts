@@ -12,6 +12,9 @@ import { RouterModule } from '@angular/router';
 import { ProfilePhotoComponent } from './components/profile-photo/profile-photo.component';
 import { UploadImageComponent } from './components/upload-image/upload-image.component';
 import { BlobImageDirective } from './directives/blob-image.directive';
+import { ApproveRejectFriendRequestComponent } from './components/approve-reject-friend-request/approve-reject-friend-request.component';
+import { TruncatePipe } from './pipes/truncate.pipe';
+import { FromNowPipe } from './pipes/from-now.pipe';
 
 @NgModule({
   imports: [
@@ -30,7 +33,10 @@ import { BlobImageDirective } from './directives/blob-image.directive';
     TabsComponent,
     ProfilePhotoComponent,
     UploadImageComponent,
-    BlobImageDirective
+    BlobImageDirective,
+    ApproveRejectFriendRequestComponent,
+    TruncatePipe,
+    FromNowPipe
   ],
   exports: [
     TextInputComponent,
@@ -44,7 +50,10 @@ import { BlobImageDirective } from './directives/blob-image.directive';
     TabsComponent,
     ProfilePhotoComponent,
     UploadImageComponent,
-    BlobImageDirective
+    BlobImageDirective,
+    ApproveRejectFriendRequestComponent,
+    TruncatePipe,
+    FromNowPipe
   ]
 })
 export class SharedModule { }

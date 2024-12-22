@@ -1,5 +1,5 @@
 import { createAction, props } from "@ngrx/store";
-import {ActionBase} from "../common/action-base";
+import {ActionBase} from "../_common/action-base";
 import { Friend, FriendRequest } from "@/app/models/friend-requets";
 import { SignalRData } from "@/app/models/signalR-data";
 

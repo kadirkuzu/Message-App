@@ -31,18 +31,20 @@ public class GetUsersByNameQueryHandler : IRequestHandler<GetUsersByNameQuery, I
 
         var friendRequests = await _readFriendRequests.GetWhere(x => x.SenderId == _user.Id || x.ReceiverId == _user.Id).ToListAsync(cancellationToken); 
 
-        return users.Select(x =>
+        return users.Select(user =>
         {
-            var friendRequest = friendRequests.FirstOrDefault(x=>x.SenderId == _user.Id || x.ReceiverId == _user.Id);
+            var friendRequest = friendRequests.FirstOrDefault(x=>x.SenderId == user.Id || x.ReceiverId == user.Id);
 
             return new AddFriendRequestUserDto
             {
-                FullName = x.FullName,
-                UserName = x.UserName!,
-                Id = x.Id,
+                FullName = user.FullName,
+                UserName = user.UserName!,
+                Id = user.Id,
                 IsFriend = friendRequest?.IsAccepted ?? false,
-                IsSended = friendRequest != null,
-                HasPhoto = x.HasPhoto
+                IsSended = friendRequest?.SenderId == _user.Id,
+                IsReceived = friendRequest?.ReceiverId == _user.Id,
+                FriendRequestId = friendRequest?.Id,
+                HasPhoto = user.HasPhoto
             };
         });
     }

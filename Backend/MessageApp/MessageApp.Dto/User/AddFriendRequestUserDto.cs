@@ -1,4 +1,6 @@
-﻿namespace MessageApp.Dto.User; 
+﻿using MessageApp.Dto.FriendRequest;
+
+namespace MessageApp.Dto.User; 
 
 public class AddFriendRequestUserDto
 {
@@ -6,7 +8,9 @@ public class AddFriendRequestUserDto
     public string UserName { get; set; }
     public string FullName { get; set; }
     public bool IsSended { get; set; }
+    public bool IsReceived { get; set; }
     public bool IsFriend { get; set; }
     public bool HasPhoto { get; set; }
+    public Guid? FriendRequestId { get; set; }
 
 }

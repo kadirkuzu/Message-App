@@ -1,13 +1,14 @@
 import { createAction, props } from "@ngrx/store";
 import {Message} from "../../models/message";
-import {ActionBase} from "../common/action-base";
+import {ActionBase} from "../_common/action-base";
 import { SignalRData } from "@/app/models/signalR-data";
 
 class Actions extends ActionBase {
   constructor(type:string) {super(type)}
 
   getAll = createAction(
-    `${this.type} Get All`
+    `${this.type} Get All`,
+    props<{ chatId: string }>()
   )
 
   getAllSuccess = createAction(

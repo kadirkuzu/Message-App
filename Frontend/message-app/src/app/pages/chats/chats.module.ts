@@ -2,15 +2,17 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {MessagesComponent} from "./messages/messages.component";
 import {RouterModule} from "@angular/router";
-import { ChatsComponent } from './chats/chats.component';
 import { CreateChatPageComponent } from './create-chat-page/create-chat-page.component';
 import { SharedModule } from '@/app/shared/shared.module';
+import { ChatsComponent } from './chats.component';
+import { FriendsBarComponent } from './friends-bar/friends-bar.component';
 
 @NgModule({
   declarations: [
     MessagesComponent,
     ChatsComponent,
-    CreateChatPageComponent
+    CreateChatPageComponent,
+    FriendsBarComponent,
   ],
   imports: [
     CommonModule,

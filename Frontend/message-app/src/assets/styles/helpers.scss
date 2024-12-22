@@ -19,12 +19,12 @@
         padding-left: #{($i) + 'px'} !important;
     }
 
-    .ph-#{$i} {
+    .px-#{$i} {
         padding-left: #{($i) + 'px'} !important;
         padding-right: #{($i) + 'px'} !important;
     }
 
-    .pv-#{$i} {
+    .py-#{$i} {
         padding-top: #{($i) + 'px'} !important;
         padding-bottom: #{($i) + 'px'} !important;
     }
@@ -49,12 +49,12 @@
         margin-left: #{($i) + 'px'} !important;
     }
 
-    .mh-#{$i} {
+    .mx-#{$i} {
         margin-left: #{($i) + 'px'} !important;
         margin-right: #{($i) + 'px'} !important;
     }
 
-    .mv-#{$i} {
+    .my-#{$i} {
         margin-top: #{($i) + 'px'} !important;
         margin-bottom: #{($i) + 'px'} !important;
     }

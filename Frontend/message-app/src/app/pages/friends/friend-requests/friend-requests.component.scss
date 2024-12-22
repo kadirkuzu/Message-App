@@ -31,29 +31,3 @@
     }
 
 }
-
-.icon {
-    display: inline-flex;
-    width: 40px;
-    height: 40px;
-    justify-content: center;
-    align-items: center;
-    color: $white;
-    border-radius: 100%;
-    cursor: pointer;
-
-    &.approve {
-        background-color: $success;
-        margin-right: 10px;
-    }
-    &.reject {
-        background-color: $danger;
-    }
-    i {
-        font-size: 20px;
-    }
-
-    &:hover {
-        border: 1px solid $white;
-    }
-}

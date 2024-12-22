@@ -5,10 +5,10 @@ import {ApiService} from "./common/api.service";
 @Injectable({
   providedIn: 'root'
 })
-export class MessagesService {
+export class MessagesApiService {
   constructor(private apiService: ApiService) {}
 
-  getAll() {
-    return this.apiService.get<Message[]>(`messages`);
+  getAll(chatId:string) {
+    return this.apiService.get<Message[]>(`messages/${chatId}`);
   }
 }

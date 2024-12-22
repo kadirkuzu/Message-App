@@ -7,7 +7,7 @@
             <div class="col-12 col-lg-4 min-width-400">
                 <div class="user">
                     <div class="information">
-                        <app-profile-photo [hasPhoto]="friend.hasPhoto" [userId]="friend.userId" />
+                        <app-profile-photo [hasPhoto]="friend.hasPhoto" [id]="friend.userId" />
                         <div class="name-wrapper">
                             <div class="mb-10 full-name">{{friend.fullName}}</div>
                             <div class="user-name">{{'@' + friend.userName}}</div>
@@ -19,7 +19,7 @@
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="friendActions">
                             <li>
-                                <a class="dropdown-item">Send Message</a>
+                                <a class="dropdown-item" (click)="sendMessage(friend.userId)">Send Message</a>
                             </li>
                             <li>
                                 <a class="dropdown-item" href="tel:{{friend.phoneNumber}}">Call</a>

@@ -4,6 +4,7 @@ import { catchError, map, mergeMap, of } from "rxjs";
 import { UserActions } from "./actions";
 import { FriendActions } from "../friends/actions";
 import { UsersApiService } from "@/app/services/api/users.api.service";
+import { ChatActions } from "../chats/actions";
 
 @Injectable()
 export class UserEffects {
@@ -15,7 +16,8 @@ export class UserEffects {
         return [
           UserActions.getUserSuccess({ payload }),
           FriendActions.getAllFriendRequests(),
-          FriendActions.getAllFriends()
+          FriendActions.getAllFriends(),
+          ChatActions.getAll()
         ]
       }),
       catchError(errors => of(UserActions.errorAction({ errors: errors })))))));

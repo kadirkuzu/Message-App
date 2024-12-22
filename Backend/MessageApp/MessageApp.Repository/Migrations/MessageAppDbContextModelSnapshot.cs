@@ -46,17 +46,17 @@ namespace MessageApp.Repository.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<string>("Discriminator")
-                        .IsRequired()
-                        .HasMaxLength(5)
-                        .HasColumnType("character varying(5)");
+                    b.Property<bool>("HasImage")
+                        .HasColumnType("boolean");
 
                     b.Property<bool>("IsGroup")
                         .HasColumnType("boolean");
 
                     b.Property<string>("Title")
-                        .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<int>("UnreadCount")
+                        .HasColumnType("integer");
 
                     b.Property<DateTime?>("UpdatedDate")
                         .HasColumnType("timestamp with time zone");
@@ -64,10 +64,6 @@ namespace MessageApp.Repository.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Chats");
-
-                    b.HasDiscriminator().HasValue("Chat");
-
-                    b.UseTphMappingStrategy();
                 });
 
             modelBuilder.Entity("MessageApp.Domain.Entities.File", b =>
@@ -196,9 +192,6 @@ namespace MessageApp.Repository.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<Guid?>("GroupId")
-                        .HasColumnType("uuid");
-
                     b.Property<bool>("HasPhoto")
                         .HasColumnType("boolean");
 
@@ -245,8 +238,6 @@ namespace MessageApp.Repository.Migrations
                         .HasColumnType("character varying(256)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("GroupId");
 
                     b.HasIndex("NormalizedEmail")
                         .HasDatabaseName("EmailIndex");
@@ -388,17 +379,6 @@ namespace MessageApp.Repository.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("MessageApp.Domain.Entities.Group", b =>
-                {
-                    b.HasBaseType("MessageApp.Domain.Entities.Chat");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.HasDiscriminator().HasValue("Group");
-                });
-
             modelBuilder.Entity("MessageApp.Domain.Entities.GroupImageFile", b =>
                 {
                     b.HasBaseType("MessageApp.Domain.Entities.File");
@@ -464,13 +444,6 @@ namespace MessageApp.Repository.Migrations
                     b.Navigation("Sender");
                 });
 
-            modelBuilder.Entity("MessageApp.Domain.Entities.User", b =>
-                {
-                    b.HasOne("MessageApp.Domain.Entities.Group", null)
-                        .WithMany("Admins")
-                        .HasForeignKey("GroupId");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
                 {
                     b.HasOne("MessageApp.Domain.Entities.UserRole", null)
@@ -525,11 +498,6 @@ namespace MessageApp.Repository.Migrations
             modelBuilder.Entity("MessageApp.Domain.Entities.Chat", b =>
                 {
                     b.Navigation("Messages");
-                });
-
-            modelBuilder.Entity("MessageApp.Domain.Entities.Group", b =>
-                {
-                    b.Navigation("Admins");
                 });
 #pragma warning restore 612, 618
         }

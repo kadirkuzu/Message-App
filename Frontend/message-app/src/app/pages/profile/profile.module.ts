@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { ProfileComponent } from './profile/profile.component';
+import { ProfileComponent } from './profile.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { SharedModule } from '@/app/shared/shared.module';
 

@@ -3,5 +3,7 @@ export const environment = {
   api: "https://localhost:7071/api/",
   server: "https://localhost:7071/",
   signalRHub: "signalr-hub",
-  imageBaseUrl: 'https://messageapp.blob.core.windows.net'
+  imageBaseUrl: 'https://messageapp.blob.core.windows.net',
+  userImageContainer: 'profile-images',
+  groupImageContainer: 'group-images',
 };

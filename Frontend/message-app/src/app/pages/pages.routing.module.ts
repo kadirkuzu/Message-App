@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: 'friends', loadChildren: () => import("./friends/friends.module").then(module => module.FriendsModule), canActivate: [authGuard] },
   { path: 'profile', loadChildren: () => import("./profile/profile.module").then(module => module.ProfileModule), canActivate: [authGuard] },
   { path: 'auth', loadChildren: () => import("./auth/auth.module").then(module => module.AuthModule) , canActivate: [loggedGuard] },
+  { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 
 @NgModule({

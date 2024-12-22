@@ -10,7 +10,7 @@
         #sideBarCanvas (hidden.bs.offcanvas)="openBar = false">
         <div class="offcanvas-header d-flex justify-content-between align-items-center">
             <div class="d-flex align-items-center user-info-wrapper">
-                <app-profile-photo [isLoading]="(uploadLoading$ | async)!" [hasPhoto]="user.hasPhoto" [userId]="user.id" [height]="50" />
+                <app-profile-photo [isLoading]="(uploadLoading$ | async)!" [hasPhoto]="user.hasPhoto" [id]="user.id" [height]="50" />
                 <div class="text-white user-info">
                     <div>{{user.fullName}}</div>
                     <div>{{'@' + user.userName}}</div>

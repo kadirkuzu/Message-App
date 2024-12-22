@@ -1,11 +1,13 @@
 ﻿using MessageApp.Commands.Messages.AddMessage;
 using MessageApp.Domain.Entities;
+using MessageApp.Features.Mappings;
 using MessageApp.Queries.Messages.GetMessages;
 using MessageApp.Repository.Abstract;
 using MessageApp.Repository.Concrete;
 using MessageApp.Repository.Concrete.Contexts;
 using MessageApp.Services;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System.Security.Claims;
@@ -17,6 +19,7 @@ namespace MessageApp.Features
         public static void AddFeaturesServices(this IServiceCollection services)
         {
             services.AddMediatR(options => options.RegisterServicesFromAssemblies(typeof(GetMessagesQuery).Assembly, typeof(AddMessageCommand).Assembly));
+            services.AddAutoMapper(typeof(MessageProfile).Assembly);
             services.AddServices();
             services.AddDbContext<MessageAppDbContext>(options => options.UseNpgsql(Configuration.ConnectionString));
             services.AddIdentity<User, UserRole>().AddEntityFrameworkStores<MessageAppDbContext>();
@@ -26,16 +29,20 @@ namespace MessageApp.Features
             services.AddScoped<User>(serviceProvider =>
             {
                 var httpContextAccessor = serviceProvider.GetRequiredService<IHttpContextAccessor>();
-                var user = httpContextAccessor.HttpContext?.User;
-                var fullName = GetValueFromClaim(user, ClaimTypes.Name.ToString());
+                var contextUser = httpContextAccessor.HttpContext?.User;
+                UserManager<User> userManager = serviceProvider.GetRequiredService<UserManager<User>>();
+
+                var userId = Guid.Parse(GetValueFromClaim(contextUser, ClaimTypes.NameIdentifier));
+                var user = userManager.Users.First(x=>x.Id == userId);
 
                 return new User
                 {
-                    Id = Guid.Parse(GetValueFromClaim(user, ClaimTypes.NameIdentifier)),
-                    UserName = GetValueFromClaim(user, "userName"),
-                    FullName = GetValueFromClaim(user, ClaimTypes.Name.ToString()),
-                    Email = GetValueFromClaim(user, ClaimTypes.Email.ToString()),
-                    PhoneNumber = GetValueFromClaim(user, ClaimTypes.MobilePhone.ToString())
+                    Id = user.Id,
+                    UserName = user.UserName,
+                    FullName = user.FullName,
+                    Email = user.Email,
+                    PhoneNumber = user.PhoneNumber,
+                    HasPhoto = user.HasPhoto
                 }; ;
             });
         }

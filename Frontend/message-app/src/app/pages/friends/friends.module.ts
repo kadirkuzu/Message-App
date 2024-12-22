@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AllFriendsComponent } from './all-friends/all-friends.component';
 import { RouterModule } from '@angular/router';
-import { FriendsComponent } from './friends/friends.component';
+import { FriendsComponent } from './friends.component';
 import { SharedModule } from '@/app/shared/shared.module';
 import { NewFriendRequestComponent } from './new-friend-request/new-friend-request.component';
 import { FriendRequestsComponent } from './friend-requests/friend-requests.component';
