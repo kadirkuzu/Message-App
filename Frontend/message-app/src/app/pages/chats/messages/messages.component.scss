@@ -9,20 +9,6 @@
   overflow: auto;
   padding: 20px;
 
-  &::-webkit-scrollbar {
-    width: 6px;
-  }
-
-  &::-webkit-scrollbar-track {
-    background-color: #f1f1f1;
-    border-radius: 10px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: #888;
-    border-radius: 10px;
-  }
-
   .date {
     color: $white;
     text-align: center;

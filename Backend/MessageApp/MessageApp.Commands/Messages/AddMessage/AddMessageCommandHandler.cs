@@ -34,7 +34,7 @@ public class AddMessageCommandHandler : IRequestHandler<AddMessageCommand, Messa
         await _writeRepository.AddAsync(message);
 
         var chat = await _chatReadRepository.GetFirstAsync(x=>x.Id == request.ChatId);
-        chat.AddMessage(message.Id);
+        chat.AddMessage(message);
 
         var mapped = _mapper.Map<MessageDto>(message);
 

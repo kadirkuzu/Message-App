@@ -1,7 +1,6 @@
 import { createAction, props } from "@ngrx/store";
 import {ActionBase} from "../_common/action-base";
 import { Chat } from "@/app/models/chat";
-import { Message } from "@/app/models/message";
 import { SignalRData } from "@/app/models/signalR-data";
 
 class Actions extends ActionBase {
@@ -21,9 +20,28 @@ class Actions extends ActionBase {
     props<{ data: SignalRData<Chat> }>()
   )
 
+  add = createAction (
+    `${this.type} Add`,
+    props<{payload: { userIds: string[], title: string, image?: File }}>()
+  )
+
   addOne= createAction (
-    `${this.type} Add SignalR`,
+    `${this.type} Add One`,
     props<{ data: Chat }>()
+  )
+
+  uploadImage = createAction(
+    `${this.type} Upload Image`,
+    props<{chatId: string, formData:FormData}>()
+  )
+
+  uploadImageSuccess = createAction(
+    `${this.type} Upload Image Success`
+  )
+
+  addImageSignalR = createAction (
+    `${this.type} Add Image SignalR`,
+    props<{ data: SignalRData<{id:string}> }>()
   )
 }
 export const ChatActions = new Actions('[Chats/API]')

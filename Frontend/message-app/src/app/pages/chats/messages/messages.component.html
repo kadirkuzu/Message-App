@@ -3,24 +3,22 @@
         <div class="position-relative h-100 w-100">
             <app-chat-head/>
             <div class="messages-wrapper d-flex flex-column justify-content-between gap-3 h-100">
-                <div class="messages-area" #messagesArea>
+                <div class="messages-area scroll-bar" #messagesArea>
                     @for (message of messages; track $index) {
-                        <div class="mb-3">
-                            @if(showDate(message,messages[$index - 1])){
-                                <div class="date">
-                                    {{message.createdDate | dateUtc : 'ddd, MMMM DD YYYY'}}
-                                </div>
-                            }
-                            @if(message.sender.id == user.id){
-                                <app-user-message [message]="message" [nextMessage]="messages[$index + 1]" [chat]="chat" />
-                            } @else {
-                                <app-chat-message [message]="message" [nextMessage]="messages[$index + 1]" [previousMessage]="messages[$index - 1]" [chat]="chat" />
-                            }
-                    </div>
+                        @if(showDate(message,messages[$index - 1])){
+                            <div class="date">
+                                {{message.createdDate | dateUtc : 'ddd, MMMM DD YYYY'}}
+                            </div>
+                        }
+                        @if(message.sender.id == user.id){
+                            <app-user-message [message]="message" [nextMessage]="messages[$index + 1]" [chat]="chat" />
+                        } @else {
+                            <app-chat-message [message]="message" [nextMessage]="messages[$index + 1]" [previousMessage]="messages[$index - 1]" [chat]="chat" />
+                        }
                     }
                 </div>
         
-                <div class="d-flex gap-3">
+                <div class="d-flex gap-3 align-items-end">
                     <app-multiline-input [theme]="'light'" placeholder="Write a message"  class="w-100" [control]="messageCtrl" />
                     <button class="btn btn-primary" (click)="sendMessage()">Send</button>
                 </div>

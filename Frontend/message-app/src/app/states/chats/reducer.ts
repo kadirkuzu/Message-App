@@ -1,6 +1,6 @@
 import {createEntityAdapter, EntityState} from "@ngrx/entity";
 import { createReducer, on } from "@ngrx/store";
-import {ChatActions as Actions} from "./actions";
+import {ChatActions as Actions, ChatActions} from "./actions";
 import { Chat } from "@/app/models/chat";
 import { MessageActions } from "../messages/actions";
 
@@ -36,6 +36,18 @@ export const reducer = createReducer(
       changes: {
         lastMessage: message,
         unreadCount: chat?.unreadCount + 1,
+      }
+    },state)
+  }),
+  on(Actions.addImageSignalR, (state, { data }) => {
+    let id = data.object.id
+    let chat = state.entities[id]
+
+    if(!chat) return state
+    return adapter.updateOne({
+      id: id,
+      changes: {
+        hasImage: true
       }
     },state)
   }),

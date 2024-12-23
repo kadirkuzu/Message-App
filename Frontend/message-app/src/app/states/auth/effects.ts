@@ -31,7 +31,7 @@ export class AuthEffects {
           UserActions.getUser()
         ]
       }),
-      catchError(errors =>  { alert(errors.message) ; return of(AuthActions.errorAction({ errors: errors }))})))));
+      catchError(errors => of(AuthActions.errorAction({ errors: errors })))))));
 
   logout$ = createEffect(() => this.actions$.pipe(ofType(AuthActions.logout),
     map(() => {

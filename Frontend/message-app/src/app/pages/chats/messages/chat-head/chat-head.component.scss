@@ -1,7 +1,6 @@
 @import 'src/assets/styles/variables.scss' ;
 
 .chat-head {
-    color: $white;
     display: flex;
     gap: 20px;
     align-items: center;
@@ -12,6 +11,7 @@
     left: 0;
 
     .group-info {
+        color: $white;
         display: flex;
         flex-direction: column;
         justify-content: space-between ;
@@ -24,5 +24,22 @@
         .last-message {
             color: $muted;
         }
+        
+        .title {
+            height: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            font-size: 18px;
+
+            .users-name {
+                font-size: 14px;
+            }
+        }
+
+        .from-now {
+            color: $muted;
+        }
+
     }
 }

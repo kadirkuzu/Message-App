@@ -1,16 +1,25 @@
 @if(chat$ | async; as chat ) {
     <div class="chat-head">
         @if(chat.isGroup){
-            <app-profile-photo [id]="chat.id" [isGroup]="true" [hasPhoto]="chat.hasImage" [height]="50" />
-            <div class="group-info w-100">
-                <div class="w-100 d-flex align-items-center justify-content-between">
-                    <div>
-                        <div>{{chat.title | titlecase | truncate : 15}}</div>
-                        <div>{{getUsersName(chat)}}</div>
-                    </div>
-                    <div class="from-now">Created Date: {{chat.createdDate | dateUtc}}</div>
+
+            <div class="profile-image-container" data-bs-toggle="modal" data-bs-target="#updateGroupImageModal">
+                <app-profile-photo [id]="chat.id" [isGroup]="true" [hasPhoto]="chat.hasImage" [height]="50" />
+                <div class="overlay">
+                    <i class="fa-solid fa-camera"></i>
                 </div>
             </div>
+            <div class="group-info w-100">
+                <div class="w-100 d-flex align-items-center justify-content-between">
+                    <div class="title">
+                        <div>{{chat.title | titlecase | truncate : 15}}</div>
+                        <div class="users-name">{{getUsersName(chat)}}</div>
+                    </div>
+                    <div class="from-now">Created Date: {{chat.createdDate | dateUtc : 'MM/DD/YYYY'}}</div>
+                </div>
+            </div>
+
+            <app-upload-image modalId="updateGroupImageModal" title="Upload Group Image" (upload)="uploadImage(chat.id,$event.file)" />
+
         } @else {
             <app-profile-photo [id]="chat.users[0].id" [hasPhoto]="chat.users[0].hasPhoto" [height]="50" />
             <div class="group-info w-100">
@@ -20,4 +29,5 @@
             </div>
         }
     </div>
+
 }

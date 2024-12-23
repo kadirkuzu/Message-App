@@ -7,5 +7,6 @@ public class SignalRTarget
     public const string FriendRequestRemoved = "FriendRequestRemoved";
     public const string FriendAdded = "FriendAdded";
     public const string ChatAdded = "ChatAdded";
+    public const string ChatPhotoUploaded = "ChatPhotoUploaded";
     public const string FriendRemoved = "FriendRemoved";
 }

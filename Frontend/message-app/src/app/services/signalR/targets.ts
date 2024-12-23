@@ -33,4 +33,8 @@ export const SignalRTargets: SignalRTarget[] = [
         target: 'ChatAdded',
         action: ChatActions.addSignalR
     },
+    {
+        target: 'ChatPhotoUploaded',
+        action: ChatActions.addImageSignalR
+    },
 ]

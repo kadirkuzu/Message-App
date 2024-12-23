@@ -17,6 +17,9 @@ import { TruncatePipe } from './pipes/truncate.pipe';
 import { FromNowPipe } from './pipes/from-now.pipe';
 import { DateUtcPipe } from './pipes/date-utc.pipe';
 import { MultilineInputComponent } from './components/inputs/multiline-input/multiline-input.component';
+import { ChatsFilterPipe } from './pipes/chats-filter.pipe';
+import { FriendRequestFilterPipe } from './pipes/friend-requests-filter.pipe';
+import { FriendsFilterPipe } from './pipes/friends-filter.pipe';
 
 @NgModule({
   imports: [
@@ -40,7 +43,10 @@ import { MultilineInputComponent } from './components/inputs/multiline-input/mul
     TruncatePipe,
     FromNowPipe,
     DateUtcPipe,
-    MultilineInputComponent
+    MultilineInputComponent,
+    ChatsFilterPipe,
+    FriendRequestFilterPipe,
+    FriendsFilterPipe
   ],
   exports: [
     TextInputComponent,
@@ -59,7 +65,10 @@ import { MultilineInputComponent } from './components/inputs/multiline-input/mul
     TruncatePipe,
     FromNowPipe,
     DateUtcPipe,
-    MultilineInputComponent
+    MultilineInputComponent,
+    ChatsFilterPipe,
+    FriendRequestFilterPipe,
+    FriendsFilterPipe
   ]
 })
 export class SharedModule { }

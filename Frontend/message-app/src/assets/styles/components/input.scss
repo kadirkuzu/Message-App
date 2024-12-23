@@ -1,13 +1,21 @@
 @import '../variables.scss';
 
-input, textarea {
+input,
+textarea {
   box-shadow: none !important;
   border-radius: $form-border-radius !important;
   font-size: $input-font-size;
 
+  &.has-icon {
+    border-left: none !important;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+  }
+
   &.light {
     background-color: $white !important;
     border-color: $gray-400 !important;
+
     &:focus {
       border-color: $gray-600 !important;
     }
@@ -30,6 +38,11 @@ input, textarea {
   &.is-invalid {
     border-color: #dc3545 !important;
   }
+
+  &.borderless {
+    border: 0 !important;
+    border-radius: 0 !important;
+  }
 }
 
 input {
@@ -40,7 +53,7 @@ textarea {
   width: 100%;
   resize: none !important;
   height: $form-height !important;
-  max-height: 150px; 
+  max-height: 150px;
   padding: 10px;
 }
 
@@ -62,10 +75,33 @@ textarea {
   font-size: 14px;
   font-weight: 400;
   margin-top: 5px;
+
   &.valid {
     color: $success;
   }
+
   &.inValid {
     color: $danger;
+  }
+}
+
+.input-group-text {
+  transition: border-color 0.15s ease-in-out ;
+  &.dark {
+    background-color: $secondary !important;
+    color: $dark-placeholder-color !important;
+    border-color: $dark-placeholder-color !important;
+    border-top-left-radius: $form-border-radius !important;
+    border-bottom-left-radius: $form-border-radius !important;
+    border-right: none !important;
+
+    &.focused {
+      border-color: $white !important;
+    }
+
+    &.borderless {
+      border: none !important;
+      border-radius: 0 !important;
+    }
   }
 }

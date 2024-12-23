@@ -1,5 +1,11 @@
 @import 'src/assets/styles/variables.scss' ;
 
+.chats {
+    max-height: calc(100% - 120px);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
 .chat {
     color: $white;
     display: flex;

@@ -3,6 +3,7 @@ using System;
 using MessageApp.Repository.Concrete.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace MessageApp.Repository.Migrations
 {
     [DbContext(typeof(MessageAppDbContext))]
-    partial class MessageAppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241222215635_chat-last-message")]
+    partial class chatlastmessage
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -51,6 +54,9 @@ namespace MessageApp.Repository.Migrations
 
                     b.Property<bool>("IsGroup")
                         .HasColumnType("boolean");
+
+                    b.Property<Guid?>("LastMessageId")
+                        .HasColumnType("uuid");
 
                     b.Property<string>("Title")
                         .HasColumnType("text");

@@ -10,5 +10,7 @@
 />
 }
 @else {
-    <img [src]="isGroup ? '../../../../assets/images/group-image.png' : '../../../../assets/images/user-icon.png'" [style.height]="height + 'px'" [style.width]="height + 'px'" [style.borderRadius]="borderRadius" class="image-placeholder" />
+    <div [style.height]="height + 'px'" [style.width]="height + 'px'" [style.borderRadius]="borderRadius" class="image-placeholder">
+        <img [src]="isGroup ? '../../../../assets/images/group-image.png' : '../../../../assets/images/user-icon.png'" />
+    </div>
 }

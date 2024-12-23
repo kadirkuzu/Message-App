@@ -2,7 +2,17 @@
     @if(label){
         <label class="input-label" [ngClass]="theme">{{label}}</label>
     }
-    <input class="form-control" [placeholder]="placeholder" [ngClass]="theme"
-        [class.is-invalid]="control.invalid && (control.touched ||control.dirty)" type="text"
-        [formControl]="control">
+
+    <div class="input-group">
+        @if(icon){
+            <div class="input-group-text" [ngClass]="theme" [class.borderless]="borderless" [class.focused]="isFocused">
+                <span>
+                    <i class="{{icon}}"></i>
+                </span>
+            </div>
+        }
+        <input class="form-control" #input [class.borderless]="borderless" [placeholder]="placeholder" [ngClass]="theme" [class.has-icon]="!!icon"
+            [class.is-invalid]="control.invalid && (control.touched ||control.dirty)" type="text" (focus)="isFocused = true" (blur)="isFocused = false"
+            [formControl]="control">
+    </div>
 </div>

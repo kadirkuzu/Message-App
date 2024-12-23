@@ -34,11 +34,8 @@ public class GetChatsQueryHandler : IRequestHandler<GetChatsQuery, IEnumerable<C
         var payload = _mapper.Map<IEnumerable<ChatDto>>(chats);
         foreach (var chat in payload)
         {
-            if(chat.LastMessageId.HasValue)
-            {
-                var lastMessage = await _messageReadRepository.GetWhere(x=> x.Id == chat.LastMessageId).Include(x=>x.Sender).FirstAsync();
-                chat.LastMessage = _mapper.Map<MessageDto>(lastMessage);
-            }
+            var lastMessage = await _messageReadRepository.GetWhere(x=> x.ChatId == chat.Id).Include(x => x.Sender).OrderByDescending(x=>x.CreatedDate).FirstOrDefaultAsync();
+            chat.LastMessage = _mapper.Map<MessageDto>(lastMessage);
             chat.Users = chat.Users.Where(x => x.Id != _user.Id);
         }
         return payload;

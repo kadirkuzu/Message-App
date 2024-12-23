@@ -6,19 +6,13 @@ import { FriendsComponent } from './friends.component';
 import { SharedModule } from '@/app/shared/shared.module';
 import { NewFriendRequestComponent } from './new-friend-request/new-friend-request.component';
 import { FriendRequestsComponent } from './friend-requests/friend-requests.component';
-import { FriendRequestFilterPipe } from './pipes/friend-requests-filter.pipe';
-import { FriendsFilterPipe } from './pipes/friends-filter.pipe';
-
-
 
 @NgModule({
   declarations: [
     AllFriendsComponent,
     FriendsComponent,
     NewFriendRequestComponent,
-    FriendRequestsComponent,
-    FriendRequestFilterPipe,
-    FriendsFilterPipe
+    FriendRequestsComponent
   ],
   imports: [
     CommonModule,

@@ -11,5 +11,9 @@ export class TextInputComponent {
   @Input() placeholder = ''
   @Input() label = ''
   @Input() class = ''
+  @Input() icon = ''
   @Input() theme: 'dark' | 'light' = 'dark'
+  @Input() borderless = false
+
+  isFocused = false
 }

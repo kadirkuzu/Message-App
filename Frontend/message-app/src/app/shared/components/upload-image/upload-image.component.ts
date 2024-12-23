@@ -8,8 +8,9 @@ import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@
 export class UploadImageComponent {
   @ViewChild('imageInput') imageInput!: ElementRef;
   @Input() modalId = ''
+  @Input() title = ''
 
-  @Output() upload = new EventEmitter<File>()
+  @Output() upload = new EventEmitter<{file:File,preview:string}>()
 
   selectedFile?: File
   imagePreview?: string
@@ -29,7 +30,7 @@ export class UploadImageComponent {
 
   uploadImage(): void {
     if (this.selectedFile) {
-      this.upload.emit(this.selectedFile)
+      this.upload.emit({file:this.selectedFile,preview: this.imagePreview!})
     }
   }
 

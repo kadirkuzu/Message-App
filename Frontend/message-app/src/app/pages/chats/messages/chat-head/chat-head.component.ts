@@ -1,4 +1,5 @@
 import { Chat } from '@/app/models/chat';
+import { ChatActions } from '@/app/states/chats/actions';
 import { ChatsSelector } from '@/app/states/chats/selectors';
 import { Component, Input } from '@angular/core';
 import { Store } from '@ngrx/store';
@@ -11,9 +12,16 @@ import { Store } from '@ngrx/store';
 export class ChatHeadComponent {
   chat$ = this.store.select(ChatsSelector.getActiveChat)
 
-  getUsersName(chat:Chat){
-    return chat.users.map(x=>x.fullName).join(', ')
+  constructor(private store: Store) { }
+
+  getUsersName(chat: Chat) {
+    return chat.users.map(x => '@' + x.userName).join(', ')
   }
-  
-  constructor(private store:Store){}
+
+  uploadImage(chatId:string, image:File){
+    let formData = new FormData()
+    formData.append(chatId,image)
+    this.store.dispatch(ChatActions.uploadImage({chatId,formData}))
+  }
+
 }
