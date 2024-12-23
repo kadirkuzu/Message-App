@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
-import { catchError, map, mergeMap, of, withLatestFrom } from "rxjs";
+import { catchError, EMPTY, map, mergeMap, of, withLatestFrom } from "rxjs";
 import { Store } from "@ngrx/store";
 import { ChatActions } from "./actions";
 import { ChatsApiService } from "@/app/services/api/chats.api.service";
@@ -33,7 +33,7 @@ export class ChatEffects {
 
   add$ = createEffect(() => this.actions$.pipe(ofType(ChatActions.add),
     mergeMap((action) => this.chatsApiService.add(action.payload).pipe(
-      map(data => {
+      mergeMap(data => {
         if(action.payload.image){
           let formData = new FormData()
           formData.append(data.id,action.payload.image)
@@ -41,7 +41,7 @@ export class ChatEffects {
         }
         this.router.navigateByUrl('chats/' + data.id)
         this.signalRService.joinGroup(data.id)
-        return ChatActions.addOne({ data })
+        return EMPTY
       }),
       catchError(errors => of(ChatActions.errorAction({ errors: errors })))))));
 
