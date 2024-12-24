@@ -21,6 +21,7 @@ import { ChatsFilterPipe } from './pipes/chats-filter.pipe';
 import { FriendRequestFilterPipe } from './pipes/friend-requests-filter.pipe';
 import { FriendsFilterPipe } from './pipes/friends-filter.pipe';
 import { IfAdminDirective } from './directives/if-admin.directive';
+import { DecryptMessage } from './pipes/decrypt-message.pipe';
 
 @NgModule({
   imports: [
@@ -48,7 +49,8 @@ import { IfAdminDirective } from './directives/if-admin.directive';
     ChatsFilterPipe,
     FriendRequestFilterPipe,
     FriendsFilterPipe,
-    IfAdminDirective
+    IfAdminDirective,
+    DecryptMessage
   ],
   exports: [
     TextInputComponent,
@@ -71,7 +73,8 @@ import { IfAdminDirective } from './directives/if-admin.directive';
     ChatsFilterPipe,
     FriendRequestFilterPipe,
     FriendsFilterPipe,
-    IfAdminDirective
+    IfAdminDirective,
+    DecryptMessage
   ]
 })
 export class SharedModule { }

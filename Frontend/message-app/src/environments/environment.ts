@@ -6,5 +6,6 @@ export const environment = {
   imageBaseUrl: 'https://messageapp.blob.core.windows.net',
   userImageContainer: 'profile-images',
   groupImageContainer: 'group-images',
-  superAdminUserName : 'admin'
+  superAdminUserName : 'admin',
+  defaultMessage: 'Welcome to message safely app.'
 };

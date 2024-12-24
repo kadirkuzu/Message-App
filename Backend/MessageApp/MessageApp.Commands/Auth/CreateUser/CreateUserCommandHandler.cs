@@ -24,7 +24,7 @@ public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, BoolD
         var result = await _userManager.CreateAsync(user, request.Password);
         if (result.Succeeded)
         {
-            await _chatService.CreateChatWithAdmin(user.Id,cancellationToken);
+            await _chatService.CreateChatWithAdmin(user,cancellationToken);
             return new BoolDto { Result = true };
         }
         else

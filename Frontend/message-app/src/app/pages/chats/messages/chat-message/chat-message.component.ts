@@ -1,5 +1,6 @@
 import { Chat } from '@/app/models/chat';
 import { Message } from '@/app/models/message';
+import { environment } from '@/environments/environment';
 import { Component, Input } from '@angular/core';
 import moment from 'moment';
 
@@ -13,6 +14,8 @@ export class ChatMessageComponent {
   @Input() nextMessage !: Message
   @Input() previousMessage !: Message
   @Input() chat !: Chat
+
+  defaultMessage = environment.defaultMessage
 
   get showTime() {
     return !this.nextMessage ||

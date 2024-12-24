@@ -14,7 +14,8 @@ namespace MessageApp.API.Controllers
         [HttpPost("create-account")] 
         public async Task<IActionResult> CreateAccount(CreateUserCommand command)
         {
-            return Ok(await mediator.Send(command));
+            var res = await mediator.Send(command);
+            return Ok(res);
         }       
         
         [HttpPost("[action]")] 

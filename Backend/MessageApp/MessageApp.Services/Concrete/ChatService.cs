@@ -31,13 +31,13 @@ public class ChatService : IChatService
         _configuration = configuration;
     }
 
-    public async Task<ChatDto> CreateChat(IEnumerable<Guid> UserIds, string Title,string FirstMessage, CancellationToken cancellationToken = default)
+    public async Task<ChatDto> CreateChat(IEnumerable<Guid> UserIds, string Title,string FirstMessage,User? sender, CancellationToken cancellationToken = default)
     {
         var users = await _userManager.Users.Where(user => UserIds.Any(x => x == user.Id || _user.Id == user.Id)).ToListAsync(cancellationToken);
         var chat = new Chat(users, users.Count > 2, Title);
         await _writeRepository.AddAsync(chat);
 
-        var message = new Message(_user, chat.Id, FirstMessage);
+        var message = new Message(sender ?? _user, chat.Id, FirstMessage);
         await _messageWriteRepository.AddAsync(message);
         await _messageWriteRepository.SaveAsync();
         chat.AddMessage(message);
@@ -54,10 +54,10 @@ public class ChatService : IChatService
         return mapped;
     }
 
-    public async Task<ChatDto> CreateChatWithAdmin(Guid UserId, CancellationToken cancellationToken = default)
+    public async Task<ChatDto> CreateChatWithAdmin(User user, CancellationToken cancellationToken = default)
     {
         var userName = _configuration["App:AdminUserName"];
         var admin = await _userManager.FindByNameAsync(userName!);
-        return await CreateChat([UserId,admin!.Id],"","Welcome To Message App",cancellationToken);
+        return await CreateChat([user.Id,admin!.Id],"","", admin, cancellationToken);
     }
 }

@@ -1,7 +1,7 @@
 <div class="user-message">
     <div class="message-box">
         <div class="message-content" [class.show-bubble]="showTime">
-            {{ message.content }}
+            {{ message.content.length ? message.content : defaultMessage }}
         </div>
         @if(showTime){
             <div class="created-date">{{ message.createdDate | dateUtc : "HH:mm" }}</div>

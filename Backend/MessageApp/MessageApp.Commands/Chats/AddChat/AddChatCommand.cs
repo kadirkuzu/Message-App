@@ -19,6 +19,6 @@ public class AddChatCommandHandler : IRequestHandler<AddChatCommand, ChatDto>
 
     public async Task<ChatDto> Handle(AddChatCommand request, CancellationToken cancellationToken)
     {
-        return await _chatService.CreateChat(request.UserIds, request.Title, "Group Created.", cancellationToken);
+        return await _chatService.CreateChat(request.UserIds, request.Title, "Group Created.",cancellationToken: cancellationToken);
     }
 }

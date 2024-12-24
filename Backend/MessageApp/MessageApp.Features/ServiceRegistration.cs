@@ -30,20 +30,26 @@ namespace MessageApp.Features
             {
                 var httpContextAccessor = serviceProvider.GetRequiredService<IHttpContextAccessor>();
                 var contextUser = httpContextAccessor.HttpContext?.User;
-                UserManager<User> userManager = serviceProvider.GetRequiredService<UserManager<User>>();
 
-                var userId = Guid.Parse(GetValueFromClaim(contextUser, ClaimTypes.NameIdentifier));
-                var user = userManager.Users.First(x=>x.Id == userId);
-
-                return new User
+                if (contextUser?.Identity?.IsAuthenticated == true)
                 {
-                    Id = user.Id,
-                    UserName = user.UserName,
-                    FullName = user.FullName,
-                    Email = user.Email,
-                    PhoneNumber = user.PhoneNumber,
-                    HasPhoto = user.HasPhoto
-                };
+                    UserManager<User> userManager = serviceProvider.GetRequiredService<UserManager<User>>();
+
+                    var userId = Guid.Parse(GetValueFromClaim(contextUser, ClaimTypes.NameIdentifier));
+                    var user = userManager.Users.First(x => x.Id == userId);
+
+                    return new User
+                    {
+                        Id = user.Id,
+                        UserName = user.UserName,
+                        FullName = user.FullName,
+                        Email = user.Email,
+                        PhoneNumber = user.PhoneNumber,
+                        HasPhoto = user.HasPhoto
+                    };
+                }
+
+                return new User();
             });
 
             var context = services.BuildServiceProvider().GetService<MessageAppDbContext>();
