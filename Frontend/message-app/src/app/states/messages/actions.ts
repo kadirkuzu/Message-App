@@ -30,5 +30,10 @@ class Actions extends ActionBase {
     `${this.type} Send Message Success`,
     props<{ payload: Message }>()
   )
+
+  sendMessageToAll = createAction(
+    `${this.type} Send Message To All`,
+    props<{ content: string }>()
+  )
 }
 export const MessageActions = new Actions('[Messages/API]')

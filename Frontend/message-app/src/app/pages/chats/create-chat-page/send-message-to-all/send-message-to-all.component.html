@@ -1,0 +1,21 @@
+<div class="modal fade" id="sendMessageToAll" tabindex="-1" aria-hidden="true" (hidden.bs.modal)="clear()">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="sendMessageToAll">Send Message To All</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" #close aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <app-multiline-input [control]="formControl" theme="light" placeholder="Message..." [rows]="5" />
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    Cancel
+                </button>
+                <button type="button" class="btn btn-primary" (click)="send(close)">
+                    Send
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

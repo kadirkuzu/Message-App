@@ -20,6 +20,7 @@ import { MultilineInputComponent } from './components/inputs/multiline-input/mul
 import { ChatsFilterPipe } from './pipes/chats-filter.pipe';
 import { FriendRequestFilterPipe } from './pipes/friend-requests-filter.pipe';
 import { FriendsFilterPipe } from './pipes/friends-filter.pipe';
+import { IfAdminDirective } from './directives/if-admin.directive';
 
 @NgModule({
   imports: [
@@ -46,7 +47,8 @@ import { FriendsFilterPipe } from './pipes/friends-filter.pipe';
     MultilineInputComponent,
     ChatsFilterPipe,
     FriendRequestFilterPipe,
-    FriendsFilterPipe
+    FriendsFilterPipe,
+    IfAdminDirective
   ],
   exports: [
     TextInputComponent,
@@ -68,7 +70,8 @@ import { FriendsFilterPipe } from './pipes/friends-filter.pipe';
     MultilineInputComponent,
     ChatsFilterPipe,
     FriendRequestFilterPipe,
-    FriendsFilterPipe
+    FriendsFilterPipe,
+    IfAdminDirective
   ]
 })
 export class SharedModule { }

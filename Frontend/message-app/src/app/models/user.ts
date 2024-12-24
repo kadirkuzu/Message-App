@@ -5,7 +5,10 @@ export class User {
     fullName!: string
     userName!: string
     hasPhoto!: boolean
+    roles!: Role[]
 }
+
+export type Role = 'SuperAdmin' | 'Admin' | 'User'
 
 export class AddFriendRequestUser{
     id!:string

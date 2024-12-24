@@ -1,15 +1,22 @@
 <div class="row h-100">
     <div class="col-8 h-100" [class.col-12]="activeTab == 'new-message'">
-        <div class="d-flex gap-3">
-            <div class="route" [class.active]="activeTab == 'new-message'" (click)="changeTab('new-message')">
-                <i class="fa-solid fa-user"></i>
-                <span class="title">New Message</span>
+        <div class="d-flex justify-content-between">
+            <div class="d-flex gap-3">
+                <div class="route" [class.active]="activeTab == 'new-message'" (click)="changeTab('new-message')">
+                    <i class="fa-solid fa-user"></i>
+                    <span class="title">New Message</span>
+                </div>
+                <div class="route" [class.active]="activeTab == 'new-group'" (click)="changeTab('new-group')">
+                    <i class="fa-solid fa-users"></i>
+                    <span class="title">New Group</span>
+                </div>
             </div>
-            <div class="route" [class.active]="activeTab == 'new-group'" (click)="changeTab('new-group')">
+            <div class="route" data-bs-toggle="modal" data-bs-target="#sendMessageToAll" *ifAdmin="true">
                 <i class="fa-solid fa-users"></i>
-                <span class="title">New Group</span>
+                <span class="title">Send Message To All</span>
             </div>
         </div>
+
 
         <app-text-input [control]="searchFriend" class="mt-3" [placeholder]="'Search Users'"
             [icon]="'fa-solid fa-magnifying-glass'" />
@@ -30,42 +37,45 @@
         </div>
     </div>
     @if(activeTab == 'new-group'){
-        <div class="col-4 right-card h-100 scroll-bar d-flex flex-column justify-content-between">
-            <div>
-                <div class="d-flex justify-content-center mt-20 mt-md-0">
-                    <div class="profile-image-container" data-bs-toggle="modal" data-bs-target="#groupImageModal">
-                        @if(groupImagePreview){
-                            <img [src]="groupImagePreview" class="group-image"/>
-                        } @else {
-                            <div class="empty">
-                                <img src="../../../../assets/images/group-image.png"/>
-                            </div>
-                        }
-                        <div class="overlay">
-                            <i class="fa-solid fa-camera"></i>
+    <div class="col-4 right-card h-100 scroll-bar d-flex flex-column justify-content-between">
+        <div>
+            <div class="d-flex justify-content-center mt-20 mt-md-0">
+                <div class="profile-image-container" data-bs-toggle="modal" data-bs-target="#groupImageModal">
+                    @if(groupImagePreview){
+                        <img [src]="groupImagePreview" class="group-image" />
+                    } @else {
+                        <div class="empty">
+                            <img src="../../../../assets/images/group-image.png" />
                         </div>
-                    </div>
-                </div>
-    
-                <app-text-input [control]="title" [placeholder]="'Group Title'" class="mt-3"/>
-                
-                <div class="list">
-                    @for(friend of selectedList; track friend.userId){
-                        <div class="mt-3">
-                            <div class="d-flex align-items-center justify-content-between w-100">
-                                <div class="d-flex gap-2">
-                                    <app-profile-photo [hasPhoto]="friend.hasPhoto" [id]="friend.userId" [height]="30" />
-                                    <div class="text-white">{{'@' + friend.userName}}</div>
-                                </div>
-                                <span class="text-white c-pointer" (click)="addRemoveToList(friend)"><i class="fa-solid fa-xmark"></i></span>
-                            </div>
-                    </div>
                     }
+                    <div class="overlay">
+                        <i class="fa-solid fa-camera"></i>
+                    </div>
                 </div>
             </div>
-            <button class="btn btn-primary mt-3" [disabled]="selectedList.length <= 1" (click)="create()">Create Group</button>
+
+            <app-text-input [control]="title" [placeholder]="'Group Title'" class="mt-3" />
+
+            <div class="list">
+                @for(friend of selectedList; track friend.userId){
+                    <div class="mt-3">
+                        <div class="d-flex align-items-center justify-content-between w-100">
+                            <div class="d-flex gap-2">
+                                <app-profile-photo [hasPhoto]="friend.hasPhoto" [id]="friend.userId" [height]="30" />
+                                <div class="text-white">{{'@' + friend.userName}}</div>
+                            </div>
+                            <span class="text-white c-pointer" (click)="addRemoveToList(friend)"><i
+                                    class="fa-solid fa-xmark"></i></span>
+                        </div>
+                    </div>
+                }
+            </div>
         </div>
+        <button class="btn btn-primary mt-3" [disabled]="selectedList.length <= 1" (click)="create()">Create
+            Group</button>
+    </div>
     }
 </div>
 
 <app-upload-image modalId="groupImageModal" title="Upload Group Image" (upload)="uploadImage($event)" />
+<app-send-message-to-all *ifAdmin="true" />

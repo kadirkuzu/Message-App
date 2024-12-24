@@ -10,6 +10,16 @@
     right: 0;
     left: 0;
 
+    .logo {
+        width: 50px;
+        object-fit: contain;
+    }
+
+    .big-title {
+        font-weight: 500;
+        font-size: 26px;
+    }
+
     .group-info {
         color: $white;
         display: flex;

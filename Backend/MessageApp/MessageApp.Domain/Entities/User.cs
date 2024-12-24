@@ -9,4 +9,14 @@ public class User : IdentityUser<Guid>
     public DateTime? RefreshTokenEndDate { get; set; }
     public ICollection<Chat> Chats { get; set; }
     public bool HasPhoto { get; set; }
+
+    public User() { }
+    public User(string email,string userName, string fullName, string phoneNumber = "")
+    {
+        Id = Guid.NewGuid();
+        Email = email;
+        UserName = userName;
+        FullName = fullName;
+        PhoneNumber = phoneNumber;
+    }
 }

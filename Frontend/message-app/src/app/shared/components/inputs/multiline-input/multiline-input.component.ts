@@ -12,4 +12,5 @@ export class MultilineInputComponent {
   @Input() label = ''
   @Input() class = ''
   @Input() theme: 'dark' | 'light' = 'dark'
+  @Input() rows = 2
 }

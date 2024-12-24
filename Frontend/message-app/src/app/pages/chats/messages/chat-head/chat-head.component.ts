@@ -1,6 +1,7 @@
 import { Chat } from '@/app/models/chat';
 import { ChatActions } from '@/app/states/chats/actions';
 import { ChatsSelector } from '@/app/states/chats/selectors';
+import { environment } from '@/environments/environment';
 import { Component, Input } from '@angular/core';
 import { Store } from '@ngrx/store';
 
@@ -11,6 +12,8 @@ import { Store } from '@ngrx/store';
 })
 export class ChatHeadComponent {
   chat$ = this.store.select(ChatsSelector.getActiveChat)
+
+  adminUserName = environment.superAdminUserName
 
   constructor(private store: Store) { }
 

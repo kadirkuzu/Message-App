@@ -7,7 +7,6 @@ public class ChatDto
 {
     public Guid Id { get; set; }
     public string Title { get; set; }
-    public Guid? LastMessageId { get; set; }
     public MessageDto? LastMessage { get; set; }
     public bool IsGroup { get; set; }
     public bool HasImage { get; set; }

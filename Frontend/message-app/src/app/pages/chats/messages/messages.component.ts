@@ -20,6 +20,7 @@ export class MessagesComponent implements OnInit, AfterViewInit {
 
   messages$ = this.store.select(MessagesSelector.getAll)
   chat$ = this.store.select(ChatsSelector.getActiveChat)
+  getIsAdminChat$ = this.store.select(ChatsSelector.getIsAdminChat)
   activeUser$ = this.store.select(UserSelector.activeUser)
   unsubscribe$ = new Subject<void>();
 

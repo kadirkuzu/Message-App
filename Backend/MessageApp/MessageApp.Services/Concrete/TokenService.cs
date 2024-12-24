@@ -1,6 +1,7 @@
 ﻿using MessageApp.Domain.Entities;
 using MessageApp.Dto.User;
 using MessageApp.Services.Abstract;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
@@ -13,17 +14,19 @@ namespace MessageApp.Services.Concrete;
 public class TokenService : ITokenService
 {
     readonly IConfiguration _configuration;
+    readonly UserManager<User> _userManager;
 
-    public TokenService(IConfiguration configuration)
+    public TokenService(IConfiguration configuration, UserManager<User> userManager)
     {
         _configuration = configuration;
+        _userManager = userManager;
     }
 
-    public UserToken CreateAccessToken(User user)
+    public async Task<UserToken> CreateAccessToken(User user)
     {
         var token = new UserToken();
 
-        SymmetricSecurityKey securityKey = new(Encoding.UTF8.GetBytes(_configuration["Token:SecurityKey"]));
+        SymmetricSecurityKey securityKey = new(Encoding.UTF8.GetBytes(_configuration["Token:SecurityKey"]!));
 
         SigningCredentials signingCredentials = new(securityKey, SecurityAlgorithms.HmacSha256);
 
@@ -38,6 +41,12 @@ public class TokenService : ITokenService
                 new ("userName", user.UserName!),
                 new (ClaimsIdentity.DefaultRoleClaimType, "User"),
             };
+
+        var userRoles = await _userManager.GetRolesAsync(user);
+        foreach (var userRole in userRoles)
+        {
+            claims.Add(new Claim(ClaimTypes.Role, userRole));
+        }
 
         JwtSecurityToken securityToken = new JwtSecurityToken(
                 audience: _configuration["Token:Audience"],

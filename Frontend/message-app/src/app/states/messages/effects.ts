@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
 import {Actions, createEffect, ofType} from "@ngrx/effects";
-import {catchError, map, mergeMap, of, withLatestFrom} from "rxjs";
+import {catchError, EMPTY, map, mergeMap, of, withLatestFrom} from "rxjs";
 import {Store} from "@ngrx/store";
 import {MessagesApiService} from "../../services/api/messages.api.service";
 import {MessageActions} from "./actions";
@@ -19,5 +19,10 @@ export class MessageEffects {
     withLatestFrom(this.store.select(ChatsSelector.getActiveChat)),
     mergeMap(([action,chat]) => this.messagesApiService.sendMessage(chat?.id!,action.content).pipe(
       map(payload => MessageActions.sendMessageSuccess({payload})),
+      catchError(errors => of(MessageActions.errorAction({errors:errors})))))));
+
+  sendMessageToAll$ = createEffect(() => this.actions$.pipe(ofType(MessageActions.sendMessageToAll),
+    mergeMap((action) => this.messagesApiService.sendMessageToAll(action.content).pipe(
+      mergeMap(payload => EMPTY),
       catchError(errors => of(MessageActions.errorAction({errors:errors})))))));
 }

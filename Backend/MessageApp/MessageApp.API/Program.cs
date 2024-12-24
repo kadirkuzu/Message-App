@@ -7,19 +7,14 @@ using Serilog.Core;
 using Microsoft.AspNetCore.HttpLogging;
 using MessageApp.API.Extensions;
 using MessageApp.Services;
-using MessageApp.API.Filters;
-using System.Security.Claims;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers(options =>
-{
-    options.Filters.Add<RolePermissionFilter>();
-});
+builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddCors(options => options.AddDefaultPolicy(policy => 
-        policy.WithOrigins("http://localhost:4200", "https://a86c-95-70-248-70.ngrok-free.app")
+        policy.WithOrigins("http://localhost:4200")
             .AllowAnyHeader()
             .AllowAnyMethod()
             .AllowCredentials()
@@ -43,7 +38,7 @@ builder.Services.AddAuthentication(x =>
 
             ValidAudience = builder.Configuration["Token:Audience"],
             ValidIssuer = builder.Configuration["Token:Issuer"],
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Token:SecurityKey"])),
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Token:SecurityKey"]!)),
             LifetimeValidator = (notBefore, expires, securityToken, validationParameters) => expires == null || expires > DateTime.UtcNow,
 
             NameClaimType = "userId"

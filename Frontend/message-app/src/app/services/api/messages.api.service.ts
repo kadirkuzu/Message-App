@@ -15,4 +15,8 @@ export class MessagesApiService {
   sendMessage(chatId:string,content:string) {
     return this.apiService.post<Message>(`messages`, {chatId,content});
   }
+
+  sendMessageToAll(content:string) {
+    return this.apiService.post<Message>(`messages/send-to-all`, {content});
+  }
 }

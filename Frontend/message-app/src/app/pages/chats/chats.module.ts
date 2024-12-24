@@ -9,6 +9,7 @@ import { FriendsBarComponent } from './friends-bar/friends-bar.component';
 import { ChatHeadComponent } from './messages/chat-head/chat-head.component';
 import { UserMessageComponent } from './messages/user-message/user-message.component';
 import { ChatMessageComponent } from './messages/chat-message/chat-message.component';
+import { SendMessageToAllComponent } from './create-chat-page/send-message-to-all/send-message-to-all.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ChatMessageComponent } from './messages/chat-message/chat-message.compo
     ChatHeadComponent,
     UserMessageComponent,
     ChatMessageComponent,
+    SendMessageToAllComponent,
   ],
   imports: [
     CommonModule,

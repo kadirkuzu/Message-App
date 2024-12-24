@@ -4,7 +4,17 @@
     @if(user$ | async; as user) {
         @for(chat of (chats$ | async)! | chatsFilter : search.value; track chat.id; let index = $index){
             <div class="chat" [class.borderless]="index == 0" [routerLink]="chat.id" routerLinkActive="active">
-                @if(chat.isGroup){
+                @if(!chat.isGroup && chat.users[0].userName == adminUserName){
+                    <img class="logo" src="../../../../assets/images/chat.png" />
+                    <div class="group-info w-100">
+                        <div class="w-100 d-flex align-items-center justify-content-between">
+                            <div>Message Safely</div>
+                            <div class="from-now">{{chat.lastMessage.createdDate | fromNow}}</div>
+                        </div>
+                        <div class="last-message">{{chat.lastMessage.content | truncate: 25}}</div>
+                    </div>
+                }
+                @else if(chat.isGroup){
                     <app-profile-photo [id]="chat.id" [isGroup]="true" [hasPhoto]="chat.hasImage" [height]="50" />
                     <div class="group-info w-100">
                         <div class="w-100 d-flex align-items-center justify-content-between">

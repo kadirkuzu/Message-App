@@ -10,7 +10,7 @@
                     <div class="d-flex justify-content-between align-items-center w-100">
                         <div class="routes">
                             <div class="route" routerLink='/chats' routerLinkActive="active-link">Chats</div>
-                            <div class="route" routerLink='/friends' routerLinkActive="active-link">Friends</div>
+                            <div class="route" routerLink='/friends' routerLinkActive="active-link" *ifAdmin="false">Friends</div>
                             <div class="route" routerLink='/profile' routerLinkActive="active-link">Profile</div>
                         </div>
                         <div class="d-flex align-items-center user-info-wrapper">

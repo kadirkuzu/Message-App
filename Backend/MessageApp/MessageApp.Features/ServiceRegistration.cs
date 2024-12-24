@@ -16,7 +16,7 @@ namespace MessageApp.Features
 {
     public static class ServiceRegistration
     {
-        public static void AddFeaturesServices(this IServiceCollection services)
+        public static async Task AddFeaturesServices(this IServiceCollection services)
         {
             services.AddMediatR(options => options.RegisterServicesFromAssemblies(typeof(GetMessagesQuery).Assembly, typeof(AddMessageCommand).Assembly));
             services.AddAutoMapper(typeof(MessageProfile).Assembly);
@@ -26,7 +26,7 @@ namespace MessageApp.Features
             services.AddScoped(typeof(IReadRepository<>), typeof(ReadRepository<>));
             services.AddScoped(typeof(IWriteRepository<>), typeof(WriteRepository<>));
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            services.AddScoped<User>(serviceProvider =>
+            services.AddScoped(serviceProvider =>
             {
                 var httpContextAccessor = serviceProvider.GetRequiredService<IHttpContextAccessor>();
                 var contextUser = httpContextAccessor.HttpContext?.User;
@@ -43,8 +43,12 @@ namespace MessageApp.Features
                     Email = user.Email,
                     PhoneNumber = user.PhoneNumber,
                     HasPhoto = user.HasPhoto
-                }; ;
+                };
             });
+
+            var context = services.BuildServiceProvider().GetService<MessageAppDbContext>();
+            await context!.Database.MigrateAsync();
+            await services.InitializeRolesAsync();
         }
         private static string GetValueFromClaim(ClaimsPrincipal? user,string claimType)
         {

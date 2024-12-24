@@ -2,7 +2,7 @@
     @if(label){
         <label class="input-label" [ngClass]="theme">{{label}}</label>
     }
-    <textarea class="form-control" [placeholder]="placeholder" [ngClass]="theme"
+    <textarea class="form-control" [placeholder]="placeholder" [ngClass]="theme" [rows]="rows"
         [class.is-invalid]="control.invalid && (control.touched ||control.dirty)" type="text"
         [formControl]="control">
     </textarea>

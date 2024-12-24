@@ -1,6 +1,15 @@
 @if(chat$ | async; as chat ) {
     <div class="chat-head">
-        @if(chat.isGroup){
+        @if(!chat.isGroup && chat.users[0].userName == adminUserName){
+            <img class="logo" src="../../../../assets/images/chat.png" />
+            <div class="group-info w-100">
+                <div class="w-100 d-flex align-items-center justify-content-between">
+                    <div class="big-title">Message Safely</div>
+                </div>
+            </div>
+        }
+
+        @else if(chat.isGroup){
 
             <div class="profile-image-container" data-bs-toggle="modal" data-bs-target="#updateGroupImageModal">
                 <app-profile-photo [id]="chat.id" [isGroup]="true" [hasPhoto]="chat.hasImage" [height]="50" />

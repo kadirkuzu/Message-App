@@ -17,11 +17,12 @@
                         }
                     }
                 </div>
-        
-                <div class="d-flex gap-3 align-items-end">
-                    <app-multiline-input [theme]="'light'" placeholder="Write a message"  class="w-100" [control]="messageCtrl" />
-                    <button class="btn btn-primary" (click)="sendMessage()">Send</button>
-                </div>
+                @if(!(getIsAdminChat$|async)){
+                    <div class="d-flex gap-3 align-items-end">
+                        <app-multiline-input [theme]="'light'" placeholder="Write a message"  class="w-100" [control]="messageCtrl" />
+                        <button class="btn btn-primary" (click)="sendMessage()">Send</button>
+                    </div>
+                }
             </div>
         </div>
     }

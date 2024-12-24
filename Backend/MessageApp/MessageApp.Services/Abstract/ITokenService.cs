@@ -5,6 +5,6 @@ namespace MessageApp.Services.Abstract;
 
 public interface ITokenService
 {
-    UserToken CreateAccessToken(User user);
+    Task<UserToken> CreateAccessToken(User user);
     string CreateRefreshToken();
 }

@@ -23,7 +23,10 @@ public class GetMeQueryHandler : IRequestHandler<GetMeQuery, UserDto>
     public async Task<UserDto> Handle(GetMeQuery request, CancellationToken cancellationToken)
     {
         var user = await _userManager.FindByIdAsync(_user.Id.ToString());
+        var roles = await _userManager.GetRolesAsync(user!);
+        var mapped = _mapper.Map<UserDto>(user);
+        mapped.Roles = roles;
 
-        return _mapper.Map<UserDto>(user);
+        return mapped;
     }
 }

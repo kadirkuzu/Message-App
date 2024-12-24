@@ -23,7 +23,7 @@ public class RefreshTokenCommandHandler : IRequestHandler<RefreshTokenCommand, U
         if (user == null || user.RefreshTokenEndDate < DateTime.UtcNow) throw new Exception("Bad Token");
         else
         {
-            var token = _tokenHandler.CreateAccessToken(user);
+            var token = await _tokenHandler.CreateAccessToken(user);
             user.RefreshToken = token.RefreshToken;
             user.RefreshTokenEndDate = token.Expiration.AddHours(1);
             return token;
