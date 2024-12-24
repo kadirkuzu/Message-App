@@ -11,7 +11,7 @@
                             <div>Message Safely</div>
                             <div class="from-now">{{chat.lastMessage.createdDate | fromNow}}</div>
                         </div>
-                        <div class="last-message">{{!chat.lastMessage.content ? 'Welcome to message safely app.' : (chat.lastMessage.content | decryptMessage | truncate: 25)}}</div>
+                        <div class="last-message">{{(chat.lastMessage | decryptMessage | truncate: 25)}}</div>
                     </div>
                 }
                 @else if(chat.isGroup){
@@ -21,7 +21,7 @@
                             <div>{{chat.title | titlecase | truncate : 15}}</div>
                             <div class="from-now">{{chat.lastMessage.createdDate | fromNow}}</div>
                         </div>
-                        <div class="last-message">{{(user.id == chat.lastMessage.sender.id ? 'You' : chat.lastMessage.sender.userName) + ': ' + chat.lastMessage.content | decryptMessage | truncate : 25}}</div>
+                        <div class="last-message">{{(user.id == chat.lastMessage.sender.id ? 'You' : chat.lastMessage.sender.userName) + ': ' + (chat.lastMessage | decryptMessage | truncate : 25)}}</div>
                     </div>
                 } @else {
                     <app-profile-photo [id]="chat.users[0].id" [hasPhoto]="chat.users[0].hasPhoto" [height]="50" />
@@ -31,7 +31,7 @@
                             <div class="from-now">{{chat.lastMessage.createdDate | fromNow}}</div>
                         </div>
                         <div class="last-message">
-                            {{(user.id == chat.lastMessage.sender.id ? 'You: ' : '') + (!chat.lastMessage.content ? 'Welcome to message safely app.' :(chat.lastMessage.content | decryptMessage | truncate : 25))}}
+                            {{(user.id == chat.lastMessage.sender.id ? 'You: ' : '') + (!chat.lastMessage.content ? 'Welcome to message safely app.' :(chat.lastMessage | decryptMessage | truncate : 25))}}
                         </div>                
                     </div>
                 }

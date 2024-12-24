@@ -9,7 +9,7 @@ class Selector {
 
   all = createSelector(getState, selectAdapter.selectAll)
 
-  getAll = createSelector(this.all, all => all.map(x=>({...x,content: decryptMessage(x.content)})))
+  getAll = createSelector(this.all, all => all.map(x=>({...x,content: x.isEncrypted ? decryptMessage(x.content) : x.content})))
 
   loading = createSelector(getState, (state: State) => state.isLoading > 0)
 

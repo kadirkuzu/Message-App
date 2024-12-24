@@ -7,5 +7,4 @@ export const environment = {
   userImageContainer: 'profile-images',
   groupImageContainer: 'group-images',
   superAdminUserName : 'admin',
-  defaultMessage: 'Welcome to message safely app.'
 };

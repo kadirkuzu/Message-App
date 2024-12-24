@@ -37,7 +37,7 @@ public class ChatService : IChatService
         var chat = new Chat(users, users.Count > 2, Title);
         await _writeRepository.AddAsync(chat);
 
-        var message = new Message(sender ?? _user, chat.Id, FirstMessage);
+        var message = new Message(sender ?? _user, chat.Id, FirstMessage,false);
         await _messageWriteRepository.AddAsync(message);
         await _messageWriteRepository.SaveAsync();
         chat.AddMessage(message);
@@ -58,6 +58,6 @@ public class ChatService : IChatService
     {
         var userName = _configuration["App:AdminUserName"];
         var admin = await _userManager.FindByNameAsync(userName!);
-        return await CreateChat([user.Id,admin!.Id],"","", admin, cancellationToken);
+        return await CreateChat([user.Id,admin!.Id],"","Welcome to message safely app.", admin, cancellationToken);
     }
 }

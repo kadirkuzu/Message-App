@@ -3,6 +3,7 @@ using System;
 using MessageApp.Repository.Concrete.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace MessageApp.Repository.Migrations
 {
     [DbContext(typeof(MessageAppDbContext))]
-    partial class MessageAppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241224134840_is-encrypted-message")]
+    partial class isencryptedmessage
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

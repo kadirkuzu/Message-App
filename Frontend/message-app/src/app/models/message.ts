@@ -6,4 +6,5 @@ export class Message extends Entity {
   chatId!: string
   content!: string
   isRead!: boolean
+  isEncrypted!: boolean
 }

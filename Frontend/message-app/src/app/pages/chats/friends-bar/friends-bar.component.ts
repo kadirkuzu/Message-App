@@ -15,7 +15,6 @@ export class FriendsBarComponent {
   user$ = this.store.select(UserSelector.activeUser)
 
   adminUserName = environment.superAdminUserName
-  defaultMessage = environment.defaultMessage
 
   search = new FormControl()
 

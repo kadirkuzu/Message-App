@@ -1,4 +1,5 @@
 import { decryptMessage } from '@/app/common/helpers/message-helpers';
+import { Message } from '@/app/models/message';
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
@@ -6,8 +7,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class DecryptMessage implements PipeTransform {
 
-  transform(value: string) {
-    return decryptMessage(value)
+  transform(message: Message) {
+    return message.isEncrypted ? decryptMessage(message.content) : message.content
   }
 
 }
