@@ -22,6 +22,7 @@ public class Message : BaseEntity
         ChatId = chatId;
         Content = content;
         IsRead = false;
+        IsEncrypted = isIsEncrypted;
     }
 
     public void Read()

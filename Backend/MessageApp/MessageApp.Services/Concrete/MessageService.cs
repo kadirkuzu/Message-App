@@ -58,7 +58,7 @@ public class MessageService : IMessageService
         var chats = await _chatReadRepository.GetWhere(x=> x.Users.Count == 2 && x.Users.Any(user => user.Id == _user.Id)).ToListAsync();
         foreach (var chat in chats)
         {
-            var message = new Message(_user, chat.Id, Content);
+            var message = new Message(_user, chat.Id, Content, false);
             await _writeRepository.AddAsync(message);
             chat.AddMessage(message);
             var mapped = _mapper.Map<MessageDto>(message);

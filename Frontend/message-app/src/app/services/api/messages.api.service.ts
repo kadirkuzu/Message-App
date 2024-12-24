@@ -19,7 +19,6 @@ export class MessagesApiService {
   }
 
   sendMessageToAll(content:string) {
-    content = encryptMessage(content)
     return this.apiService.post<Message>(`messages/send-to-all`, {content});
   }
 }

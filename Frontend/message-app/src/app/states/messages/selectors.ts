@@ -7,9 +7,7 @@ const selectAdapter = adapter.getSelectors()
 
 class Selector {
 
-  all = createSelector(getState, selectAdapter.selectAll)
-
-  getAll = createSelector(this.all, all => all.map(x=>({...x,content: x.isEncrypted ? decryptMessage(x.content) : x.content})))
+  getAll = createSelector(getState, selectAdapter.selectAll)
 
   loading = createSelector(getState, (state: State) => state.isLoading > 0)
 
