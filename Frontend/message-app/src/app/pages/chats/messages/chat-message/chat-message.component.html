@@ -4,7 +4,7 @@
             @if(showUser){
                 <app-profile-photo [id]="message.sender.id" [height]="35" [hasPhoto]="message.sender.hasPhoto" />
             }
-            <div class="message-content" [class.ml-45]="!showUser" [class.show-bubble]="showBubble">
+            <div class="message-content" [class.ml-45]="chat.isGroup && !showUser" [class.show-bubble]="showBubble">
                 @if(showUser){
                     <div class="user-name">{{message.sender.fullName}}</div>
                 }
@@ -12,7 +12,7 @@
             </div>
         </div>
         @if(showTime){
-            <div class="created-date">{{ message.createdDate | dateUtc : "HH:mm" }}</div>
+            <div [class.ml-45]="chat.isGroup" class="created-date">{{ message.createdDate | dateUtc : "HH:mm" }}</div>
         }
     </div>
 </div>
