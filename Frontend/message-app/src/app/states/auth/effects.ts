@@ -20,18 +20,15 @@ export class AuthEffects {
       catchError(errors => of(AuthActions.errorAction({ errors: errors })))))));
 
   login$ = createEffect(() => this.actions$.pipe(ofType(AuthActions.login),
-    mergeMap((action) => this.authApiService.login(action.payload).pipe(
-      mergeMap(payload => {
+    map(({payload}) => {
         this.authService.setToken(payload)
         setTimeout(() => {
           this.router.navigate([''])
         }, 100);
-        return [
-          AuthActions.loginSuccess(),
-          UserActions.getUser()
-        ]
-      }),
-      catchError(errors => of(AuthActions.errorAction({ errors: errors })))))));
+
+        return UserActions.getUser()
+    })
+  ))
 
   logout$ = createEffect(() => this.actions$.pipe(ofType(AuthActions.logout),
     map(() => {

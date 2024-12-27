@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import signalR, { HubConnection, HubConnectionBuilder, HubConnectionState } from '@microsoft/signalr';
+import { HubConnection, HubConnectionBuilder, HubConnectionState } from '@microsoft/signalr';
 import { environment } from '../../../environments/environment';
 import { Store } from '@ngrx/store';
 import { filter } from 'rxjs';

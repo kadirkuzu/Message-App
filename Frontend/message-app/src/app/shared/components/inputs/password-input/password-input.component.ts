@@ -12,4 +12,12 @@ export class PasswordInputComponent {
   @Input() label = ''
   @Input() class = ''
   @Input() theme: 'dark' | 'light' = 'dark'
+  @Input() hasError = false
+
+  type : 'password' | 'text' = 'password'
+
+  changeType(){
+    this.type = this.type == 'password' ? 'text' : 'password'
+  }
+
 }

@@ -20,7 +20,7 @@ builder.Services.AddCors(options => options.AddDefaultPolicy(policy =>
             .AllowCredentials()
 ));
 
-builder.Services.AddFeaturesServices();
+await builder.Services.AddFeaturesServices();
 
 builder.Services.AddAuthentication(x =>
 {

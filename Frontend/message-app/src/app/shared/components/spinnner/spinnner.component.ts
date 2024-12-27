@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-spinnner',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './spinnner.component.scss'
 })
 export class SpinnnerComponent {
-
+  @Input() marginLeft = 0
 }

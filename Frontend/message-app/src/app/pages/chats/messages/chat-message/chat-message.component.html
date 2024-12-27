@@ -1,7 +1,15 @@
 <div class="chat-message">
     <div class="message-box">
-        <div class="message-content" [class.show-bubble]="showTime">
-            {{ message | decryptMessage }}
+        <div class="user-message">
+            @if(showUser){
+                <app-profile-photo [id]="message.sender.id" [height]="35" [hasPhoto]="message.sender.hasPhoto" />
+            }
+            <div class="message-content" [class.ml-45]="!showUser" [class.show-bubble]="showBubble">
+                @if(showUser){
+                    <div class="user-name">{{message.sender.fullName}}</div>
+                }
+                {{ message | decryptMessage }}
+            </div>
         </div>
         @if(showTime){
             <div class="created-date">{{ message.createdDate | dateUtc : "HH:mm" }}</div>

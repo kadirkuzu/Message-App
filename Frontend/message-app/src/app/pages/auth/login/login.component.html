@@ -2,12 +2,22 @@
     <div class="page-container">
         <form (submit)="login()">
             <h2 class="text-center text-white mb-30">Welcome Back</h2>
-            <app-text-input label="Email or User Name" placeholder="Enter Your Email" [control]="emailOrUserName"></app-text-input>
-            <app-password-input class="mt-10" label="Password" placeholder="Enter Your Password" [control]="password"/>
-            <div class="text-center">
-                <button class="btn btn-primary mt-30 w-100" >Login</button>
-                <p class="mt-20 text-white">Don't have an account? <a class="link c-pointer" routerLink="/auth/create-account">Create account</a></p>
-            </div>
+            <app-text-input label="Email or User Name" placeholder="Enter Your Email" [control]="emailOrUserName" [hasError]="!!errorMessage"></app-text-input>
+            <app-password-input class="mt-10" label="Password" placeholder="Enter Your Password" [control]="password" [hasError]="!!errorMessage"/>
+
+            @if(errorMessage){
+                <div class="invalid-text">
+                    {{errorMessage}}
+                </div>
+            }
+
+            <button class="btn btn-primary mt-30 w-100" [disabled]="loading" >
+                Login
+                @if(loading){
+                    <app-spinnner [marginLeft]="5"/>
+                }
+            </button>
+            <p class="mt-20 text-white text-center">Don't have an account? <a class="link c-pointer" routerLink="/auth/create-account">Create account</a></p>
         </form>
     </div>
 </div>

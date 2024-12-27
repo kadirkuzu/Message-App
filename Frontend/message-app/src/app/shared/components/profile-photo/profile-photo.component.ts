@@ -9,8 +9,8 @@ import { Component, Input } from '@angular/core';
 export class ProfilePhotoComponent {
   @Input() height = 60
   @Input() borderRadius = '100%'
-  @Input() hasPhoto = false
-  @Input() id = ''
+  @Input({ required: true }) hasPhoto = false
+  @Input({ required: true }) id = ''
   @Input() isGroup = false
   @Input() isLoading = false
 

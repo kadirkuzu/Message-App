@@ -29,10 +29,10 @@
             border-inline: var(--t) solid #0000;
             border-radius: calc(var(--r) + var(--t))/var(--r);
             mask:
-                radial-gradient(100% 100% at var(--_p) 0, #0000 99%, #000 102%) var(--_p) 100%/var(--t) var(--t) no-repeat,
+                radial-gradient(100% 100% at var(--_p) 100%, #0000 99%, #000 102%) var(--_p) 0/var(--t) var(--t) no-repeat,
                 linear-gradient(#000 0 0) padding-box;
             --_p: 100%;
-            border-bottom-right-radius: 0 0;
+            border-top-right-radius: 0 0;
             place-self: end;
         }
     }
@@ -42,6 +42,7 @@
         color: white;
         margin-top: 10px;
         margin-bottom: 5px;
+        margin-right: 15px;
         font-size: 12px;
     }
 }

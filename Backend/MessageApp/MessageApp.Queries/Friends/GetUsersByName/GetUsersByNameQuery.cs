@@ -23,9 +23,10 @@ public class GetUsersByNameQueryHandler : IRequestHandler<GetUsersByNameQuery, I
 
     public async Task<IEnumerable<AddFriendRequestUserDto>> Handle(GetUsersByNameQuery request, CancellationToken cancellationToken)
     {
+        var searchValue = request.UserName.ToLower();
         var users = await _userManager.Users
             .Where(x=>x.Id != _user.Id)
-            .Where(x => x.UserName!.Contains(request.UserName) || x.FullName.Contains(request.UserName))
+            .Where(x => x.UserName!.ToLower().Contains(searchValue) || x.FullName.ToLower().Contains(searchValue))
             .AsNoTracking()
             .ToListAsync(cancellationToken);
 

@@ -19,4 +19,13 @@ export class ChatMessageComponent {
       this.message.sender.id != this.nextMessage.sender.id ||
       moment(this.message.createdDate).format("HH:mm") != moment(this.nextMessage.createdDate).format("HH:mm")
   }
+
+  get showBubble() {
+    return !this.previousMessage || this.message.sender.id != this.previousMessage.sender.id
+  }
+
+  get showUser () {
+    return this.chat.isGroup && !this.previousMessage || this.message.sender.id != this.previousMessage.sender.id
+  }
+
 }

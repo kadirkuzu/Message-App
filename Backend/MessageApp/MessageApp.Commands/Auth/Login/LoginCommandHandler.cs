@@ -23,7 +23,7 @@ public class LoginCommandHandler : IRequestHandler<LoginCommand, UserToken>
     public async Task<UserToken> Handle(LoginCommand request, CancellationToken cancellationToken)
     {
         var user = await _userManager.FindByNameAsync(request.EmailOrUserName);
-        user ??= await _userManager.FindByEmailAsync(request.EmailOrUserName) ?? throw new Exception("User Not Found"); 
+        user ??= await _userManager.FindByEmailAsync(request.EmailOrUserName) ?? throw new Exception("Email or password is not correct"); 
         var result = await _signInManager.CheckPasswordSignInAsync(user, request.Password, false);
 
         if (result.Succeeded) {

@@ -11,17 +11,19 @@
                             </div>
                         }
                         @if(message.sender.id == user.id){
-                            <app-user-message [message]="message" [nextMessage]="messages[$index + 1]" [chat]="chat" />
+                            <app-user-message [message]="message" [nextMessage]="messages[$index + 1]" [previousMessage]="messages[$index - 1]" [chat]="chat" />
                         } @else {
                             <app-chat-message [message]="message" [nextMessage]="messages[$index + 1]" [previousMessage]="messages[$index - 1]" [chat]="chat" />
                         }
                     }
                 </div>
                 @if(!(getIsAdminChat$|async)){
-                    <div class="d-flex gap-3 align-items-end">
-                        <app-multiline-input [theme]="'light'" placeholder="Write a message"  class="w-100" [control]="messageCtrl" />
-                        <button class="btn btn-primary" (click)="sendMessage()">Send</button>
-                    </div>
+                    <form (ngSubmit)="sendMessage()">
+                        <div class="d-flex gap-3 align-items-end">
+                            <app-multiline-input [theme]="'light'" placeholder="Write a message"  class="w-100" [control]="messageCtrl" />
+                            <button class="btn btn-primary">Send</button>
+                        </div>
+                    </form>
                 }
             </div>
         </div>

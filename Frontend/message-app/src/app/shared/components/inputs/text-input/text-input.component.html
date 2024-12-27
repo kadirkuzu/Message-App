@@ -12,7 +12,7 @@
             </div>
         }
         <input class="form-control" #input [class.borderless]="borderless" [placeholder]="placeholder" [ngClass]="theme" [class.has-icon]="!!icon"
-            [class.is-invalid]="control.invalid && (control.touched ||control.dirty)" type="text" (focus)="isFocused = true" (blur)="isFocused = false"
+            [class.is-invalid]="(control.invalid || hasError) && (control.touched ||control.dirty)" type="text" (focus)="isFocused = true" (blur)="isFocused = false"
             [formControl]="control">
     </div>
 </div>

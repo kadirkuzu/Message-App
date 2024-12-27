@@ -1,6 +1,6 @@
 <div class="user-message">
     <div class="message-box">
-        <div class="message-content" [class.show-bubble]="showTime">
+        <div class="message-content" [class.show-bubble]="showBubble">
             {{ message | decryptMessage }}
         </div>
         @if(showTime){

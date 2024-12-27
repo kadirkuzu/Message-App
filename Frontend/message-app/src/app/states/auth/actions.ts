@@ -1,6 +1,6 @@
 import { createAction, props } from "@ngrx/store";
 import {ActionBase} from "../_common/action-base";
-import { CreateAccountDto, LoginDto } from "@/app/models/auth";
+import { CreateAccountDto, LoginDto, UserToken } from "@/app/models/auth";
 
 class Actions extends ActionBase {
   constructor(type:string) {super(type)}
@@ -16,11 +16,7 @@ class Actions extends ActionBase {
 
   login = createAction(
     `${this.type} Login`,
-    props<{ payload: LoginDto }>()
-  )
-
-  loginSuccess = createAction(
-    `${this.type} Login Success`
+    props<{ payload: UserToken }>()
   )
 
   logout = createAction(

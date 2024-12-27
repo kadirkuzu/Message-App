@@ -5,6 +5,7 @@ textarea {
   box-shadow: none !important;
   border-radius: $form-border-radius !important;
   font-size: $input-font-size;
+  background-image: none !important;
 
   &.has-icon {
     border-left: none !important;

@@ -11,6 +11,14 @@
     word-wrap: break-word;
     position: relative;
 
+    .user-message{
+        display: flex;
+        .user-name {
+            font-weight: 700;
+            font-size: 15px;
+        }
+    }
+
     .message-content {
         background-color: $white;
         padding: 10px 15px;
@@ -22,22 +30,23 @@
             margin-left: 0;
             --r: 15px;
             --t: 0.8em;
-    
+        
             max-width: 100%;
             min-width: 120px;
             border-inline: var(--t) solid #0000;
-            border-radius: calc(var(--r) + var(--t))/var(--r);
+            border-radius: calc(var(--r) + var(--t)) / var(--r);
             mask:
-                radial-gradient(100% 100% at var(--_p) 0, #0000 99%, #000 102%) var(--_p) 100%/var(--t) var(--t) no-repeat,
+                radial-gradient(100% 100% at var(--_p) 100%, #0000 99%, #000 102%) var(--_p) 0 / var(--t) var(--t) no-repeat,
                 linear-gradient(#000 0 0) padding-box;
             --_p: 0;
-            border-bottom-left-radius: 0 0;
+            border-top-left-radius: 0 0;
         }
     }
 
     .created-date {
         color: white;
         margin-top: 10px;
+        margin-left: 45px;
         font-size: 12px;
     }
 }

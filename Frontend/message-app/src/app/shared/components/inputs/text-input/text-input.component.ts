@@ -14,6 +14,7 @@ export class TextInputComponent {
   @Input() icon = ''
   @Input() theme: 'dark' | 'light' = 'dark'
   @Input() borderless = false
+  @Input() hasError = false
 
   isFocused = false
 }

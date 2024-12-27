@@ -11,6 +11,7 @@ import moment from 'moment';
 export class UserMessageComponent {
   @Input() message !: Message
   @Input() nextMessage !: Message
+  @Input() previousMessage !: Message
   @Input() chat !: Chat
 
   get showTime () {
@@ -18,4 +19,6 @@ export class UserMessageComponent {
     this.message.sender.id != this.nextMessage.sender.id ||
     moment(this.message.createdDate).format("HH:mm") != moment(this.nextMessage.createdDate).format("HH:mm")
   }
+
+  get showBubble () { return !this.previousMessage ||this.message.sender.id != this.previousMessage.sender.id}
 }
