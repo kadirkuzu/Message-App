@@ -25,7 +25,7 @@ export class ChatMessageComponent {
   }
 
   get showUser () {
-    return this.chat.isGroup && !this.previousMessage || this.message.sender.id != this.previousMessage.sender.id
+    return this.chat.isGroup && (!this.previousMessage || this.message.sender.id != this.previousMessage.sender.id)
   }
 
 }
