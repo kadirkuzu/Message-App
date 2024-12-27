@@ -12,6 +12,7 @@ import { Store } from '@ngrx/store';
 })
 export class FriendsBarComponent {
   chats$ = this.store.select(ChatsSelector.getAllFiltered)
+  imageLoadings$ = this.store.select(ChatsSelector.imageLoadings)
   user$ = this.store.select(UserSelector.activeUser)
 
   adminUserName = environment.superAdminUserName

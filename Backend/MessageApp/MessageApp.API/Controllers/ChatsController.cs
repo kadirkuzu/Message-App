@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using MessageApp.Commands.Chats.AddChat;
+using MessageApp.Commands.Chats.UpdateChatTitle;
 using MessageApp.Commands.Chats.UploadImage;
 using MessageApp.Commands.Users.UploadImage;
 using MessageApp.Queries.Chats.GetChats;
@@ -31,6 +32,13 @@ namespace MessageApp.API.Controllers
         public async Task<IActionResult> UploadGroupImage(Guid chatId)
         {
             var command = new UploadGroupImageCommand(chatId, Request.Form.Files);
+            return Ok(await mediator.Send(command));
+        }
+
+        [HttpPut("{chatId}/title")]
+        public async Task<IActionResult> UpdateTitle([FromRoute] Guid chatId, [FromBody] UpdateChatTitleCommand data)
+        {
+            var command = new UpdateChatTitleCommand(chatId, data.Title);
             return Ok(await mediator.Send(command));
         }
     }

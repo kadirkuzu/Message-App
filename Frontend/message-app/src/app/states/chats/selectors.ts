@@ -18,6 +18,8 @@ class Selector {
 
   loading = createSelector(getState, (state: State) => state.isLoading > 0)
 
+  imageLoadings = createSelector(getState, (state: State) => state.imageLoadings)
+
 }
 
 export const ChatsSelector = new Selector()

@@ -20,4 +20,8 @@ export class ChatsApiService {
   uploadImage(chatId:string,formData:FormData) {
     return this.apiService.post<BoolDto>(`chats/${chatId}/upload-image`, formData);
   }
+
+  updateTitle(chatId:string,title:string) {
+    return this.apiService.put<Chat>(`chats/${chatId}/title`, {title});
+  }
 }

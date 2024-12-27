@@ -15,7 +15,9 @@
                     </div>
                 }
                 @else if(chat.isGroup){
-                    <app-profile-photo [id]="chat.id" [isGroup]="true" [hasPhoto]="chat.hasImage" [height]="50" />
+                    @if (imageLoadings$ | async; as imageLoadings) {
+                        <app-profile-photo [id]="chat.id" [isGroup]="true" [isLoading]="imageLoadings[chat.id]" [hasPhoto]="chat.hasImage" [height]="50" />
+                    }
                     <div class="group-info w-100">
                         <div class="w-100 d-flex align-items-center justify-content-between">
                             <div>{{chat.title | titlecase | truncate : 15}}</div>

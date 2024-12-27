@@ -72,7 +72,7 @@ export class CreateChatPageComponent {
   }
 
   create() {
-    if (this.formGroup.invalid) this.formGroup.markAllAsTouched()
+    if (this.formGroup.invalid) return this.formGroup.markAllAsTouched()
     
     let payload = {
       userIds: this.selectedList.map(x=>x.userId),

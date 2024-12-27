@@ -16,3 +16,7 @@
   border-radius: 20px;
   cursor: pointer;
 }
+
+.modal-backdrop {
+  z-index: -1;
+}

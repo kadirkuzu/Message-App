@@ -1,5 +1,5 @@
 @if(chat$ | async; as chat ) {
-    <div class="chat-head">
+    <div class="chat-head" [class.c-pointer]="chat.isGroup" (click)="chat.isGroup ? showDetails = !showDetails : null">
         @if(!chat.isGroup && chat.users[0].userName == adminUserName){
             <img class="logo" src="../../../../assets/images/chat.png" />
             <div class="group-info w-100">
@@ -11,12 +11,11 @@
 
         @else if(chat.isGroup){
 
-            <div class="profile-image-container" data-bs-toggle="modal" data-bs-target="#updateGroupImageModal">
-                <app-profile-photo [id]="chat.id" [isGroup]="true" [hasPhoto]="chat.hasImage" [height]="50" />
-                <div class="overlay">
-                    <i class="fa-solid fa-camera"></i>
-                </div>
-            </div>
+            @if (imageLoadings$ | async; as imageLoadings) {
+            <app-profile-photo [id]="chat.id" [isGroup]="true" [isLoading]="imageLoadings[chat.id]" [hasPhoto]="chat.hasImage"
+                [height]="50" />
+            }
+
             <div class="group-info w-100">
                 <div class="w-100 d-flex align-items-center justify-content-between">
                     <div class="title">
@@ -27,8 +26,6 @@
                 </div>
             </div>
 
-            <app-upload-image modalId="updateGroupImageModal" title="Upload Group Image" (upload)="uploadImage(chat.id,$event.file)" />
-
         } @else {
             <app-profile-photo [id]="chat.users[0].id" [hasPhoto]="chat.users[0].hasPhoto" [height]="50" />
             <div class="group-info w-100">
@@ -38,5 +35,42 @@
             </div>
         }
     </div>
+
+    <div class="right-card scroll-bar" [class.show]="showDetails">
+        <div class="h-100">
+            <span class="close-icon" (click)="showDetails = false"><i class="fa-solid fa-xmark"></i></span>
+            <div class="d-flex justify-content-center mt-20 mt-md-0">
+                <div class="profile-image-container" data-bs-toggle="modal" data-bs-target="#updateGroupImageModal">
+                    @if (imageLoadings$ | async; as imageLoadings) {
+                        <app-profile-photo [id]="chat.id" [isGroup]="true" [isLoading]="imageLoadings[chat.id]" [hasPhoto]="chat.hasImage" [height]="106" />
+                    }
+                    <div class="overlay">
+                        <i class="fa-solid fa-camera"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex mt-3 gap-3">
+                <app-text-input [control]="title" [placeholder]="'Group Title'" class="w-100" />
+                <div [class.show]="title.value != chat.title" class="save-button">
+                    <button class="btn btn-primary" (click)="saveTitle()">Save</button>
+                </div>
+            </div>
+            <div class="list">
+                @for(user of chat.users; track user.id){
+                    <div class="mt-3">
+                        <div class="d-flex align-items-center justify-content-between w-100">
+                            <div class="d-flex gap-2">
+                                <app-profile-photo [hasPhoto]="user.hasPhoto" [id]="user.id" [height]="30" />
+                                <div class="text-white">{{'@' + user.userName}}</div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <app-upload-image modalId="updateGroupImageModal" title="Upload Group Image" (upload)="uploadImage(chat.id,$event.file)" />
 
 }

@@ -33,4 +33,9 @@ public class Chat : BaseEntity
         LastMessage = message;
         UnreadCount++;
     }
+
+    public void UpdateTitle(string title)
+    {
+        Title = title;
+    }
 }

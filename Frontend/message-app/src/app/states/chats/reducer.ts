@@ -6,14 +6,16 @@ import { MessageActions } from "../messages/actions";
 
 export interface State extends EntityState<Chat> {
   isLoading: number;
-  activeChatId?: string
+  activeChatId?: string;
+  imageLoadings: Record<string,boolean>
 }
 
 export const adapter = createEntityAdapter<Chat>();
 
 export const initialState: State = adapter.getInitialState({
   isLoading: 0,
-  activeChatId: undefined
+  activeChatId: undefined,
+  imageLoadings: {}
 })
 
 export const reducer = createReducer(
@@ -53,5 +55,25 @@ export const reducer = createReducer(
   }),
   on(MessageActions.getAll, (state, { chatId }) => {
     return {...state,activeChatId: chatId}
-  })
+  }),
+  on(Actions.setImageLoading, (state, { chatId, isLoading }) => {
+    return {...state,imageLoadings: {...state.imageLoadings, [chatId]: isLoading}}
+  }),
+  on(Actions.updateTitleSuccess, (state, { payload }) => {
+    return adapter.updateOne({
+      id: payload.id,
+      changes: {
+        title: payload.title
+      }
+    },state)
+  }),
+  on(Actions.updateTitleSignalR, (state, { data }) => {
+    let payload = data.object
+    return adapter.updateOne({
+      id: payload.id,
+      changes: {
+        title: payload.title
+      }
+    },state)
+  }),
 )

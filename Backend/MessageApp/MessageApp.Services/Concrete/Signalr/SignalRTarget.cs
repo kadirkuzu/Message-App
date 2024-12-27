@@ -9,4 +9,5 @@ public class SignalRTarget
     public const string ChatAdded = "ChatAdded";
     public const string ChatPhotoUploaded = "ChatPhotoUploaded";
     public const string FriendRemoved = "FriendRemoved";
+    public const string ChatTitleUpdated = "ChatTitleUpdated";
 }
